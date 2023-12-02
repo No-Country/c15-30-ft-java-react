@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { FaSearch, FaSortDown, FaSortUp } from "react-icons/fa";
+import { textBold } from "@/styles/fonts";
 
 const Input = React.forwardRef(({ className, type, ...props }, ref) => {
   return (
@@ -54,9 +55,9 @@ export const Inputs  = (props) => {
 
   if (tipo === "busqueda") {
     return (
-      <div className="mx-auto max-w-md mt-10 w-[200px] md:w-[500px]">
-        <div className="h-[52px] w-full flex justify-center relative">
-          <Input type="text" placeholder="Place Holder" {...props} />
+      <div className="mx-auto max-w-md mt-10 w-[300px] md:w-[500px]">
+        <div className="h-[54px] w-full flex justify-center relative">
+          <Input type="text" className={cn(textBold.className, 'h-[50px] rounded-xl shadow-md')} {...props} />
           <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" />
         </div>
       </div>

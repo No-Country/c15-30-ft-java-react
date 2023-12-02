@@ -3,6 +3,7 @@ import NavBar from "@/components/ui/navbar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";
+import { FaBars } from "react-icons/fa";
 
 const titleContent = {
   title: "Co-crear hecho fácil.",
@@ -12,9 +13,8 @@ const titleContent = {
 
 const sectionContent = {
   title: "Proyectos",
-  description:
-    "Entérate de los proyectos mas relevantes a tu alrededor.",
-}
+  description: "Entérate de los proyectos mas relevantes a tu alrededor.",
+};
 
 export default function Home() {
   return (
@@ -25,8 +25,10 @@ export default function Home() {
         content={titleContent}
         className={""}
       />
-      <Button className={""}>hola</Button>
-      <ImageContainer size={"sm"} component={<HombreLaptop />}  />
+      <Button type={""} className={""}>
+        Crear proyecto
+      </Button>
+      <ImageContainer size={"sm"} component={<HombreLaptop />} />
       <TitleContainer
         type={"titleAndDescription"}
         content={sectionContent}
