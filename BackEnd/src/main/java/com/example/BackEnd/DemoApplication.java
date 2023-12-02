@@ -1,13 +1,13 @@
-package com.project.noCountry;
+package com.example.BackEnd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NoCountryApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NoCountryApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }
