@@ -3,7 +3,7 @@ import NavBar from "@/components/ui/navbar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";
-import { FaBars } from "react-icons/fa";
+import Link from "next/link";
 
 const titleContent = {
   title: "Co-crear hecho fácil.",
@@ -26,7 +26,7 @@ export default function Home() {
         className={""}
       />
       <Button type={""} className={""}>
-        Crear proyecto
+        <Link href={'/projects/me/create'}>Crear proyecto</Link>
       </Button>
       <ImageContainer size={"sm"} component={<HombreLaptop />} />
       <TitleContainer

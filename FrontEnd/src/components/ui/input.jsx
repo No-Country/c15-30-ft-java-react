@@ -32,7 +32,7 @@ export const Inputs  = (props) => {
   const { tipo } = props
   if (tipo === "default") {
     return (
-      <div className="">
+      <div >
         <div className="w-full flex justify-center">
           <Input placeholder="Place Holder" className={'h-[52px] border-2 border-black'} {...props} />
         </div>
@@ -55,7 +55,7 @@ export const Inputs  = (props) => {
 
   if (tipo === "busqueda") {
     return (
-      <div className="mx-auto max-w-md mt-10 w-[300px] md:w-[500px]">
+      <div className="mx-auto max-w-md w-[300px] md:w-[500px]">
         <div className="h-[54px] w-full flex justify-center relative">
           <Input type="text" className={cn(textBold.className, 'h-[50px] rounded-xl shadow-md')} {...props} />
           <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" />
