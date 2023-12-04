@@ -3,7 +3,7 @@ import NavBar from "@/components/ui/navbar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";
-import { FaBars } from "react-icons/fa";
+import Link from "next/link";
 
 const titleContent = {
   title: "Co-crear hecho fácil.",
@@ -19,14 +19,14 @@ const sectionContent = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center gap-[10px]">
-      <NavBar tipo={"noLogeado"} />
+      <NavBar tipo={"color"} />
       <TitleContainer
         type={"sectionTitle"}
         content={titleContent}
         className={""}
       />
-      <Button type={""} className={""}>
-        Crear proyecto
+      <Button type={""}  variant={'destructive'} className={""}>
+        <Link href={'/projects/me/create'}>Crear proyecto</Link>
       </Button>
       <ImageContainer size={"sm"} component={<HombreLaptop />} />
       <TitleContainer
@@ -34,6 +34,9 @@ export default function Home() {
         content={sectionContent}
         className={""}
       />
+      <Button type={""} className={""}>
+        <Link href={'/explore'}>Explora</Link>
+      </Button>
     </div>
   );
 }

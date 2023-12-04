@@ -28,7 +28,7 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
           {content.title}
         </h2>
         {datos.map((dato) => (
-          <p key={dato} className={cn("text-gray-500 text-sm")}>
+          <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
             {dato.trim()}
           </p>
         ))}
@@ -40,7 +40,7 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
         {content.title}
       </h2>
       {datos.map((dato) => (
-        <p key={dato} className={cn("text-gray-500 text-sm")}>
+        <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
           {dato.trim()}
         </p>
       ))}

@@ -42,14 +42,14 @@ import { text, textMedium, textBold } from "@/styles/fonts"
  */
 const TitleContainer = ({type, content}) => {
   if (type === "titleAndDescription")   return (
-    <div className="px-[26.5px] h-[208px] w-[377px] flex flex-col gap-4 mt-[30px]">
+    <div className="px-[26.5px] w-[377px] flex flex-col gap-4 mt-[30px]">
       <h2 className={cn(textMedium.className, "text-subtitle text-center")}>{content.title}</h2>
-      <h3 className={cn(text.className, "h-[101px] text-sm text-center text-gray-500")}>{content.description}</h3>
+      <h3 className={cn(text.className, "text-sm text-center text-gray-500")}>{content.description}</h3>
     </div>
   )
 
   if (type === "sectionTitle")   return (
-    <div className="px-[26.5px] h-[208px] w-[377px] flex flex-col gap-4 mt-[30px]">
+    <div className="px-[26.5px] w-[377px] flex flex-col gap-4 mt-[30px]">
       <h2 className={cn(textMedium.className, "text-title text-center")}>{content.title}</h2>
       <h3 className={cn(text.className, "text-sm text-center text-gray-500")}>{content.description}</h3>
     </div>
