@@ -1,15 +1,18 @@
+'use client'
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import Link from "next/link";
-import { FaChevronLeft , FaBars } from "react-icons/fa";
+import { FaChevronLeft , FaBars, FaHome } from "react-icons/fa";
 import NavBarBlob from "../../svgs/NavBarBlob";
 import NavBarBlob2 from "../../svgs/NavBarBlob2";
 import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
 import BlobWorkspaceMd from "../../svgs/BlobWorkspaceMd.jsx";
 import BlobWorkspaceLg from "../../svgs/BlobWorkspaceLg.jsx";
+import { useRouter } from "next/navigation";
 
 const variants = {
   contracted: "",
@@ -27,6 +30,10 @@ const variants = {
  *
  */
 const NavBar = ({ tipo, variant, ...props }) => {
+
+  const router = useRouter()
+
+
   if (tipo === "noLogeado")
     return (
       <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
@@ -88,6 +95,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
                   variant="default"
                   size={"roundedSm"}
                   className={"absolute z-10 cursor-pointer"}
+                  onClick={() => router.back()}
                 >
                   <FaChevronLeft />
                 </Button>
@@ -114,12 +122,13 @@ const NavBar = ({ tipo, variant, ...props }) => {
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-[60px]">
               <div className="flex items-center">
-                <div className="flex justify-center items-center ml-[30px]">
+                <div className="flex justify-center items-center ml-[30px]"  >
                   <Button
                     type={"rounded"}
                     variant="default"
                     size={"rounded"}
                     className={"absolute top-4 z-10 cursor-pointer"}
+                    onClick={() => router.back()}
                   >
                     <FaChevronLeft className="text-[25px]"  />
                   </Button>

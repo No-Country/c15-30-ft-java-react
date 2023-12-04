@@ -19,13 +19,13 @@ const sectionContent = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center gap-[10px]">
-      <NavBar tipo={"noLogeado"} />
+      <NavBar tipo={"color"} />
       <TitleContainer
         type={"sectionTitle"}
         content={titleContent}
         className={""}
       />
-      <Button type={""} className={""}>
+      <Button type={""}  variant={'destructive'} className={""}>
         <Link href={'/projects/me/create'}>Crear proyecto</Link>
       </Button>
       <ImageContainer size={"sm"} component={<HombreLaptop />} />
@@ -34,6 +34,9 @@ export default function Home() {
         content={sectionContent}
         className={""}
       />
+      <Button type={""} className={""}>
+        <Link href={'/explore'}>Explora</Link>
+      </Button>
     </div>
   );
 }

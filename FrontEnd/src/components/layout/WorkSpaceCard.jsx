@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 //datos sacados del proyecto nombre -> title - descripcion -> data
 const activityCardInfo = {
   title: "IA de reconocimiento facial",
-  data: ["Buscamos crear la IA más efectiva en el reconocimiento facial"],
+  data: ["Buscamos crear la IA más efectiva en el reconocimiento facial asdas deasd easdadasda easdasd easdasd"],
 };
 
 /**
@@ -37,7 +37,7 @@ const WorkSpaceCard = () => {
 
         <section className="flex flex-col gap-3">
           {projects.map((project) => (
-            <><div className="flex justify-between items-center">
+            <><div className="flex justify-between items-center line-clamp-2">
             <TextDispalyWithTitle
               type={"vertical"}
               content={activityCardInfo}
@@ -48,7 +48,7 @@ const WorkSpaceCard = () => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
-          <hr className="mt-2" /></>
+          <hr className="mt-2 border-gray-300" /></>
           ))}
         </section>
       </div>
