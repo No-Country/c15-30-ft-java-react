@@ -32,11 +32,7 @@ public class Usuario implements Serializable {
     private String contrasena;
     @Column(name = "activo")
     private boolean activo;
-    /*
-    * -- Pais
-    * proyectos
-    * proyectos_favoritos
-    * stack_usuario
-    * */
+
+    // TODO: Agregar atributos de pais, proyectos, proyectos_favoritos y stack_usuario
 
 }
