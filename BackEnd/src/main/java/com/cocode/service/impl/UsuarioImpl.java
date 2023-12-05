@@ -19,11 +19,14 @@ public class UsuarioImpl implements IUsuario {
         return usuarioDao.save(usuario);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Usuario findById(Long id) {
         return usuarioDao.findById(id).orElse(null);
     }
 
+    // TODO: Desarrollar método findByName()
+    @Transactional(readOnly = true)
     @Override
     public Usuario findByName(String nombre) {
         return null;
