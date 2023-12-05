@@ -4,7 +4,7 @@ import Axios from 'axios';
 
 const axiosInstance = Axios.create({
     //TODO cambiar esto a la api de CoCode
-  baseURL: 'https://restcountries.com/v3.1/all',
+  baseURL: 'http://localhost:3000/api',
   // headers: {
   //   Authorization: `Bearer ${localStorage.getItem('token')}`
   // }

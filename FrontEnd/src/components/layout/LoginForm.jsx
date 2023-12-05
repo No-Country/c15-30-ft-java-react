@@ -7,23 +7,18 @@ import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 import { textBold } from '@/styles/fonts'
 import { useForm } from 'react-hook-form'
-import API from '@/axios/apiConnection'
+
 
 
 const LoginForm = () => {
-  const userStatus = useLoginStore((state) => state.loggedIn)
-  const login = useLoginStore((state) => state.logIn)
   const {register, handleSubmit, errors} = useForm()
 
   const onSubmit = async (data) => {
     console.log(data)
-    const response = await API.get()
-    console.log(response)
   }
 
   return (
     <form className='w-full' onSubmit={handleSubmit(onSubmit)}>
-      <h2>{!loading ? 'no' : 'si'}</h2>
        <div className="p-[52px] flex flex-col gap-[27px]">
           <Input
             name={"email"}
