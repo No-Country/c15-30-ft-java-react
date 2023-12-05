@@ -1,7 +1,6 @@
 import React from "react";
-import NavBar from "../../components/ui/navbar";
 import TextDisplayWIthTitle from "../../components/ui/textDisplayWIthTitle";
-import { Inputs } from "../../components/ui/input";
+import { Input } from "../../components/ui/input";
 import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
 import WorkSpaceCard from "@/components/layout/WorkSpaceCard";
 
@@ -14,6 +13,8 @@ const pageContent = {
   data: ["Aquí puedes ver los proyectos en los que participas actualmente."],
 };
 const WorkSpace = () => {
+
+  
   return (
     <div className="h-full flex flex-col justify-between">
       <div className="px-[20px]">
@@ -24,7 +25,7 @@ const WorkSpace = () => {
             content={UserData}
           />
          <div className="mt-5">
-         <Inputs tipo={"busqueda"} placeholder={"Buscar"} />
+         <Input tipo={"busqueda"} placeholder={"Buscar"} />
          </div>
         </section>
         <section className={"mt-[20px] flex flex-col"}>

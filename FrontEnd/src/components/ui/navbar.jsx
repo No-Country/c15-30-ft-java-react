@@ -91,7 +91,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             <div className="flex items-center">
               <div className="flex justify-center items-center ml-[20px]">
                 <Button
-                  type={"rounded"}
+                  tipo={"rounded"}
                   variant="default"
                   size={"roundedSm"}
                   className={"absolute z-10 cursor-pointer"}
@@ -124,7 +124,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
               <div className="flex items-center">
                 <div className="flex justify-center items-center ml-[30px]"  >
                   <Button
-                    type={"rounded"}
+                    tipo={"rounded"}
                     variant="default"
                     size={"rounded"}
                     className={"absolute top-4 z-10 cursor-pointer"}
@@ -136,7 +136,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
               </div>
               <div className="flex justify-center items-center mr-[30px]">
                 <Button
-                  type={"rounded"}
+                  tipo={"rounded"}
                   variant="default"
                   size={"rounded"}
                   className={"absolute top-4 z-10 cursor-pointer"}

@@ -12,8 +12,8 @@ const TitleDisplayWithButton = (/* {data} */) => {
     <div className='flex justify-between items-center'>
       <h2 className={cn(textBold.className, "")}>{data.title}</h2>
       <section className='flex gap-3'>
-      <Button type={'rounded'} size={'roundedSm'}><FaChevronLeft /></Button>
-      <Button type={'rounded'} size={'roundedSm'}><FaChevronRight /></Button>
+      <Button tipo={'rounded'} size={'roundedSm'}><FaChevronLeft /></Button>
+      <Button tipo={'rounded'} size={'roundedSm'}><FaChevronRight /></Button>
       </section>
     </div>
   )

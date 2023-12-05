@@ -18,14 +18,14 @@ const sectionContent = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center gap-[10px]">
-      <NavBar tipo={"color"} />
+    <div className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
+      <NavBar tipo={"noLogeado"} />
       <TitleContainer
         type={"sectionTitle"}
         content={titleContent}
         className={""}
       />
-      <Button type={""}  variant={'destructive'} className={""}>
+      <Button tipo={""}  className={""}>
         <Link href={'/projects/me/create'}>Crear proyecto</Link>
       </Button>
       <ImageContainer size={"sm"} component={<HombreLaptop />} />
@@ -34,7 +34,7 @@ export default function Home() {
         content={sectionContent}
         className={""}
       />
-      <Button type={""} className={""}>
+      <Button tipo={""} className={""}>
         <Link href={'/explore'}>Explora</Link>
       </Button>
     </div>

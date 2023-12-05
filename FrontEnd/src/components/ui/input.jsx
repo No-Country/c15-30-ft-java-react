@@ -3,38 +3,20 @@ import { cn } from "@/lib/utils";
 import { FaSearch, FaSortDown, FaSortUp } from "react-icons/fa";
 import { textBold } from "@/styles/fonts";
 
-const Input = React.forwardRef(({ className, type, ...props }, ref) => {
-  return (
-    (<input
-      type={type}
-      className={cn(
-        "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
-      ref={ref}
-      {...props} />)
-  );
-})
-Input.displayName = "Input"
+const baseStyle =
+  "flex h-10 w-full rounded-lg  bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 text-primary";
 
-export { Input as InputShad }
-
-/**
- * 
- * @props default: hay un solo input  
- * @props doble: hay dos inputs
- * @props busqueda: input con logo de busqueda
- * @props ordenar: input para ordenar
- * 
- * @example <Inputs tipo="default" />
- */
-export const Inputs  = (props) => {
-  const { tipo } = props
+const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
   if (tipo === "default") {
     return (
-      <div >
-        <div className="w-full flex justify-center">
-          <Input placeholder="Place Holder" className={'h-[52px] border-2 border-black'} {...props} />
+      <div>
+        <div className={cn(baseStyle, textBold.className, "w-full flex justify-center", className)}>
+          <input
+            placeholder="Place Holder"
+            className="h-[52px] rounded-lg border border-black p-2 text-primary"
+            ref={ref}
+            {...props}
+          />
         </div>
       </div>
     );
@@ -43,11 +25,17 @@ export const Inputs  = (props) => {
   if (tipo === "doble") {
     return (
       <div className="mx-auto max-w-md mt-10 w-[300px] md:max-w-[500px] flex justify-between gap-6">
-        <div className="h-[52px] w-full flex justify-center">
-          <Input type="text" placeholder="Place Holder" {...props} />
+        <div
+          className={cn(
+            baseStyle,
+            "h-[52px] w-full flex justify-center",
+            className
+          )}
+        >
+          <input type="text" placeholder="Place Holder" {...props} />
         </div>
         <div className="h-[52px] w-full flex justify-center">
-          <Input type="text" placeholder="Place Holder" {...props} />
+          <input type="text" placeholder="Place Holder" {...props} />
         </div>
       </div>
     );
@@ -57,7 +45,11 @@ export const Inputs  = (props) => {
     return (
       <div className="mx-auto max-w-md w-[300px] md:w-[500px]">
         <div className="h-[54px] w-full flex justify-center relative">
-          <Input type="text" className={cn(textBold.className, 'h-[50px] rounded-xl shadow-md')} {...props} />
+          <input
+            type="text"
+            className={cn(textBold.className, "h-[50px] rounded-xl shadow-md p-2 text-primary")}
+            {...props}
+          />
           <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" />
         </div>
       </div>
@@ -68,7 +60,12 @@ export const Inputs  = (props) => {
     return (
       <div className="mx-auto max-w-md mt-10 w-[95px] md:max-w-screen-sm">
         <div className="h-[52px] w-full flex justify-center relative">
-          <Input type="text" placeholder="Ordenar" className="h-[52px]" {...props} />
+          <input
+            type="text"
+            placeholder="Ordenar"
+            className="h-[52px]"
+            {...props}
+          />
           <div className="h-full flex flex-col justify-center absolute right-1">
             <FaSortUp className="text-gray-400 cursor-pointer mt-3" />
             <FaSortDown className="text-gray-400 cursor-pointer mb-3" />
@@ -79,4 +76,8 @@ export const Inputs  = (props) => {
   }
 
   return null; // Manejar casos desconocidos o inesperados
-};
+});
+
+Input.displayName = "Input";
+
+export { Input };
