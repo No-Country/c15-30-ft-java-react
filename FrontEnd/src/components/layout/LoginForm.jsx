@@ -7,14 +7,19 @@ import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 import { textBold } from '@/styles/fonts'
 import { useForm } from 'react-hook-form'
-
-
+import API from '@/axios/apiConnection'
+import { persistence } from '@/utils/localeStorage'
 
 const LoginForm = () => {
   const {register, handleSubmit, errors} = useForm()
 
   const onSubmit = async (data) => {
-    console.log(data)
+    const response = await API.post('/login',data)
+    const {user,token} = response
+    if (user && token) {
+      persistence.set('user',user)
+      persistence.set('token',token)
+    }
   }
 
   return (

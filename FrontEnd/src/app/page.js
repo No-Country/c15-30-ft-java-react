@@ -25,8 +25,8 @@ export default function Home() {
         content={titleContent}
         className={""}
       />
-      <Button tipo={""}  className={""}>
-        <Link href={'/projects/me/create'}>Crear proyecto</Link>
+      <Button tipo={""} className={""}>
+        <Link href={"/projects/me/create"}>Crear proyecto</Link>
       </Button>
       <ImageContainer size={"sm"} component={<HombreLaptop />} />
       <TitleContainer
@@ -34,8 +34,9 @@ export default function Home() {
         content={sectionContent}
         className={""}
       />
+
       <Button tipo={""} className={""}>
-        <Link href={'/explore'}>Explora</Link>
+        <Link href={"/explore"}>Explora</Link>
       </Button>
     </div>
   );

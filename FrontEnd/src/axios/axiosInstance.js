@@ -1,13 +1,14 @@
-// axiosInstance.js
+'use client'
 
+import { persistence } from '@/utils/localeStorage';
 import Axios from 'axios';
 
 const axiosInstance = Axios.create({
     //TODO cambiar esto a la api de CoCode
-  baseURL: 'http://localhost:3000/api',
-  // headers: {
-  //   Authorization: `Bearer ${localStorage.getItem('token')}`
-  // }
+  baseURL: 'http://localhost:8080/',
+/*   headers: {
+    Authorization: `Bearer ${persistence.get('token')}`
+  } */
 });
 
 export default axiosInstance;

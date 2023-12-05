@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  return NextResponse.json({
+  const param = 1
+  const data = {
     proyectos: [
       {
         id: 1,
         nombre: "Proyecto 1",
-        descripcion: "Descripción del Proyecto 1",
+        descripcion: "Descripción del Proyecto 1 de verdad",
         colaboradores: [1, 2, 3],
         imagenPerfilUrl: "https://ejemplo.com/imagen1.jpg",
       },
@@ -46,5 +47,8 @@ export async function GET() {
         imagenPerfilUrl: "https://ejemplo.com/imagen6.jpg",
       },
     ],
-  });
+  }
+
+  const filtered = data.proyectos.filter(proyecto => proyecto.id === param);
+  return NextResponse.json(filtered);
 }
