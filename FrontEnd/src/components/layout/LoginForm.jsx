@@ -1,5 +1,5 @@
 'use client'
-
+import { useSession } from 'next-auth/react'
 import React from 'react'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
@@ -7,14 +7,22 @@ import { FaGithub, FaGoogle } from 'react-icons/fa'
 import { cn } from '@/lib/utils'
 import { textBold } from '@/styles/fonts'
 import { useForm } from 'react-hook-form'
-
-
+import ButtonAuth from './ButtonAuth'
+import { signIn } from 'next-auth/react'
 
 const LoginForm = () => {
   const {register, handleSubmit, errors} = useForm()
 
   const onSubmit = async (data) => {
-    console.log(data)
+    const {email,password} = data
+
+    const response = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+      callbackUrl: "/workspace",
+    });
+
   }
 
   return (
@@ -39,7 +47,7 @@ const LoginForm = () => {
         </div>
         <div className="flex flex-col gap-5">
           <div className={" flex justify-center"}>
-            <Button type={'submit'} >Iniciar sesion</Button>
+            <ButtonAuth type={'submit'} >Iniciar sesion</ButtonAuth>
           </div>
           <div className="flex items-center gap-5 px-[56px]">
             <hr className="w-full border" />

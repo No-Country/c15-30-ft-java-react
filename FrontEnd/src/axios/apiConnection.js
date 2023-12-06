@@ -1,18 +1,20 @@
 import axiosInstance from "./axiosInstance";
 
+const handleRequest = async (requestFunction, path,  data) => {
+  try {
+    const response = await requestFunction(path, data);
+    return response.data; 
+  } catch (error) {
+
+    console.error(error)
+  }
+};
+
 const API = {
-  get: async (path, params) => {
-    return await axiosInstance.get(path);
-  },
-  post: async (path, params, data) => {
-    return await axiosInstance.post(path, params, data);
-  },
-  put: async (path, params, data) => {
-    return await axiosInstance.put(path, params, data);
-  },
-  delete: async (path, params) => {
-    return await axiosInstance.delete(path, params);
-  },
-}
+  get: async (path) => handleRequest(axiosInstance.get, path, ),
+  post: async (path, data) => handleRequest(axiosInstance.post, path, data),
+  put: async (path, data) => handleRequest(axiosInstance.put, path, data),
+  delete: async (path) => handleRequest(axiosInstance.delete, path),
+};
 
 export default API;

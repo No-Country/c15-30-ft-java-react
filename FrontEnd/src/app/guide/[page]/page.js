@@ -1,14 +1,12 @@
-'use client'
 
-import { useParams } from 'next/navigation'
 import React from 'react'
 
-const DocsPage = () => {
-  const params = useParams()
+const DocsPage = ({params}) => {
+  const pageName = params.page
 
 
   return (
-    <div>{params.page}</div>
+    <div>{pageName}</div>
   )
 }
 

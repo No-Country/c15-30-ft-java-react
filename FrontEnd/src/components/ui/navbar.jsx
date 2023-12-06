@@ -1,18 +1,20 @@
-'use client'
+"use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import Link from "next/link";
-import { FaChevronLeft , FaBars, FaHome } from "react-icons/fa";
+import { FaChevronLeft, FaBars, FaSpinner } from "react-icons/fa";
 import NavBarBlob from "../../svgs/NavBarBlob";
 import NavBarBlob2 from "../../svgs/NavBarBlob2";
 import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
 import BlobWorkspaceMd from "../../svgs/BlobWorkspaceMd.jsx";
 import BlobWorkspaceLg from "../../svgs/BlobWorkspaceLg.jsx";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useUserStore } from "@/state/user/user";
+import { signOut, useSession } from "next-auth/react";
 
 const variants = {
   contracted: "",
@@ -30,11 +32,16 @@ const variants = {
  *
  */
 const NavBar = ({ tipo, variant, ...props }) => {
+  const {data: session, status} = useSession()
+  const user = useUserStore((state) => state.user);
+  const path =  usePathname()
+  const router = useRouter();
+  const userImage = useMemo(() => {
+    return user?.imageUrl ? user?.imageUrl : "/images/default-user.png";
+  }, [user]);
 
-  const router = useRouter()
 
-
-  if (tipo === "noLogeado")
+  if (!session)
     return (
       <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,12 +54,18 @@ const NavBar = ({ tipo, variant, ...props }) => {
               </div>
             </div>
             <div className="grid grid-flow-col items-center justify-between gap-[20px]">
-              <Link href={"/login"}>
-                <Button variant="default" size={"sm"}>
-                  Login
-                </Button>
-              </Link>
-
+              {(
+                <Link href={"/login"}>
+                  <Button
+                    tipo={"squared"}
+                    size={"squaredSm"}
+                    variant={""}
+                    type={""}
+                  >
+                    login
+                  </Button>
+                </Link>
+              )}
               <FaBars className="text-title cursor-pointer" />
             </div>
           </div>
@@ -60,7 +73,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
       </nav>
     );
 
-  if (tipo === "logeado")
+  if (session && path === "/")
     return (
       <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +87,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             </div>
             <div className="grid grid-flow-col items-center justify-between gap-[20px]">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src={userImage} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </div>
@@ -103,7 +116,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             </div>
             <div className="flex justify-center items-center mr-[20px]">
               <Avatar className={"absolute z-10 cursor-pointer"}>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src={userImage} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </div>
@@ -114,15 +127,15 @@ const NavBar = ({ tipo, variant, ...props }) => {
         <NavBarBlob2 className={"absolute top-[-20px] right-1 opacity-70"} />
       </nav>
     );
-    
-  if (tipo === "colorExtended")
+
+  if (session && path === "/workspace")
     return (
-      <nav className="relative h-[250px]" >
+      <nav className="relative h-[250px]">
         <div className="relative mt-5 h-[205px] w-full rounded-[60px] overflow-hidden">
           <div className="mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-[60px]">
               <div className="flex items-center">
-                <div className="flex justify-center items-center ml-[30px]"  >
+                <div className="flex justify-center items-center ml-[30px]">
                   <Button
                     tipo={"rounded"}
                     variant="default"
@@ -130,7 +143,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
                     className={"absolute top-4 z-10 cursor-pointer"}
                     onClick={() => router.back()}
                   >
-                    <FaChevronLeft className="text-[25px]"  />
+                    <FaChevronLeft className="text-[25px]" />
                   </Button>
                 </div>
               </div>
@@ -159,16 +172,13 @@ const NavBar = ({ tipo, variant, ...props }) => {
               "absolute bottom-0 z-10 cursor-pointer w-[110px] h-[110px] rounded-full bg-[#532D60] bg-opacity-50 flex justify-center items-center"
             }
           >
-            <Avatar
-              variant={"lg"}
-              className={"absolute z-10 cursor-pointer"}
-            >
-              <AvatarImage src="https://github.com/shadcn.png" />
+            <Avatar variant={"lg"} className={"absolute z-10 cursor-pointer"}>
+              <AvatarImage src={userImage} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
         </div>
       </nav>
     );
-};
+}
 export default NavBar;

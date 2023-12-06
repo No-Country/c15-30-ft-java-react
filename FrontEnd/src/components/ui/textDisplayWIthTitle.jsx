@@ -5,7 +5,7 @@ import { textBold } from "../../styles/fonts.js";
 const variants = {
   primary: "text-primary",
   regular: "text-black",
-}
+};
 
 /**
  * Despliega un texto formateado con titulo
@@ -19,7 +19,6 @@ const variants = {
  * @returns
  */
 const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
-  const datos = content.data;
 
   if (type === "vertical")
     return (
@@ -27,23 +26,16 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
         <h2 className={cn(textBold.className, variants[variant])}>
           {content.title}
         </h2>
-        {datos.map((dato) => (
-          <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
-            {dato.trim()}
-          </p>
-        ))}
+        <p className={cn("text-gray-500 text-sm line-clamp-2")}>{content.data}</p>
       </div>
     );
+
   return (
-    <div className="flex justify-between" {...props}>
+    <div className="w-full flex justify-between" {...props}>
       <h2 className={cn(textBold.className, variants[variant])}>
         {content.title}
       </h2>
-      {datos.map((dato) => (
-        <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
-          {dato.trim()}
-        </p>
-      ))}
+      <p className={cn("text-gray-500 text-sm line-clamp-2")}>{content.data}</p>
     </div>
   );
 };

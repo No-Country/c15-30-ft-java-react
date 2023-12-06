@@ -5,7 +5,8 @@ import { textBold } from "@/styles/fonts";
 import React, { useEffect } from "react";
 import TextDispalyWithTitle from "../ui/textDisplayWIthTitle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { workSpaceProjectsStore } from "@/state/user/workspaceProjects";
+import { useUserStore } from "@/state/user/user";
+import API from "@/axios/apiConnection";
 
 /**
  * Para este componente se necesitaria:
@@ -16,19 +17,15 @@ import { workSpaceProjectsStore } from "@/state/user/workspaceProjects";
  * @returns
  */
 const WorkSpaceCard = () => {
-  const setProjects = workSpaceProjectsStore((state) => state.setProjects);
-  const projects = workSpaceProjectsStore((state) => state.projects);
+  const [projects, setProjects] = React.useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await setProjects();
-      } catch (error) {
-        console.error(error);
-      }
+    const getProjects = async () => {
+      const projects = await API.get("/projects");
+      setProjects(projects)
     };
-    fetchData();
-  }, [setProjects]);
+    getProjects();
+  }, []);
 
   return (
     <div>
@@ -44,9 +41,10 @@ const WorkSpaceCard = () => {
         </section>
 
         <section className="flex flex-col gap-3">
-          {projects.proyectos &&
-            projects?.proyectos
+           {projects &&
+            projects
               .map((project) => {
+
                 const activityCardInfo = {
                   title: project.nombre,
                   data: [project.descripcion],
@@ -54,8 +52,8 @@ const WorkSpaceCard = () => {
                 const projectImage = project.imagenPerfilUrl;
 
                 return (
-                  <>
-                    <div className="flex justify-between items-center line-clamp-2">
+                  <div key={project.id}>
+                    <div  className="flex justify-between items-center line-clamp-2">
                       <TextDispalyWithTitle
                         type={"vertical"}
                         content={activityCardInfo}
@@ -67,7 +65,7 @@ const WorkSpaceCard = () => {
                       </Avatar>
                     </div>
                     <hr className="mt-2 border-gray-300" />
-                  </>
+                  </div>
                 );
               })
               .slice(0, 3)}

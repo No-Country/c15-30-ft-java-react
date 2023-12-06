@@ -38,15 +38,17 @@ import React from "react";
  */
 const CreateProjectDialog = ({ opener, content, children }) => {
   return (
-    <Dialog>
+    <Dialog >
       <DialogTrigger>{opener}</DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-[98vw]">
         <DialogHeader>
           <DialogTitle>{content.title}</DialogTitle>
           <DialogDescription>{content.description}</DialogDescription>
         </DialogHeader>
 
         {children}
+
+        
       </DialogContent>
     </Dialog>
   );

@@ -1,34 +1,23 @@
-import React from "react";
+import React, { Suspense } from "react";
 import TextDisplayWIthTitle from "../../components/ui/textDisplayWIthTitle";
 import { Input } from "../../components/ui/input";
 import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
 import WorkSpaceCard from "@/components/layout/WorkSpaceCard";
+import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 
-const UserData = {
-  title: "Karol G",
-  data: ["Front-end Dev"],
-};
 const pageContent = {
   title: "",
   data: ["Aquí puedes ver los proyectos en los que participas actualmente."],
 };
-const WorkSpace = () => {
 
-  
+const WorkSpace = () => {
   return (
-    <div className="h-full flex flex-col justify-between">
-      <div className="px-[20px]">
-        <section className="px-[20px] flex flex-col ">
-          <TextDisplayWIthTitle
-            type={""}
-            variant={"primary"}
-            content={UserData}
-          />
-         <div className="mt-5">
-         <Input tipo={"busqueda"} placeholder={"Buscar"} />
-         </div>
-        </section>
-        <section className={"mt-[20px] flex flex-col"}>
+    <div className="h-full">
+      <div className="px-[20px] h-full flex flex-col justify-between">
+        <Suspense fallback={<p>loading</p>}>
+          <WorkspaceUserInfoLoader />
+        </Suspense>
+        <section className={"flex flex-col"}>
           <TitleDisplayWithButton />
           <TextDisplayWIthTitle
             type={"vertical"}
@@ -36,10 +25,8 @@ const WorkSpace = () => {
             content={pageContent}
           />
         </section>
-      </div>
-      <WorkSpaceCard
-        className={""}
-      />
+        <WorkSpaceCard />
+      </div>{" "}
     </div>
   );
 };

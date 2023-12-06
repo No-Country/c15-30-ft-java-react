@@ -13,9 +13,12 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { buttonVariants } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { textBold } from "@/styles/fonts";
 import CreateProjectDialog from "./CreateProjectDialog";
+import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
+import { Input } from "../ui/input";
+import CreateProjectView from "./CreateProjectView";
 
 const components = [
   {
@@ -109,22 +112,20 @@ export function ProjectsNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          {/* dialog */}
+
           <CreateProjectDialog
-            className={cn(
-              buttonVariants({ variant: "default" }),
-              "flex justify-center items-center"
-            )}
+            className={cn(buttonVariants({ variant: "default" }))}
             opener={
               <NavigationMenuLink
-                className={cn(buttonVariants({ variant: "default" }), "w-20")}
+                className={cn(buttonVariants({ variant: "default" }), "w-24")}
               >
-                Crea
+                Configura
               </NavigationMenuLink>
             }
             content={{ title: "Crear proyecto", description: "hola 2" }}
           >
-
-            children
+            <CreateProjectView />
           </CreateProjectDialog>
         </NavigationMenuItem>
       </NavigationMenuList>
