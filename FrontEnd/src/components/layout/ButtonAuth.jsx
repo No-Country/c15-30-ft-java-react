@@ -9,7 +9,6 @@ export default function ButtonAuth() {
   if (status === "loading") {
     return (
       <Button
-        onClick={() => signOut()}
         tipo={"squared"}
         size={"squaredSm"}
         className=""

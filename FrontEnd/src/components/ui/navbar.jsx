@@ -128,7 +128,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
       </nav>
     );
 
-  if (session && path === "/workspace")
+  if (session && (path === "/workspace" || path ===  "/user"))
     return (
       <nav className="relative h-[250px]">
         <div className="relative mt-5 h-[205px] w-full rounded-[60px] overflow-hidden">

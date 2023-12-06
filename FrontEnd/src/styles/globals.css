@@ -88,5 +88,10 @@
 
 .cardConfig {
   box-shadow: 1px 1px 10px 0px gray;
+  width: 100vw;
 }
 
+.active {
+  border-bottom: 1px;
+  border-color: blue;
+}

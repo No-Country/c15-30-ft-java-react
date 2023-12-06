@@ -16,10 +16,10 @@ const LoginForm = () => {
   const onSubmit = async (data) => {
     const {email,password} = data
 
-    const response = await signIn("credentials", {
+    const response = await signIn("credentials",  {
       email,
       password,
-      redirect: false,
+      redirect: true,
       callbackUrl: "/workspace",
     });
 

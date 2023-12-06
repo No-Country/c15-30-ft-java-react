@@ -36,8 +36,9 @@ const buttonVariants = cva(
       },
       size: {
         default: `${config.height} ${config.width} ${config.textSize}  px-[27.87px]`,
+        xs: "px-[12.px]",
         sm: ` ${config.heightSm} ${config.widthSm} ${config.textSizeSm} px-[23.74px]`,
-        lg:  "h-11 px-8",
+        md:  "h-11 px-8",
         squared: "w-[77px] h-[49px]",
         squaredSm: "w-[70px] h-[40px]",
         rounded: "w-[50px] h-[50px]",

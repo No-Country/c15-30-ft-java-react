@@ -3,7 +3,7 @@ import React from 'react'
 
 const layout = ({children}) => {
   return (
-    <div className={"flex flex-col h-screen"}>
+    <div className={"flex w-full flex-col overflo-y-hidden"}>
       <div className="p-[20px] ">
         <NavBar tipo={"colorExtended"} />
       </div>
