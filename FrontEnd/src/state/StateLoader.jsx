@@ -1,24 +1,22 @@
-'use client'
+"use client";
 
-import { persistence } from '@/utils/localeStorage'
-import React from 'react'
-import axiosInstance from '@/axios/axiosInstance'
-import { useUserStore } from './user/user'
+import React from "react";
+import axiosInstance from "@/axios/axiosInstance";
+import { useTokenStore, useUserStore } from "./user/user";
+import { useSession } from "next-auth/react";
 
 const StateLoader = () => {
-  const setUser = useUserStore(state => state.setUser);
+  const setUser = useUserStore((state) => state.setUser);
+  const setToken = useTokenStore((state) => state.setToken);
+  const { data } = useSession();
+  const user = data?.user?.user;
+  const token = data?.user?.token;
 
-  if (typeof window !== 'undefined') {
-    const user = persistence.get('user');
-    const token = persistence.get('token');
-    axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    
-    setUser(user);
-  }
+  axiosInstance.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  setUser(user);
+  setToken(token);
 
-  return (
-    <></>
-  );
-}
+  return <></>;
+};
 
 export default StateLoader;

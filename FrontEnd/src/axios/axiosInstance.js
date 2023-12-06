@@ -5,7 +5,7 @@ import Axios from 'axios';
 
 const axiosInstance = Axios.create({
     //TODO cambiar esto a la api de CoCode
-  baseURL: 'http://localhost:8080/',
+  baseURL: `${'http://localhost:8080'}`,
 /*   headers: {
     Authorization: `Bearer ${persistence.get('token')}`
   } */

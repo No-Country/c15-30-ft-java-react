@@ -19,3 +19,8 @@ export const useUserStore = create((set)=>({
   },
   setUser: (user) => set({user})
 }))
+
+export const useTokenStore = create((set)=>({
+  token: "",
+  setToken: (token) => set({token})
+}))

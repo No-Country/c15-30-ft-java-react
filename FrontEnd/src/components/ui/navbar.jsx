@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import Link from "next/link";
-import { FaChevronLeft, FaBars, FaHome } from "react-icons/fa";
+import { FaChevronLeft, FaBars, FaSpinner } from "react-icons/fa";
 import NavBarBlob from "../../svgs/NavBarBlob";
 import NavBarBlob2 from "../../svgs/NavBarBlob2";
 import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
@@ -14,7 +14,7 @@ import BlobWorkspaceMd from "../../svgs/BlobWorkspaceMd.jsx";
 import BlobWorkspaceLg from "../../svgs/BlobWorkspaceLg.jsx";
 import { usePathname, useRouter } from "next/navigation";
 import { useUserStore } from "@/state/user/user";
-import ButtonAuth from "../layout/ButtonAuth";
+import { signOut, useSession } from "next-auth/react";
 
 const variants = {
   contracted: "",
@@ -32,13 +32,16 @@ const variants = {
  *
  */
 const NavBar = ({ tipo, variant, ...props }) => {
+  const {data: session, status} = useSession()
   const user = useUserStore((state) => state.user);
+  const path =  usePathname()
   const router = useRouter();
-  const userImage = user?.imageUrl
-    ? user?.imageUrl
-    : "/images/default-user.png";
+  const userImage = useMemo(() => {
+    return user?.imageUrl ? user?.imageUrl : "/images/default-user.png";
+  }, [user]);
 
-  if (tipo === "noLogeado")
+
+  if (!session)
     return (
       <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,12 +49,23 @@ const NavBar = ({ tipo, variant, ...props }) => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <Link href={"/"} className={cn(textBold.className)}>
-                  CoCode
+                  CodeGrid
                 </Link>
               </div>
             </div>
             <div className="grid grid-flow-col items-center justify-between gap-[20px]">
-              <ButtonAuth />
+              {(
+                <Link href={"/login"}>
+                  <Button
+                    tipo={"squared"}
+                    size={"squaredSm"}
+                    variant={""}
+                    type={""}
+                  >
+                    login
+                  </Button>
+                </Link>
+              )}
               <FaBars className="text-title cursor-pointer" />
             </div>
           </div>
@@ -59,7 +73,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
       </nav>
     );
 
-  if (tipo === "logeado")
+  if (session && path === "/")
     return (
       <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +81,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <Link href={"/"} className={cn(textBold.className)}>
-                  CoCode
+                  CodeGrid
                 </Link>
               </div>
             </div>
@@ -114,7 +128,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
       </nav>
     );
 
-  if (tipo === "colorExtended")
+  if (session && path === "/workspace")
     return (
       <nav className="relative h-[250px]">
         <div className="relative mt-5 h-[205px] w-full rounded-[60px] overflow-hidden">
@@ -166,5 +180,5 @@ const NavBar = ({ tipo, variant, ...props }) => {
         </div>
       </nav>
     );
-};
+}
 export default NavBar;

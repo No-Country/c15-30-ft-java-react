@@ -12,12 +12,12 @@ const pageContent = {
 
 const WorkSpace = () => {
   return (
-    <div className="h-full flex flex-col justify-between">
-      <div className="px-[20px]">
+    <div className="h-full">
+      <div className="px-[20px] h-full flex flex-col justify-between">
         <Suspense fallback={<p>loading</p>}>
           <WorkspaceUserInfoLoader />
         </Suspense>
-        <section className={"mt-[20px] flex flex-col"}>
+        <section className={"flex flex-col"}>
           <TitleDisplayWithButton />
           <TextDisplayWIthTitle
             type={"vertical"}
@@ -25,10 +25,7 @@ const WorkSpace = () => {
             content={pageContent}
           />
         </section>
-        <Suspense>
-
-          <WorkSpaceCard className={""} />
-        </Suspense>
+        <WorkSpaceCard />
       </div>{" "}
     </div>
   );

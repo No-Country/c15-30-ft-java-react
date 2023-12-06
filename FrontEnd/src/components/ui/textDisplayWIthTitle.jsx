@@ -19,7 +19,6 @@ const variants = {
  * @returns
  */
 const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
-  const datos = content.data;
 
   if (type === "vertical")
     return (
@@ -27,11 +26,7 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
         <h2 className={cn(textBold.className, variants[variant])}>
           {content.title}
         </h2>
-        {datos.map((dato) => (
-          <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
-            {dato}
-          </p>
-        ))}
+        <p className={cn("text-gray-500 text-sm line-clamp-2")}>{content.data}</p>
       </div>
     );
 
@@ -40,11 +35,7 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
       <h2 className={cn(textBold.className, variants[variant])}>
         {content.title}
       </h2>
-      {datos.map((dato) => (
-        <p key={dato} className={cn("text-gray-500 text-sm line-clamp-2")}>
-          {dato}
-        </p>
-      ))}
+      <p className={cn("text-gray-500 text-sm line-clamp-2")}>{content.data}</p>
     </div>
   );
 };

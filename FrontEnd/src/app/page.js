@@ -1,9 +1,12 @@
+
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/ui/navbar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+
 
 const titleContent = {
   title: "Co-crear hecho fácil.",
@@ -16,10 +19,15 @@ const sectionContent = {
   description: "Entérate de los proyectos mas relevantes a tu alrededor.",
 };
 
-export default function Home() {
+export default async function Home() {
+
+  const session = await getServerSession();
+  
+  console.log(session)
+
   return (
     <div className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
-      <NavBar tipo={"noLogeado"} />
+      <NavBar tipo={"noLogueado"} />
       <TitleContainer
         type={"sectionTitle"}
         content={titleContent}

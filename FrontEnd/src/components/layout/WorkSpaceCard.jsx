@@ -18,7 +18,6 @@ import API from "@/axios/apiConnection";
  */
 const WorkSpaceCard = () => {
   const [projects, setProjects] = React.useState(null);
-  const { id } = useUserStore((state) => state.user);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -45,6 +44,7 @@ const WorkSpaceCard = () => {
            {projects &&
             projects
               .map((project) => {
+
                 const activityCardInfo = {
                   title: project.nombre,
                   data: [project.descripcion],
@@ -52,8 +52,8 @@ const WorkSpaceCard = () => {
                 const projectImage = project.imagenPerfilUrl;
 
                 return (
-                  <>
-                    <div key={project.id} className="flex justify-between items-center line-clamp-2">
+                  <div key={project.id}>
+                    <div  className="flex justify-between items-center line-clamp-2">
                       <TextDispalyWithTitle
                         type={"vertical"}
                         content={activityCardInfo}
@@ -65,7 +65,7 @@ const WorkSpaceCard = () => {
                       </Avatar>
                     </div>
                     <hr className="mt-2 border-gray-300" />
-                  </>
+                  </div>
                 );
               })
               .slice(0, 3)}

@@ -9,11 +9,11 @@ const baseStyle =
 const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
   if (tipo === "default") {
     return (
-      <div>
+      <div className="w-full">
         <div className={cn(baseStyle, textBold.className, "w-full flex justify-center", className)}>
           <input
             placeholder="Place Holder"
-            className="h-[52px] rounded-lg border border-black p-2 text-primary"
+            className="h-[52px] w-full rounded-lg border border-black p-2 text-primary"
             ref={ref}
             {...props}
           />

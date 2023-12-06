@@ -21,19 +21,26 @@ const handler = NextAuth({
             headers: { "Content-Type": "application/json" },
           }
         );
-        const user = await res.json();
+        const response = await res.json();
 
-        if (user.message) throw user;
+        if (response.message) throw response;
 
-        
-        const nombre = user.user.nombre;
-        const email = user.user.email;
-        const userData = {nombre,email}
+        const { user } = response;
+        const { token } = response;
 
-        return userData;
+        return {user,token};
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user = token;
+      return session;
+    },
+  },
 });
 
 export { handler as GET, handler as POST };
