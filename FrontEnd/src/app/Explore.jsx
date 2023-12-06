@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import clsx from "clsx"
 import { FaHeart, FaRegHeart } from "react-icons/fa"
+import { Badge } from "@/components/ui/badge"
 
 /**
  * Explore Component
@@ -33,24 +33,25 @@ const styleSpan = 'bg-purple-800 text-white text-sm   px-3  rounded-xl'
 export const Explore = ({ nombre, imagen, like, tecnologiaUno, tecnologiaDos, tecnologiaTres, descripcion }) => {
     return (
         <section className="h-full w-full p-6">
-            <div className="flex justify-between items-center">
-                <button>Search</button>
-                <button>Sort</button>
-            </div>
             <div className="mt-6">
                 <strong >{nombre}</strong>
-                <div className="mt-2 h-full w-full rounded-sm border">
-                    <div className="flex justify-between ">
-                    <img
-                        src={imagen}
-                        alt={`Imagen ${nombre}`} />
-                    {like === true ? <FaHeart /> : <FaRegHeart />}
-                    </div>
-                  
-                    <div className="flex justify-around">
-                        <span className={clsx(styleSpan)}>{tecnologiaUno}</span>
-                        <span className={clsx(styleSpan)}>{tecnologiaDos}</span>
-                        <span className={clsx(styleSpan)}>{tecnologiaTres}</span>
+                <div className="mt-2 h-full w-full">
+                    <div className="flex justify-between relative rounded-xl overflow-hidden border-red-200">
+                        {/* eslint-disable */}
+                        <img
+                            src={'https://th.bing.com/th/id/R.6f4c38c16297b4f25c5b21f3bdb79fbe?rik=pnDRgSjUMZ5RfA&riu=http%3a%2f%2fimages.memes.com%2fmeme%2f674933&ehk=j8goEdI4pxUh7eGJ7UfV7IuBeXKOPHp97aatf5ODjy0%3d&risl=&pid=ImgRaw&r=0'}
+                            width={400}
+                            height={313}
+                            alt={`Imagen ${nombre}`} />
+                        {/* eslint-enable */}
+                        <div className='absolute top-2 right-2 text-white'>
+                            {like === true ? <FaHeart className=" w-[34px] h-[29.76px] "/> : <FaRegHeart className=" w-[34px] h-[29.76px] " />}
+                        </div>
+                        <div className="absolute flex w-full justify-end gap-2 bottom-2 right-2">
+                            <Badge size={'sm'}>hola</Badge>
+                            <Badge size={'sm'}>hola</Badge>
+                            <Badge size={'sm'}>hola</Badge>
+                        </div>
                     </div>
                 </div>
                 <p className="mt-2">{descripcion}</p>

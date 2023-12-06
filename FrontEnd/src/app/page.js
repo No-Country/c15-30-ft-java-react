@@ -1,49 +1,51 @@
-// import animation from '../img/animation.png'
-import Comments from './Comments'
-import { Explore } from './Explore'
 
-const card = {
-  nombre: 'Rodrigo Rodriguez',
-  rol: 'AI developer',
-  descripcion: 'La implementación de un proyecto de reconocimiento facial con inteligencia artificial ofrece numerosas ventajas en diversos sectores. Esta tecnología avanzada facilita la automatización de procesos de autenticación y verificación de identidad, mejorando la seguridad y la eficiencia en entornos como el acceso a instalaciones seguras o la gestión de asistencia.',
-}
-
-const cardExplore = {
-  nombre: 'Animacion 3D',
-  // imagen: animation,
-  imagen: 'src/img/animation.png',
-  tecnologiaUno: 'AI',
-  tecnologiaDos: 'Q&A',
-  tecnologiaTres: 'Blender',
-  descripcion: 'Estoy aprendiendo a usar Maya para animación 3d.Quiero recrear la escena de buscando a nemo donde Dori dice sherman calle Wallaby 42 Sydney pero no sé cómo.',
-}
+import { Button } from "@/components/ui/button";
+import NavBar from "@/components/ui/navbar";
+import ImageContainer from "@/components/ui/ImageContainer.jsx";
+import TitleContainer from "@/components/ui/titleContainer";
+import HombreLaptop from "@/svgs/SvgHombreLaptop";
+import Link from "next/link";
+import { getServerSession } from "next-auth";
 
 
-export default function Home() {
+const titleContent = {
+  title: "Co-crear hecho fácil.",
+  description:
+    "Mas que trabajo colaborativo, <brand name> te ayuda a encontrar a las personas ideales que pueden ayudarte a hacer realidad tus ideas.",
+};
+
+const sectionContent = {
+  title: "Proyectos",
+  description: "Entérate de los proyectos mas relevantes a tu alrededor.",
+};
+
+export default async function Home() {
+
+  const session = await getServerSession();
+  
+  console.log(session)
+
   return (
-    <main>
-        {/* Sección Comment */}
-      <div className='w-96 border border-black border-dashed'>
-        <Comments
-          nombre={card.nombre}
-          rol={card.rol}
-          like={true}
-          descripcion={card.descripcion}
-        />
-      </div>
+    <div className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
+      <NavBar tipo={"noLogueado"} />
+      <TitleContainer
+        type={"sectionTitle"}
+        content={titleContent}
+        className={""}
+      />
+      <Button tipo={""} className={""}>
+        <Link href={"/projects/me/create"}>Crear proyecto</Link>
+      </Button>
+      <ImageContainer size={"sm"} component={<HombreLaptop />} />
+      <TitleContainer
+        type={"titleAndDescription"}
+        content={sectionContent}
+        className={""}
+      />
 
-      {/* Sección Explore */}
-      <div className='w-96 border border-black border-dashed'>
-        <Explore
-          nombre={cardExplore.nombre}
-          imagen={cardExplore.imagen}
-          like={true}
-          tecnologiaUno={cardExplore.tecnologiaUno}
-          tecnologiaDos={cardExplore.tecnologiaDos}
-          tecnologiaTres={cardExplore.tecnologiaTres}
-          descripcion={cardExplore.descripcion}
-        />
-      </div>
-    </main>
-  )
+      <Button tipo={""} className={""}>
+        <Link href={"/explore"}>Explora</Link>
+      </Button>
+    </div>
+  );
 }
