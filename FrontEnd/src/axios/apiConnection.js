@@ -6,7 +6,7 @@ const handleRequest = async (requestFunction, path,  data) => {
     return response.data; 
   } catch (error) {
 
-    console.error(error)
+    console.log(error)
   }
 };
 

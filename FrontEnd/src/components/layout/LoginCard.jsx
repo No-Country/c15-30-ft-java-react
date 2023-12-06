@@ -17,7 +17,7 @@ const LoginCard = () => {
     title: "informacion",
     data: ["editar"],
   };
-
+  
   return (
     <div className="cardConfig h-screen p-[40px] flex flex-col rounded-t-[50px]">
       <section

@@ -3,15 +3,15 @@ import TextDisplayWithTitle from "@/components/ui/textDisplayWIthTitle";
 import React from "react";
 import LoginCard from "@/components/layout/LoginCard";
 
+
 const page = async () => {
-  const user = await API.get("/user");
+  const user = await API.get("/users");
+  console.log(user)
 
   const userData = {
-    title: `${user.nombre} ${user.apellido}`,
-    data: user.activo && ["online"],
+    title: ` hola`,
+    data:  "online",
   };
-
-  console.log(userData);
 
   return (
     <div className="h-full">
