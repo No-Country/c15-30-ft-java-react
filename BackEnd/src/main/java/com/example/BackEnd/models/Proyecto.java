@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Project {
+public class Proyecto {
     @Id
     @SequenceGenerator(name = "project_secuence",sequenceName = "project_secuence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "project_secuence")
