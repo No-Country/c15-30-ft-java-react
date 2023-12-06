@@ -1,9 +1,5 @@
-"use client";
-
 import { ProjectsNavigation } from "@/components/layout/ProjectsNavigation";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import TextDisplayWithTitle from "@/components/ui/textDisplayWIthTitle";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import React from "react";
@@ -33,7 +29,7 @@ const Create = () => {
       </section>
       <section className="flex justify-center items-center">custom card</section>
       <section className="flex flex-col justify-center items-center gap-5">
-        <Button tipo={"squared"} variant={"outline"} size={"lg"}>
+        <Button tipo={"squared"} variant={"outline"} size={""}>
           Añadir tareas
         </Button>
         <Button>Crear</Button>

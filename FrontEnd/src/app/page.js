@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import NavBar from "@/components/ui/navbar";
+import NavBar from "@/components/layout/NavBar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";

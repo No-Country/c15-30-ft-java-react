@@ -127,6 +127,8 @@ export function ProjectsNavigation() {
           >
             <CreateProjectView />
           </CreateProjectDialog>
+
+           {/* dialog */}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
