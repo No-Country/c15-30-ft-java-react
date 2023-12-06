@@ -5,11 +5,6 @@ import LoginCard from "@/components/layout/LoginCard";
 
 
 const page = async () => {
-<<<<<<< Updated upstream
-  const user = await API.get("/users");
-  console.log(user)
-=======
->>>>>>> Stashed changes
 
   const userData = {
     title: ` hola`,
