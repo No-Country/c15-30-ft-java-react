@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import axiosInstance from "@/axios/axiosInstance";
+import {axiosInstance} from "@/axios/apiConnection";
 import { useTokenStore, useUserStore } from "./user/user";
 import { useSession } from "next-auth/react";
 

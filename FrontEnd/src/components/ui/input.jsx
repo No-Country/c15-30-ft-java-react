@@ -49,7 +49,7 @@ const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
             type="text"
             className={cn(
               textBold.className,
-              "h-[50px] rounded-xl shadow-md p-2 text-primary"
+              "w-full h-[50px] rounded-xl shadow-md p-2 text-primary"
             )}
             {...props}
           />

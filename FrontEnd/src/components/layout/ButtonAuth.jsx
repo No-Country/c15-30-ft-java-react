@@ -3,7 +3,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "../ui/button";
 import { FaSpinner } from "react-icons/fa";
-export default function ButtonAuth() {
+export default function ButtonAuth({children}) {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
@@ -29,7 +29,7 @@ export default function ButtonAuth() {
           className=""
           type={"submit"}
         >
-          Salir
+          {children}
         </Button>
       </>
     );
@@ -42,7 +42,7 @@ export default function ButtonAuth() {
         className=""
         type={"submit"}
       >
-        Inicia sesion
+        {children}
       </Button>
     </>
   );

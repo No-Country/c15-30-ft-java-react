@@ -1,17 +1,16 @@
-
 import { Button } from "@/components/ui/button";
 import NavBar from "@/components/layout/NavBar";
 import ImageContainer from "@/components/ui/ImageContainer.jsx";
 import TitleContainer from "@/components/ui/titleContainer";
 import HombreLaptop from "@/svgs/SvgHombreLaptop";
 import Link from "next/link";
+import authOptions from "./api/auth/[...nextauth]/authOptions";
 import { getServerSession } from "next-auth";
-
 
 const titleContent = {
   title: "Co-crear hecho fácil.",
   description:
-    "Mas que trabajo colaborativo, <brand name> te ayuda a encontrar a las personas ideales que pueden ayudarte a hacer realidad tus ideas.",
+    "Mas que trabajo colaborativo, CoCode te ayuda a encontrar a las personas ideales para hacer realidad tus ideas.",
 };
 
 const sectionContent = {
@@ -19,14 +18,14 @@ const sectionContent = {
   description: "Entérate de los proyectos mas relevantes a tu alrededor.",
 };
 
-export default async function Home() {
+export default async function Home(req, res) {
+  const session = await getServerSession(authOptions);
 
-  const session = await getServerSession();
-  
   console.log(session)
 
+
   return (
-    <div className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
+    <div  className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
       <NavBar tipo={"noLogueado"} />
       <TitleContainer
         type={"sectionTitle"}

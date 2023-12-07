@@ -1,12 +1,9 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
-import React, { useEffect } from "react";
+import React from "react";
 import TextDispalyWithTitle from "../ui/textDisplayWIthTitle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useUserStore } from "@/state/user/user";
-import API from "@/axios/apiConnection";
+
 
 /**
  * Para este componente se necesitaria:
@@ -16,16 +13,7 @@ import API from "@/axios/apiConnection";
  * debe recibir un prop que contenga un array de length 3 con los proyectos recientes.
  * @returns
  */
-const WorkSpaceCard = () => {
-  const [projects, setProjects] = React.useState(null);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      const projects = await API.get("/projects");
-      setProjects(projects)
-    };
-    getProjects();
-  }, []);
+const WorkSpaceCard = ({projects}) => {
 
   return (
     <div>
