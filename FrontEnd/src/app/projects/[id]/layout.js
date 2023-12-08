@@ -1,7 +1,7 @@
 import React from "react";
 
 const layout = ({ children }) => {
-  return <div className="w-full h-screen ">{children}</div>;
+  return <main className="max-w-screen">{children}</main>;
 };
 
 export default layout;

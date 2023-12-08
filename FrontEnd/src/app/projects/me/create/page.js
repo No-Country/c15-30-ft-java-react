@@ -1,10 +1,15 @@
+import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
 import { ProjectsNavigation } from "@/components/layout/ProjectsNavigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
+import { getServerSession } from "next-auth";
 import React from "react";
 
-const Create = () => {
+const Create = async () => {
+  const session = await getServerSession(authOptions);
+  const user = session?.user?.user
+
   return (
     <div className="h-full rounded-xl">
       <div className="p-[20px] flex justify-center">
@@ -15,7 +20,7 @@ const Create = () => {
         <h2 className="mb-[20px]">
           Bienvenido!{" "}
           <span className={cn(textBold.className, "text-primary")}>
-            user.name
+            {user?.nombre}
           </span>{" "}
           👋{" "}
         </h2>

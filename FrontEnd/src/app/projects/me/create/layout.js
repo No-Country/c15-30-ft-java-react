@@ -1,10 +1,14 @@
+import authOptions from '@/app/api/auth/[...nextauth]/authOptions';
 import NavBar from '@/components/layout/NavBar'
+import { getServerSession } from 'next-auth';
 import React from 'react'
 
-const layout = ({children}) => {
+const layout = async ({children}) => {
+  const session = await getServerSession(authOptions);
+  
   return (
     <div className='w-screen h-screen p-[20px] overflow-y-hidden'>
-      <NavBar tipo={'color'} / >
+      <NavBar session={session} tipo={'color'} / >
       {children}
     </div>
   )

@@ -13,7 +13,6 @@ import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
 import BlobWorkspaceMd from "../../svgs/BlobWorkspaceMd.jsx";
 import BlobWorkspaceLg from "../../svgs/BlobWorkspaceLg.jsx";
 import { usePathname, useRouter } from "next/navigation";
-import { useUserStore } from "@/state/user/user";
 import { signOut, useSession } from "next-auth/react";
 import ToolBar from "../ui/toolBar";
 
@@ -32,9 +31,8 @@ const variants = {
  *
  *
  */
-const NavBar = ({ tipo, variant, ...props }) => {
-  const { data: session, status } = useSession();
-  const user = useUserStore((state) => state.user);
+const NavBar = ({ tipo, variant, session, ...props }) => {
+  const user = session?.user?.user;
   const path = usePathname();
   const router = useRouter();
   const userImage = user?.imageUrl ? user?.imageUrl : "/images/default-user.png";
@@ -92,7 +90,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             <div className="grid grid-flow-col items-center justify-between gap-[20px]" onClick={()=>setExtended(!isExtended)}>
               <Avatar className={"z-50"}>
                 <AvatarImage src={userImage} />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback> </AvatarFallback>
               </Avatar>
             </div>
           </div>
@@ -122,7 +120,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
             <div className="flex justify-center items-center mr-[20px]" onClick={()=>setExtended(!isExtended)}>
               <Avatar className={"absolute z-10 cursor-pointer"}>
                 <AvatarImage src={userImage} />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback> </AvatarFallback>
               </Avatar>
             </div>
           </div>
@@ -181,7 +179,7 @@ const NavBar = ({ tipo, variant, ...props }) => {
           >
             <Avatar variant={"lg"} className={"absolute z-10 cursor-pointer"}>
               <AvatarImage src={userImage} />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback> </AvatarFallback>
             </Avatar>
           </div>
         </div>

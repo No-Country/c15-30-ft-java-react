@@ -1,6 +1,5 @@
 import * as React from "react"
 import { cva } from "class-variance-authority";
-
 import { cn } from "@/lib/utils"
 
 const sizes = {
@@ -26,7 +25,6 @@ const badgeVariants = cva(
     },
   }
 )
-
 function Badge({
   className,
   variant,
@@ -35,5 +33,4 @@ function Badge({
 }) {
   return (<div className={cn(badgeVariants({ variant }), sizes[size], className)} {...props} />);
 }
-
 export { Badge, badgeVariants }
