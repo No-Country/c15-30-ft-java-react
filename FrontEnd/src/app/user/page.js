@@ -14,7 +14,7 @@ const page = async () => {
   return (
     <div className="h-full">
       <div className=" flex flex-col justify-between">
-        <section className="px-[20px] ">
+        <section className="px-[40px] ">
           <TextDisplayWithTitle
             type={""}
             variant={"primary"}

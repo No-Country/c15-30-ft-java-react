@@ -12,3 +12,8 @@ const axiosInstance = Axios.create({
 });
 
 export default axiosInstance;
+
+
+const flagsApi = Axios.create({
+  baseURL: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+})
