@@ -48,9 +48,9 @@ export const Explore = ({ nombre, imagen, like, tecnologiaUno, tecnologiaDos, te
                             {like === true ? <FaHeart className=" w-[34px] h-[29.76px] "/> : <FaRegHeart className=" w-[34px] h-[29.76px] " />}
                         </div>
                         <div className="absolute flex w-full justify-end gap-2 bottom-2 right-2">
-                            <Badge size={'sm'}>hola</Badge>
-                            <Badge size={'sm'}>hola</Badge>
-                            <Badge size={'sm'}>hola</Badge>
+                            <Badge size={'sm'}>{tecnologiaUno}</Badge>
+                            <Badge size={'sm'}>{tecnologiaDos}</Badge>
+                            <Badge size={'sm'}>{tecnologiaTres}</Badge>
                         </div>
                     </div>
                 </div>
