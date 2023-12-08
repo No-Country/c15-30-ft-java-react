@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# COCODE
 
-## Getting Started
+![banner](https://github.com/SamCaro/puntejen/assets/131512250/edd28f29-cec6-48ad-9c5f-ed4938934936)
 
-First, run the development server:
+## Índice
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* [1. Introducción](#1-introduccion)
+* [2. Resumen del proyecto](#2-resumen-del-proyecto)
+* [3. Prototipos de la Interfaz](#3-prototipo-de-la-interfaz)
+* [4. Diseño movile](#4-diseño-movile)
+* [5. Diseño desktop](#4-diseño-desktop)
+* [6. Test](#4-test)
+* [7. Tecnologías Utilizadas](#5-tecnologias-utilizadas)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 1. Introducción
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+COCODE es un proyecto que nació con la idea de proporcionar un ambiente colaborativo. No solo estamos creando una red social, sino un ecosistema para conectar a aquellos apasionados por la tecnologia y la innovación. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 2. Resumen del proyecto
 
-## Learn More
+Para poder hacernos una idea de cómo comenzar a estructurar nuestro concepto, nos cuestionamos sobre las necesidades e intereses de conectar  talento tech con buscadores de contenido, crear redes de apoyo y favorecer la interconexión. Dirigimos nuestra atención para:
 
-To learn more about Next.js, take a look at the following resources:
+- Empresas, reclutadores, emprendedores e inversionistas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navegar por perfiles, examinar proyectos, tecnologias que dominan, experiencias de colaboración, simplificar el proceso de busqueda, haciendo que la conexión con el talento perfecto sea más eficiente y efectivo. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Creadores de contenido
 
-## Deploy on Vercel
+Presentar ideas, compartir avances, buscar colaboradores afines, comprender tecnologias emergentes, encontrar inspiracón y recursos, enontrar oportunidades de desarollo y vinculación laboral. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 3. Prototipos de la Interfaz
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Una vez definidas las historias de usuario y con una visión más clara del propósito de nuestro proyecto, comenzamos a diseñar los respectivos prototipos de baja y alta fidelidad.
+
+PROTOTIPOS DE BAJA FIDELIDAD
+
+![BAJA FIDELIDAD](https://github.com/SamCaro/puntejen/assets/131512250/796dfdbc-a709-4988-a560-d6737710b1cf)
+
+PROTOTIPOS DE ALTA FIDELIDAD
+
+![ALTA FIDELIDAD](https://github.com/SamCaro/puntejen/assets/131512250/839380f4-f5ef-4373-8a19-541a7962187b)
+
+## 4. Diseño movile
+
+## 5. Diseño desktop
+
+## 6. Test
+
+Usabilidad:
+Realizamos encuestas para obtener feedback de los usuarios. Algunas sugerencias fueron incoporadas y otras se considerarán en caso de tener la oportunidad de profundizar en el proyecto.
+
+Componentes: 
+Para testear las funciones de este proyecto construiremos pruebas de componentes, haciendo énfasis en Login y Home, las cuales aspiramos 
+tener una cobertura de más de 90% en sentencias, ramas y líneas, y 90% en funciones.
+
+## 7. Tecnologías Utilizadas
