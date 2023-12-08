@@ -31,8 +31,7 @@ const variants = {
  *
  *
  */
-const NavBar = ({ tipo, variant, ...props }) => {
-  const { data: session, status } = useSession();
+const NavBar = ({ tipo, variant, session, ...props }) => {
   const user = session?.user?.user;
   const path = usePathname();
   const router = useRouter();

@@ -2,6 +2,7 @@ import API from "@/axios/apiConnection";
 import { ProjectCard } from "@/components/layout/ProjectCard";
 import { Input } from "@/components/ui/input";
 import React from "react";
+
 const Explore = async () => {
   const projects = await API.get("/projects");
   // debería traerse tambien la lista de proyectos a los que se ha dado like
@@ -20,14 +21,7 @@ const Explore = async () => {
 
       {projects.map((project) => (
         <div key={project.id}>
-          <ProjectCard
-            project={project}
-            nombre={project?.nombre}
-            imagen={project?.imagenPerfilUrl}
-            like={true}
-            tecnologias={["Angular", "JavaScript", "Python"]} // debería ser la lista de tecnologías del proyecto
-            descripcion={project?.descripcion}
-          />
+          <ProjectCard project={project} like={true} />
         </div>
       ))}
     </div>

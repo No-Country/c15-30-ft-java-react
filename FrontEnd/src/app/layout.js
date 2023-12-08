@@ -3,7 +3,6 @@ import { text } from "../styles/fonts.js";
 import UserSession from "../context/UserSession";
 import { getServerSession } from "next-auth";
 import { Toaster } from "@/components/ui/toaster";
-import { cookies } from 'next/headers'
 
 export const metadata = {
   title: "CoCode",

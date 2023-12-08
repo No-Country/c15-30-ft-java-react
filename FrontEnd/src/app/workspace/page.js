@@ -13,6 +13,8 @@ const pageContent = {
 
 const WorkSpace = async () => {
   const projects = await API.get("/projects");
+  
+  console.log(projects)
 
   return (
     <div className="h-full">

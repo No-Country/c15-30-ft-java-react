@@ -11,7 +11,7 @@ const titleContent = {
   title: "Co-crear hecho fácil.",
   description:
     "Mas que trabajo colaborativo, CoCode te ayuda a encontrar a las personas ideales para hacer realidad tus ideas.",
-};
+}; 
 
 const sectionContent = {
   title: "Proyectos",
@@ -21,12 +21,10 @@ const sectionContent = {
 export default async function Home(req, res) {
   const session = await getServerSession(authOptions);
 
-  console.log(session)
-
 
   return (
     <div  className="w-screen overflow-x-hidden flex flex-col items-center gap-[10px]">
-      <NavBar tipo={"noLogueado"} />
+      <NavBar session={session} tipo={"noLogueado"} />
       <TitleContainer
         type={"sectionTitle"}
         content={titleContent}

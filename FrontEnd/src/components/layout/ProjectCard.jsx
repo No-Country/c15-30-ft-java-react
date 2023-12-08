@@ -9,11 +9,9 @@ import Link from "next/link";
  *
  * @component
  * @param {Object} props - Propiedades del componente.
- * @param {string} props.nombre - Nombre del Proyecto.
- * @param {string} props.imagen - Imagen asociada al proyecto.
+ * @param {string} props.project recibe la data de un proyecto devuelta por la API.
  * @param {boolean} props.like - Indica si el comentario ha sido marcado como "me gusta".
- * @param {string} props.tecnologias- arreglo de nombres de tecnologías.
- * @param {string} props.descripcion - Breve descripción relativa al proyecto.
+
  * @example
  * // Ejemplo de uso del componente Explore
  * <ProjectCard
@@ -24,15 +22,12 @@ import Link from "next/link";
       descripcion={project?.descripcion}
  * />
  */
-export const ProjectCard = ({
-  project,
-  nombre,
-  imagen,
-  like,
-  tecnologias,
-  descripcion,
-}) => {
-  console.log(tecnologias);
+export const ProjectCard = ({ project, like }) => {
+  // project debería ser la data de un proyecto devuelta por la API.
+  const nombre = project?.nombre;
+  const imagen = project?.imagenPerfilUrl; // en lugar de imagenPerfilUrl, debería ser la url de la imagen del proyecto.
+  const descripcion = project?.descripcion;
+  const tecnologias = project?.tecnologias || ["angular","javascript","java"]; // debería ser la lista de tecnologías del proyecto
 
   return (
     <section className="h-full w-full p-6">
