@@ -4,7 +4,7 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 265 10% 99%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -38,10 +38,10 @@
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 264.2 42% 17.9%;
     --foreground: 210 40% 98%;
  
-    --card: 222.2 84% 4.9%;
+    --card:  264.2 42% 19.9%;
     --card-foreground: 210 40% 98%;
  
     --popover: 222.2 84% 4.9%;
@@ -50,7 +50,7 @@
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
  
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 264.2 42% 19.9%;
     --secondary-foreground: 210 40% 98%;
  
     --muted: 217.2 32.6% 17.5%;
@@ -88,7 +88,6 @@
 
 .cardConfig {
   box-shadow: 1px 1px 10px 0px gray;
-  width: 100vw;
 }
 
 .active {
