@@ -20,5 +20,5 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     @OneToMany(mappedBy = "proyecto")
-    private List<Colaboradores> colaboradores;
+    private List<Colaborador> colaboradores;
 }
