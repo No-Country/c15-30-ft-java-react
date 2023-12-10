@@ -41,7 +41,7 @@ export const WorkspaceNavBar = ({user}) => {
   </div>
     
 
-  <div className="text-gray-400 flex gap-5">
+  <div className="text-gray-400 flex items-center gap-5">
     <FaSearch className="cursor-pointer" />
     <FaInfo className="cursor-pointer" />
     <div className="relative">
@@ -53,6 +53,7 @@ export const WorkspaceNavBar = ({user}) => {
       />
       <FaBell className="cursor-pointer animate-pulse" />
     </div>
+    <ModeToggle />
   </div>
 </div>)
 }
@@ -109,7 +110,6 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             </div>
           </div>
         </div>
-        <ToolBar />
       </nav>
     );
 

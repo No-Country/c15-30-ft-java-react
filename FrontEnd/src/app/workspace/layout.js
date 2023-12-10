@@ -11,7 +11,7 @@ const layout = async ({ children }) => {
   const user = session?.user?.user;
 
   return (
-    <div className="w-full flex gap-5 h-screen overflow-y-hidden">
+    <div className="w-full flex gap-5 h-screen md:overflow-y-hidden">
       {/* Dashboard */}
       <section className="relative hidden md:flex md:flex-col md:w-1/6 bg-card shadow-md overflow-hidden">
         <WorkspaceSideBar user={user} />

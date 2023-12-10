@@ -1,8 +1,6 @@
-import React, { Suspense } from "react";
 import TextDisplayWIthTitle from "../../components/ui/textDisplayWIthTitle";
 import { Input } from "../../components/ui/input";
 import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
-import WorkSpaceCard from "@/components/layout/WorkSpaceCards";
 import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 import API from "@/axios/apiConnection";
 import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
