@@ -7,6 +7,29 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 const data = {
   title: "Tus colaboraciones"
 }
+
+/**
+ * =======================
+ * TitleDisplayWithButton
+ * =======================
+ * @props {Object} data - Contenido del componente, con la propiedad:
+ *   - title: Título que se muestra en el componente.
+ * **************************************************************
+ * 
+ * @example
+ * import TitleDisplayWithButton from './Ruta';
+ *
+ * // Uso del componente con datos personalizados
+ * const CustomTitleDisplay = () => {
+ *   return (
+ *     <TitleDisplayWithButton
+ *       data={{
+ *         title: "Tus colaboraciones personalizadas",
+ *       }}
+ *     />
+ *   );
+ * };
+ */
 const TitleDisplayWithButton = (/* {data} */) => {
   return (
     <div className='flex justify-between items-center'>

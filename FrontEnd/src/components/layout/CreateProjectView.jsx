@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import { Button } from "../ui/button";
 import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
@@ -5,12 +7,35 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 
+/**
+ * =======================
+ *   CreateProjectView
+ * =======================
+ * @props {function} handleSubmit - Función para manejar la presentación del formulario.
+ * **************************************************************
+ * 
+ * @example
+ * import CreateProjectView from './Ruta';
+ *
+ * // Uso del componente
+ * const MyCreateProjectView = () => {
+ *   const handleFormSubmit = async (formData) => {
+ *     // Lógica de presentación del formulario
+ *     const nombre = formData.get("nombre");
+ *     const descripcion = formData.get("descripcion");
+ *     console.log({nombre, descripcion});
+ *   };
+ * 
+ *   return <CreateProjectView handleSubmit={handleFormSubmit} />;
+ * };
+ */
+
 const CreateProjectView = () => {
   const handleSubmit = async (formData) => {
-    const titulo = formData.get("titulo");
+    const nombre = formData.get("nombre");
     const descripcion = formData.get("descripcion");
 
-    console.log({titulo,descripcion})
+    console.log({nombre,descripcion})
   };
 
   return (
@@ -21,8 +46,8 @@ const CreateProjectView = () => {
       <section>
         <label>Titulo del proyecto</label>
         <Input
-          id="titulo"
-          name="titulo"
+          id="nombre"
+          name="nombre"
           tipo={"default"}
           type=""
           placeholder="Título"

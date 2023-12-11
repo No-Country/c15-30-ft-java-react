@@ -12,6 +12,32 @@ const variants = {
   xl: "h-90 w-90",
 }
 
+/**
+ * =======================
+ *         Avatar
+ * =======================
+ * @props {string} variant - Tamaño del avatar. Las opciones son:
+ *   - sm: Pequeño (h-10 w-10)
+ *   - md: Mediano (h-16 w-16)
+ *   - lg: Grande (h-24 w-24)
+ *   - xl: Extra grande (h-90 w-90)
+ *   - sin valor: Tamaño predeterminado (h-10 w-10)
+ * **************************************************************
+ * 
+ * @example
+ * import { Avatar } from './Ruta';
+ *
+ * const MiComponente = () => {
+ *   return (
+ *     <Avatar variant="md" onClick={() => console.log('Avatar clickeado')}>
+ *       <Avatar.Image src="URL_de_la_imagen" alt="Descripción de la imagen" />
+ *       <Avatar.Fallback>
+ *         Cargando...
+ *       </Avatar.Fallback>
+ *     </Avatar>
+ *   );
+ * };
+ */
 const Avatar = React.forwardRef(({ className, variant, ...props }, ref) => (
   <AvatarPrimitive.Root
     ref={ref}
@@ -20,6 +46,28 @@ const Avatar = React.forwardRef(({ className, variant, ...props }, ref) => (
 ))
 Avatar.displayName = AvatarPrimitive.Root.displayName
 
+/**
+ * =======================
+ *    Avatar.Image
+ * =======================
+ * @props {string} src - URL de la imagen del avatar.
+ * @props {string} alt - Descripción de la imagen para accesibilidad.
+ * **************************************************************
+ * 
+ * @example
+ * import { Avatar, AvatarImage } from './Ruta';
+ *
+ * const MiComponente = () => {
+ *   return (
+ *     <Avatar>
+ *       <AvatarImage src="URL_de_la_imagen" alt="Descripción de la imagen" />
+ *       <Avatar.Fallback>
+ *         Cargando...
+ *       </Avatar.Fallback>
+ *     </Avatar>
+ *   );
+ * };
+ */
 const AvatarImage = React.forwardRef(({ className,...props }, ref) => (
   <AvatarPrimitive.Image
     ref={ref}
@@ -28,6 +76,27 @@ const AvatarImage = React.forwardRef(({ className,...props }, ref) => (
 ))
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
+/**
+ * =======================
+ *  Avatar.Fallback
+ * =======================
+ * @props {string} children - Contenido de respaldo en caso de que la imagen no cargue.
+ * **************************************************************
+ * 
+ * @example
+ * import { Avatar, AvatarFallback } from './Ruta';
+ *
+ * const MiComponente = () => {
+ *   return (
+ *     <Avatar>
+ *       <Avatar.Image src="URL_de_la_imagen" alt="Descripción de la imagen" />
+ *       <AvatarFallback>
+ *         Cargando...
+ *       </AvatarFallback>
+ *     </Avatar>
+ *   );
+ * };
+ */
 const AvatarFallback = React.forwardRef(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
