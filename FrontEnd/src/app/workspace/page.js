@@ -4,6 +4,7 @@ import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
 import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 import API from "@/axios/apiConnection";
 import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
+import { WorkspaceTable } from "@/components/layout/WorkspaceTable";
 
 const pageContent = {
   title: "",
@@ -34,7 +35,7 @@ const WorkSpace = async () => {
           />
         </section>
         
-        <section className="flex flex-col gap-10 my-20 w-full md:grid md:grid-cols-12 md:grid-rows-2">
+        <section className="flex flex-col gap-10 my-20 w-full md:grid md:grid-cols-12 md:grid-rows-6">
         <WordspaceReactiveCards projects={projects}>
 
         </WordspaceReactiveCards>

@@ -10,7 +10,7 @@ const WorkspaceUserInfoLoader = () => {
 
   const UserData = {
     title: user && `${user.nombre} ${user.apellido}`,
-    data: user && [user.rol],
+    data: user && [user.puesto],
   };
   const UserDataFallback = {
     title: "loading...",

@@ -2,6 +2,7 @@
  
 import * as React from "react"
 import { BiMoon, BiSun, } from 'react-icons/bi'
+import { FaCloudRain } from 'react-icons/fa'
 import { useTheme } from "next-themes"
  
 import { Button } from "@/components/ui/button"

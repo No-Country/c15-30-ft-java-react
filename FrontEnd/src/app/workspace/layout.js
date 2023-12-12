@@ -18,7 +18,7 @@ const layout = async ({ children }) => {
       </section>
       <section className={"flex flex-col md:w-5/6"}>
         <div>
-        <WorkspaceNavBar user={user} />
+          <WorkspaceNavBar user={user} />
         </div>
         <div className="relative">
           <NavBar session={session} tipo={"colorExtended"} />

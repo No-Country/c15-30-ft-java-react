@@ -14,7 +14,7 @@ const Footer = () => {
           alt=""
           width={224}
           height={172}
-          className="absolute bottom-0 left-0 md:bottom-5 md:left-5"
+          className="absolute bottom-0 left-0 md:bottom-5 md:right-0 "
         />
         {/* eslint-enable */}
       </section>

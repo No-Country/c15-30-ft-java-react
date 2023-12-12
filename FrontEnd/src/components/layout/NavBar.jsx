@@ -13,14 +13,15 @@ import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
 import BlobWorkspaceMd from "../../svgs/BlobWorkspaceMd.jsx";
 import BlobWorkspaceLg from "../../svgs/BlobWorkspaceLg.jsx";
 import { usePathname, useRouter } from "next/navigation";
-import ToolBar from "../ui/toolBar";
 import DropDownNavbar from "./DropDownNavbar";
 import { ModeToggle } from "./ModeToggle";
 import { Badge } from "../ui/badge";
+import NavBarScrollProgress from "./NavBarScrollProgress";
+import {motion} from 'framer-motion'
 
-const variants = {
-  contracted: "",
-  expanded: "",
+const linkVariants = {
+  initial: {y:-100},
+  animate: {y:0}
 };
 
 
@@ -72,8 +73,8 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
   const user = session?.user?.user;
   const path = usePathname();
   const router = useRouter();
-  const userImage = user?.imageUrl
-    ? user?.imageUrl
+  const userImage = user?.avatar
+    ? user?.avatar
     : "/images/default-user.png";
   const [isExtended, setExtended] = useState(false);
 
@@ -119,7 +120,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
   )
     return (
       <nav
-        className="fixed top-0 mb-[20px] bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm px-[20px] md:px-0 z-50"
+        className="fixed top-0 bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm md:px-0 z-50"
         {...props}
       >
         <div className="mx-auto px-4 sm:px-6 lg:px-8 md:w-full">
@@ -130,15 +131,15 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   Co<span className="text-primary font-bold">Code</span>
                 </Link>
                 <ul className="hidden md:flex md:items-center md:gap-16">
-                  <li className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.2}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
                     <Link href="/user">usuario</Link>
-                  </li>
-                  <li className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  </motion.li>
+                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.4}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
                     <Link href="/workspace">workspace</Link>
-                  </li>
-                  <li className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  </motion.li>
+                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.6}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
                     <Link href="/explore">explore</Link>
-                  </li>
+                  </motion.li>
                 </ul>
               </div>
             </div>
@@ -165,6 +166,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             </div>
           </div>
         </div>
+        <NavBarScrollProgress  />
       </nav>
     );
 

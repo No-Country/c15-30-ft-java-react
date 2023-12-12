@@ -5,7 +5,6 @@ import {
   FaBook,
   FaBookOpen,
   FaCloudsmith,
-  FaDotCircle,
   FaRegCommentDots,
   FaRegHeart,
   FaSlidersH,
@@ -16,17 +15,16 @@ import { Button } from "../ui/button";
 import Group from "../../../public/Group.png";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { ModeToggle } from "./ModeToggle";
 
 const WorkspaceSideBar = ({ user }) => {
   return (
     <>
       <nav className="hidden md:block md:h-20 md:w-full bg-secondary">
         <ul className="h-20 p-3 flex justify-between items-center">
-          <li className="flex gap-5">
+          <li className="flex gap-5 items-center">
             <div>
               <Avatar>
-                <AvatarImage src={user.imageUrl} alt="@shadcn" />
+                <AvatarImage src={user.avatar} alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </div>
@@ -38,7 +36,7 @@ const WorkspaceSideBar = ({ user }) => {
             </div>
           </li>
           <li>
-            <Button tipo={"rounded"} variant={""} size={"roundedSm"}>
+            <Button tipo={"rounded"} variant={"link"} size={"roundedSm"}>
               <FaSlidersH />
             </Button>
           </li>
@@ -51,7 +49,6 @@ const WorkspaceSideBar = ({ user }) => {
         <Separator className={"my-1"} />
         <hr className="border-gray-400" />
         <Separator className={"my-1"} />
-
         por definir
         {/* Enlaces */}
         <p className="text-sm text-gray-400 mt-5">Enlaces</p>
@@ -60,6 +57,14 @@ const WorkspaceSideBar = ({ user }) => {
         <Separator className={"my-1"} />
         <nav>
           <ul className="flex flex-col gap-4">
+            <li>
+              <Link
+                href={"/user"}
+                className="flex gap-2 items-center cursor-pointer"
+              >
+                <FaUser /> <p className="text-sm text-gray-400">Usuario</p>
+              </Link>
+            </li>
             <li>
               <Link
                 href={"/explore"}
@@ -74,14 +79,6 @@ const WorkspaceSideBar = ({ user }) => {
                 className="flex gap-2 items-center cursor-pointer"
               >
                 <FaBook /> <p className="text-sm text-gray-400">Proyectos</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/user"}
-                className="flex gap-2 items-center cursor-pointer"
-              >
-                <FaUser /> <p className="text-sm text-gray-400">Usuario</p>
               </Link>
             </li>
             <li>
@@ -122,7 +119,6 @@ const WorkspaceSideBar = ({ user }) => {
             </li>
           </ul>
         </nav>
-
         <br />
         <br />
       </section>
