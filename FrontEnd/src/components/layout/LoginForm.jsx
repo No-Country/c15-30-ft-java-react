@@ -11,7 +11,12 @@ import ButtonAuth from "./ButtonAuth";
 import { signIn } from "next-auth/react";
 import PlantBolbContainer from "./PlantBolbContainer";
 import "@/styles/animations.css";
+<<<<<<< HEAD
 import API from "@/axios/apiConnection";
+=======
+import Bolb from "../../../public/Bolb.png";
+import { AnimatePresence, motion } from "framer-motion"
+>>>>>>> feature/loginjostin
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -34,19 +39,22 @@ const LoginForm = () => {
 
   return (
     /* este es el contenedor general. */
-    <main className="relative h-full flex flex-col justify-between md:flex-row">
+    <main className="relative h-full flex flex-col md:flex-row ">
 
       {/* Este es el contenedor de la imagen */}
-      <div id="imagen" className={``}>
-        <PlantBolbContainer />
-      </div>
+      <div id="imagen" className={`md:w-1/2 md:pt-3 `}>
+        {/* <PlantBolbContainer /> */}
+        <img src={Bolb.src} alt="" />
 
+      </div>
       {/* Este es el contenedor del formulario */}
-      <form className={``} onSubmit={handleSubmit(onSubmit)}>
+      <form className={`md:w-1/2 md:pt-24  `} onSubmit={handleSubmit(onSubmit)}>
+      <AnimatePresence>
         <div className="p-[52px] flex flex-col gap-[27px]">
+          
           {isLogin && (
-            <div className="flex gap-5">
-              <Input
+            <motion.div initial={{scale:0}} animate={{scale:1}} transition={{delay: 0.1, duration: 0.5}} className="flex gap-5">
+              <Input 
                 name={"nombre"}
                 tipo={"default"}
                 placeholder={"nombre"}
@@ -62,7 +70,7 @@ const LoginForm = () => {
                 autoComplete={"username"}
                 {...register("username")}
               />
-            </div>
+            </motion.div>
           )}
           <Input
             name={"email"}
@@ -81,7 +89,7 @@ const LoginForm = () => {
             {...register("password")}
           />
           {isLogin && (
-            <div className="">
+            <motion.div initial={{rotateZ:0}} animate={{rotateZ:0}} transition={{delay: 0.1, duration: 0.5}}   className="">
               <Input
                 name={"confirm password"}
                 tipo={"default"}
@@ -90,7 +98,7 @@ const LoginForm = () => {
                 autoComplete={"username"}
                 {...register("username")}
               />
-            </div>
+            </motion.div>
           )}
         </div>
 
@@ -129,6 +137,7 @@ const LoginForm = () => {
             </span>{" "}
           </p>
         </div>
+        </AnimatePresence>
       </form>
     </main>
   );
