@@ -27,7 +27,7 @@ const LoginForm = () => {
     const response = await signIn("credentials", {
       email,
       password,
-      redirect: true,
+      redirect: false,
       callbackUrl: "/workspace",
     });
   };
