@@ -12,6 +12,8 @@ import { signIn } from "next-auth/react";
 import PlantBolbContainer from "./PlantBolbContainer";
 import "@/styles/animations.css";
 import API from "@/axios/apiConnection";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
@@ -43,9 +45,11 @@ const LoginForm = () => {
 
       {/* Este es el contenedor del formulario */}
       <form className={``} onSubmit={handleSubmit(onSubmit)}>
+      <AnimatePresence>
         <div className="p-[52px] flex flex-col gap-[27px]">
+          
           {isLogin && (
-            <div className="flex gap-5">
+            <motion.div initial={{scale:0}} animate={{scale:1}} transition={{delay: 0.1, duration: 0.5}} className="flex gap-5">
               <Input
                 name={"nombre"}
                 tipo={"default"}
@@ -62,7 +66,7 @@ const LoginForm = () => {
                 autoComplete={"username"}
                 {...register("username")}
               />
-            </div>
+            </motion.div>
           )}
           <Input
             name={"email"}
@@ -81,7 +85,7 @@ const LoginForm = () => {
             {...register("password")}
           />
           {isLogin && (
-            <div className="">
+            <motion.div initial={{scale:0}} animate={{scale:1}} transition={{delay: 0.1, duration: 0.5}}   className="">
               <Input
                 name={"confirm password"}
                 tipo={"default"}
@@ -90,7 +94,7 @@ const LoginForm = () => {
                 autoComplete={"username"}
                 {...register("username")}
               />
-            </div>
+            </motion.div>
           )}
         </div>
 
@@ -129,6 +133,7 @@ const LoginForm = () => {
             </span>{" "}
           </p>
         </div>
+        </AnimatePresence>
       </form>
     </main>
   );
