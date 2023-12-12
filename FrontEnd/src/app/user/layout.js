@@ -8,7 +8,7 @@ const layout = async ({children}) => {
   
   return (
     <div className={"flex w-screen flex-col justify-center overflow-y-hidden overflow-x-hidden"}>
-      <div className="p-[20px] ">
+      <div className="">
         <NavBar session={session} tipo={"colorExtended"} />
       </div>
 

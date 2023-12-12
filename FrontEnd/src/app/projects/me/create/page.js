@@ -1,4 +1,5 @@
 import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
+import API from "@/axios/apiConnection";
 import { ProjectsNavigation } from "@/components/layout/ProjectsNavigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -10,15 +11,27 @@ const Create = async () => {
   const session = await getServerSession(authOptions);
   const user = session?.user?.user
 
+  const postTask = async (formData) => {
+    'use server'
+
+    const task = {
+      nombre: formData.get("nombre"),
+      descripcion: formData.get("descripcion"),
+      userId: user?.id,
+    }
+    const res = API.post("/projects", task)
+    console.log(task)
+  }
+
   return (
-    <div className="h-full rounded-xl">
+    <form action={postTask} className="h-full rounded-xl">
       <div className="p-[20px] flex justify-center">
         <ProjectsNavigation></ProjectsNavigation>
       </div>
      <main className="h-full flex flex-col justify-evenly">
      <section>
         <h2 className="mb-[20px]">
-          Bienvenido!{" "}
+          Hola!{" "}
           <span className={cn(textBold.className, "text-primary")}>
             {user?.nombre}
           </span>{" "}
@@ -34,13 +47,13 @@ const Create = async () => {
       </section>
       <section className="flex justify-center items-center">custom card</section>
       <section className="flex flex-col justify-center items-center gap-5">
-        <Button tipo={"squared"} variant={"outline"} size={""}>
+        {/* <Button tipo={"squared"} variant={"outline"} size={""}>
           Añadir tareas
-        </Button>
-        <Button>Crear</Button>
+        </Button> */}
+        <Button type={"submit"}>Añadir tareas</Button>
       </section>
      </main>
-    </div>
+    </form>
   );
 };
 

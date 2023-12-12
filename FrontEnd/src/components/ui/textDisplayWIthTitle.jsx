@@ -8,16 +8,51 @@ const variants = {
 };
 
 /**
- * Despliega un texto formateado con titulo
- * @prop {string} type recibe:
- * - vertical: devuelve un formato vertical
- * - sin valor: por defecto devuelve un formato horizontal
- * @prop {string} variant recibe:
- * - primary: devuelve el titulo con el color primario
- * - regular: devuelve el titulo con el color negro(default)
- * @prop {Object} content un objeto que contiene las propiedades title y data
- * @returns
+ * =======================
+ * TextDisplayWithTitle
+ * =======================
+ * @props {string} type - Tipo de disposición del texto. Las opciones son:
+ *   - vertical: Muestra el título y el contenido de forma vertical.
+ *   - sin valor: Muestra el título y el contenido de forma horizontal.
+ * @props {string} variant - Variante de estilo del texto. Las opciones son:
+ *   - primary: Estilo primario (texto primario).
+ *   - regular: Estilo regular (texto negro).
+ *   - sin valor: Estilo primario (texto primario).
+ * @props {Object} content - Contenido del componente, con propiedades:
+ *   - title: Título del texto.
+ *   - data: Contenido del texto.
+ * **************************************************************
+ * 
+ * @example
+ * import TextDisplayWithTitle from './Ruta';
+ *
+ * // Muestra el título y el contenido de forma vertical con estilo primario
+ * const VerticalTextDisplay = () => {
+ *   return (
+ *     <TextDisplayWithTitle
+ *       type="vertical"
+ *       variant="primary"
+ *       content={{
+ *         title: "Título",
+ *         data: "Contenido del texto aquí...",
+ *       }}
+ *     />
+ *   );
+ * };
+ *
+ * // Muestra el título y el contenido de forma horizontal con estilo regular
+ * const HorizontalTextDisplay = () => {
+ *   return (
+ *     <TextDisplayWithTitle
+ *       content={{
+ *         title: "Título",
+ *         data: "Contenido del texto aquí...",
+ *       }}
+ *     />
+ *   );
+ * };
  */
+
 const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
 
   if (type === "vertical")

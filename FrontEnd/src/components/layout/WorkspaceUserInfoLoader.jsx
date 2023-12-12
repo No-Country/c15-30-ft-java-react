@@ -10,7 +10,7 @@ const WorkspaceUserInfoLoader = () => {
 
   const UserData = {
     title: user && `${user.nombre} ${user.apellido}`,
-    data: user && [user.rol],
+    data: user && [user.puesto],
   };
   const UserDataFallback = {
     title: "loading...",
@@ -19,7 +19,7 @@ const WorkspaceUserInfoLoader = () => {
 
   return (
     user && (
-      <section className="px-[20px] flex flex-col ">
+      <section className="px-[20px] flex flex-col md:hidden">
          <TextDisplayWithTitle type={""} variant={"primary"} content={user ? UserData : UserDataFallback} />
       </section>
     )

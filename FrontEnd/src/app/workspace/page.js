@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
 import TextDisplayWIthTitle from "../../components/ui/textDisplayWIthTitle";
 import { Input } from "../../components/ui/input";
 import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
-import WorkSpaceCard from "@/components/layout/WorkSpaceCard";
 import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 import API from "@/axios/apiConnection";
+import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
+import { WorkspaceTable } from "@/components/layout/WorkspaceTable";
 
 const pageContent = {
   title: "",
@@ -13,16 +13,19 @@ const pageContent = {
 
 const WorkSpace = async () => {
   const projects = await API.get("/projects");
-  
-  console.log(projects)
 
   return (
-    <div className="h-full">
-      <div className="px-[20px] h-full flex flex-col justify-between">
+    <div className="h-full md:w-full">
+      <div className="px-[20px] w-full  h-full flex flex-col justify-between">
         <WorkspaceUserInfoLoader />
 
-        <Input tipo={"busqueda"} placeholder={"Buscar"} />
-        <section className={"flex flex-col px-[20px]"}>
+        {/* visible solo en pantallas pequeñas */}
+        <form className="md:mt-10 md:hidden">
+          <Input tipo={"busqueda"} placeholder={"Buscar"} />
+        </form>
+
+        {/* visible solo en pantallas pequeñas */}
+        <section className={"flex flex-col px-[20px] md:hidden"}>
           <TitleDisplayWithButton />
 
           <TextDisplayWIthTitle
@@ -31,7 +34,12 @@ const WorkSpace = async () => {
             content={pageContent}
           />
         </section>
-        <WorkSpaceCard projects={projects} />
+        
+        <section className="flex flex-col gap-10 my-20 w-full md:grid md:grid-cols-12 md:grid-rows-6">
+        <WordspaceReactiveCards projects={projects}>
+
+        </WordspaceReactiveCards>
+        </section>
       </div>{" "}
     </div>
   );

@@ -23,8 +23,6 @@ const LoginCard = () => {
   const session = useSession();
   const user = session?.data?.user?.user;
 
-  console.log(user);
-
   const content = {
     title: user ? "Perfil" : "loading...",
     data: (
@@ -55,12 +53,14 @@ const LoginCard = () => {
                 : { title: "...", data: "..." }
             }
           />
+          {/* eslint-disable */}
           <img
             width={25}
             height={25}
             src="https://flagsapi.com/CO/shiny/64.png"
             className="rounded-full overflow-hidden"
           />
+          {/* eslint-enable */}
         </div>
         <TextDispalyWithTitle
           type={"vertical"}

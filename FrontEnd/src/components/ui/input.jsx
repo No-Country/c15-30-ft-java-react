@@ -6,6 +6,43 @@ import { textBold } from "@/styles/fonts";
 const baseStyle =
   "";
 
+  /**
+ * =======================
+ *         Input
+ * =======================
+ * @props {string} tipo - Tipo de input. Las opciones son:
+ *   - default: Input predeterminado con un solo campo.
+ *   - doble: Dos campos de input lado a lado.
+ *   - busqueda: Campo de búsqueda con icono de búsqueda.
+ *   - ordenar: Campo de texto con iconos de orden ascendente y descendente.
+ *   - sin valor: No se renderiza nada (maneja casos desconocidos o inesperados).
+ * @props {string} placeholder - Texto de marcador de posición para el input.
+ * **************************************************************
+ * 
+ * @example
+ * import { Input } from './Ruta';
+ *
+ * // Input predeterminado
+ * const DefaultInput = () => {
+ *   return <Input tipo="default" placeholder="Texto de marcador de posición" />;
+ * };
+ *
+ * // Dos campos de input lado a lado
+ * const DoubleInput = () => {
+ *   return <Input tipo="doble" placeholder="Texto de marcador de posición" />;
+ * };
+ *
+ * // Campo de búsqueda con icono de búsqueda
+ * const SearchInput = () => {
+ *   return <Input tipo="busqueda" placeholder="Buscar..." />;
+ * };
+ *
+ * // Campo de texto con iconos de orden ascendente y descendente
+ * const SortInput = () => {
+ *   return <Input tipo="ordenar" placeholder="Ordenar..." />;
+ * };
+ */
+
 const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
   if (tipo === "default") {
     return (
