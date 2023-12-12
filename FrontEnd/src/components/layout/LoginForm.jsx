@@ -10,16 +10,15 @@ import { useForm } from "react-hook-form";
 import ButtonAuth from "./ButtonAuth";
 import { signIn } from "next-auth/react";
 import PlantBolbContainer from "./PlantBolbContainer";
-import "@/styles/animations.css"
+import "@/styles/animations.css";
+import API from "@/axios/apiConnection";
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
   const [isLogin, setIsLogin] = useState(false);
 
-
   const handleToggle = () => {
     setIsLogin(!isLogin);
-
   };
 
   const onSubmit = async (data) => {
@@ -34,12 +33,16 @@ const LoginForm = () => {
   };
 
   return (
-    <main className="relative h-full flex flex-col justify-between ">
-      <div className={`absolute top-5 z-10 ${isLogin && "imagenAnimada"}  transition-all duration-300 w-full h-[450px]`}>
+    /* este es el contenedor general. */
+    <main className="relative h-full flex flex-col justify-between md:flex-row">
+
+      {/* Este es el contenedor de la imagen */}
+      <div id="imagen" className={``}>
         <PlantBolbContainer />
       </div>
 
-      <form className={`absolute bottom-5 z-0 w-full  ${isLogin && "formularioAnimado"} `} onSubmit={handleSubmit(onSubmit)}>
+      {/* Este es el contenedor del formulario */}
+      <form className={``} onSubmit={handleSubmit(onSubmit)}>
         <div className="p-[52px] flex flex-col gap-[27px]">
           {isLogin && (
             <div className="flex gap-5">
