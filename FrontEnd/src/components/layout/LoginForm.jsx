@@ -11,6 +11,7 @@ import ButtonAuth from "./ButtonAuth";
 import { signIn } from "next-auth/react";
 import PlantBolbContainer from "./PlantBolbContainer";
 import "@/styles/animations.css";
+import API from "@/axios/apiConnection";
 
 const LoginForm = () => {
   const { register, handleSubmit, errors } = useForm();
