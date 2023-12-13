@@ -105,6 +105,7 @@ const AvatarFallback = React.forwardRef(({ className, ...props }, ref) => (
       className
     )}
     {...props} />
+
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
 

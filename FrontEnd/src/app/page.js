@@ -67,7 +67,7 @@ export default async function Home(req, res) {
           <Scrolly />
         </section>
 
-        <ScrollArea className="flex  w-[400px] md:w-full  my-20 ">
+        <ScrollArea className="flex  w-[400px] md:w-full  my-32 ">
           <div className="w-full justify-center">
           <TitleContainer
             type={"titleAndDescription"}
@@ -115,8 +115,8 @@ export default async function Home(req, res) {
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
 
-        <Footer />
       </div>
+        <Footer />
     </div>
   );
 }

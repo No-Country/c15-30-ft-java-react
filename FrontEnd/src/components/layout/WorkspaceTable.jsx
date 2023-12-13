@@ -8,13 +8,12 @@ import {
   VisibilityState,
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel,
+  getFilteredRowModel, 
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -40,6 +39,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
 import { ToastAction } from "../ui/toast";
 import data from "../../constants/MOCK_DATA.json";
+import { Card } from "../ui/card";
 
 export const columns = [
   {
@@ -81,7 +81,7 @@ export const columns = [
       <div
         className={
           row.getValue("status") === "Mr"
-            ?  cn(textBold.className, "capitalize text-left text-green-400")
+            ? cn(textBold.className, "capitalize text-left text-green-400")
             : row.getValue("status") === "Ms"
             ? cn(textBold.className, "capitalize text-left text-yellow-400")
             : row.getValue("status") === "Dr"
@@ -97,11 +97,17 @@ export const columns = [
   },
   {
     accessorKey: "avatar",
-    header: ({ column }) => {
-    },
+    header: ({ column }) => {},
     cell: ({ row }) => (
       <div className="lowercase text-left font-medium">
-        <img src={row.getValue("avatar")} alt="img avatar" width={50} height={50} />{" "}
+        {/* eslint-disable */}
+        <img
+          src={row.getValue("avatar")}
+          alt="img avatar"
+          width={50}
+          height={50}
+        />
+        {/* eslint-enable */}
       </div>
     ),
   },
@@ -157,7 +163,6 @@ export const columns = [
     header: () => <div className="text-left">Fecha_limite</div>,
     cell: ({ row }) => {
       const Fecha_limite = row.getValue("Fecha_limite");
-
       const fechaLimiteString = Fecha_limite;
       const fechaLimite = new Date(fechaLimiteString);
       const opcionesDeFormato = {
@@ -169,8 +174,11 @@ export const columns = [
         "es-ES",
         opcionesDeFormato
       );
-
-      return <div className="text-left font-medium">{row.getValue("fecha_limite").split("")}</div>;
+      return (
+        <div className="text-left font-medium">
+          {row.getValue("fecha_limite").split("")}
+        </div>
+      );
     },
   },
   {
@@ -178,7 +186,6 @@ export const columns = [
     enableHiding: false,
     cell: ({ row }) => {
       const data = row.original;
-
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -195,8 +202,8 @@ export const columns = [
               Copiar id
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>A</DropdownMenuItem>
+            <DropdownMenuItem>B</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -210,7 +217,6 @@ export function WorkspaceTable({ className }) {
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});
   const [rowSelection, setRowSelection] = React.useState({});
-
   const table = useReactTable({
     data,
     columns,
@@ -222,12 +228,7 @@ export function WorkspaceTable({ className }) {
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
-    state: {
-      sorting,
-      columnFilters,
-      columnVisibility,
-      rowSelection,
-    },
+    state: { sorting, columnFilters, columnVisibility, rowSelection },
   });
 
   const gestionar = () => {
@@ -237,14 +238,15 @@ export function WorkspaceTable({ className }) {
         variant: "destructive",
         title: "Selecciona una columna",
         description:
-          "Debes seleccionar como minimo una tarea para gestionarla.",
+          "Debes seleccionar como mínimo una tarea para gestionarla.",
         action: <ToastAction altText="Deshacer">Entendido</ToastAction>,
       });
     console.log(selected?.rowsById);
   };
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full ${className}`}
+    >
       <div className="flex items-left py-4">
         <Input
           placeholder="Filter emails..."
@@ -287,7 +289,7 @@ export function WorkspaceTable({ className }) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <Card className="rounded-[25px] shadow-sm">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -312,7 +314,7 @@ export function WorkspaceTable({ className }) {
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected() && "selected... "}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -333,7 +335,7 @@ export function WorkspaceTable({ className }) {
             )}
           </TableBody>
         </Table>
-      </div>
+      </Card>
       <div className="flex items-left justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} de{" "}

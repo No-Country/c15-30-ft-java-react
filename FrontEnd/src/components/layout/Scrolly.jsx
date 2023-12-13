@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import HomeGroup from "../../../public/HomeGroup.png";
 import HomeHombreTrabajando from "../../../public/HomeHombreTrabajando.png";
-import { Button } from "../ui/button";
+import Link from "next/link";
+import { buttonVariants } from "../ui/button";
 
 // Definir la variante de animación
 const draw = {
@@ -66,12 +67,12 @@ const ScrollContainer = ({ children }) => {
           <h3 className={cn(textBold.className, "text-title text-center")}>
             Comienza un proyecto
           </h3>
-          <p className="text-center ">
+          <p className="text-center mt-5">
             Crea un proyecto o explora la lista de la comunidad y únete al que
             más te guste
           </p>
           <div className="w-full flex justify-center mt-20">
-            <Button>Proyectos</Button>
+          <Link href={"/explore"} className={cn(buttonVariants("default"))} >Explora</Link>
           </div>
         </section>
       </div>
