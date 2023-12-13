@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   DropdownMenu,
@@ -11,8 +11,9 @@ import {
 import { FaGithub, FaHome, FaUser, FaBook } from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { signOut } from "next-auth/react";
+import { cn } from "@/lib/utils";
 
 /**
  * =======================
@@ -20,7 +21,7 @@ import { signOut } from "next-auth/react";
  * =======================
  * @props {ReactNode} children - Contenido del desplegable del menú.
  * **************************************************************
- * 
+ *
  * @example
  * import DropDownNavbar from './Ruta';
  *
@@ -35,30 +36,54 @@ import { signOut } from "next-auth/react";
  * };
  */
 
+//reparar este componente
 const DropDownNavbar = ({ children }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>{children}</DropdownMenuTrigger>
       <DropdownMenuContent className="text-center">
-        <DropdownMenuLabel>
-          <Button>Crear</Button>
-        </DropdownMenuLabel>
+        <DropdownMenuLabel>Crear</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem className={"text-md"}>
           {" "}
-          <Link href={'/user'}><FaGithub className=""/> <p>Usuario</p></Link>
+          <Link
+            className={cn("flex justify-center items-center gap-2 w-full")}
+            href={"/user"}
+          >
+            <FaGithub className="" /> <p>Usuario</p>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className={"text-md"}>
-          <Link href={'/workspace'}><FaGithub className=""/> Workspace</Link>
+          <Link
+            className={cn("flex justify-center items-center gap-2 w-full")}
+            href={"/workspace"}
+          >
+            <FaGithub className="" /> <p>Workspace</p>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className={"text-md"}>
-        <Link href={'/explore'}><FaGithub className=""/> Explore</Link>
+          <Link
+            className={cn("flex justify-center items-center gap-2 w-full")}
+            href={"/explore"}
+          >
+            <FaGithub className="" /> <p>Explore</p>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuItem className={"text-md"}>
-        <Link href={'/'}><FaGithub className=""/> Billing</Link>
+          <Link
+            className={cn(
+              buttonVariants({ variant: "ghost" }),
+              "flex justify-center items-center gap-2 w-full"
+            )}
+            href={"/explore"}
+          >
+            <FaGithub className="" /> <p>Explore</p>
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className={"text-md"} onClick={signOut}>Salir</DropdownMenuLabel>
+        <DropdownMenuLabel className={"text-md"} onClick={signOut}>
+          Salir
+        </DropdownMenuLabel>
       </DropdownMenuContent>
     </DropdownMenu>
   );

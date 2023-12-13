@@ -25,7 +25,7 @@ const LoginForm = () => {
     setIsLogin(!isLogin);
   };
 
-  const onSubmit = async (data) => {
+  const onLoginSubmit = async (data) => {
     const { email, password } = data;
 
     const response = await signIn("credentials", {
@@ -50,6 +50,30 @@ const LoginForm = () => {
     }
   };
 
+
+  const onRegisterSubmit = (data)=>{
+    if (data.confirm_password === data.password) {
+      toast({
+        variant: "",
+        title: "Registro exitoso",
+        description: "Inicia sesion para continuar",
+        isClosable: true,
+        duration: 5000,
+      })
+      setIsLogin(false);
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Password no coincide",
+        description: "El password debe coincidir con la cofirmacion",
+        isClosable: true,
+        duration: 5000,
+      })
+    }
+    
+  }
+
+
   return (
     <main className="relative h-full flex flex-col md:flex-row ">
       <div id="imagen" className={`pt-0 md:w-1/2 md:pt-3 `}>
@@ -63,7 +87,7 @@ const LoginForm = () => {
       </div>
       <form
         className={`md:flex md:flex-col md:justify-center md:items-center`}
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={!isLogin ? handleSubmit(onLoginSubmit) : handleSubmit(onRegisterSubmit)}
       >
 
         <AnimatePresence key={isLogin} className={"md:w-screen"}>
@@ -76,20 +100,20 @@ const LoginForm = () => {
                 className="flex gap-5"
               >
                 <Input
-                  name={"Nombre"}
+                  name={"nombre"}
                   tipo={"default"}
                   placeholder={"nombre"}
                   type={"text"}
                   autoComplete={"username"}
-                  {...register("username")}
+                  {...register("nombre")}
                 />
                 <Input
-                  name={"Apellido"}
+                  name={"apellido"}
                   tipo={"default"}
                   placeholder={"apellido"}
                   type={"text"}
                   autoComplete={"username"}
-                  {...register("username")}
+                  {...register("apellido")}
                 />
               </motion.div>
             )}
@@ -118,12 +142,12 @@ const LoginForm = () => {
                 className="w-full"
               >
                 <Input
-                  name={"confirm password"}
+                  name={"confirm_password"}
                   tipo={"default"}
                   placeholder={"confirm password"}
                   type={"text"}
                   autoComplete={"username"}
-                  {...register("username")}
+                  {...register("confirm_password")}
                 />
               </motion.div>
             )}

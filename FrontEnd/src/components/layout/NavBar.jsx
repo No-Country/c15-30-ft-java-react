@@ -6,7 +6,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import Link from "next/link";
-import { FaChevronLeft, FaBars, FaSpinner, FaSearch, FaInfo, FaBell } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaBars,
+  FaSpinner,
+  FaSearch,
+  FaInfo,
+  FaBell,
+  FaAngleLeft,
+} from "react-icons/fa";
 import NavBarBlob from "../../svgs/NavBarBlob";
 import NavBarBlob2 from "../../svgs/NavBarBlob2";
 import BlobWorkspaceSm from "../../svgs/BlobWorkspaceSm.jsx";
@@ -17,47 +25,63 @@ import DropDownNavbar from "./DropDownNavbar";
 import { ModeToggle } from "./ModeToggle";
 import { Badge } from "../ui/badge";
 import NavBarScrollProgress from "./NavBarScrollProgress";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
+import SearchBar from "../ui/searchBar";
+import Image from "next/image";
+import defaultAvatar from "../../../public/defaultAvatar.png";
 
 const linkVariants = {
-  initial: {y:-100},
-  animate: {y:0}
+  initial: { y: -100 },
+  animate: { y: 0 },
 };
 
+export const WorkspaceNavBar = ({ user }) => {
+  
+  const router = useRouter();
 
-export const WorkspaceNavBar = ({user}) => {
-  return (<div className="hidden md:flex justify-between items-center px-10 bg-secondary ">
-  <div className="hidden md:flex flex-col md:h-20">
-    <div className="hidden md:flex gap-2 items-center">
-      <h2 className={cn(textBold.className, "")}>Hola,</h2>
-      <p className={cn(textBold.className, "text-primary")}>
-        {user.nombre}
-      </p>
-      <p className={cn(textBold.className, "text-[34px]")}>👋</p>
-    </div>
-    <p className="text-sm text-gray-400">
-      Administra tus proyectos y consulta la info más relevante a tu
-      alrededor.
-    </p>
-  </div>
-    
+  return (
+    <div className="hidden md:flex justify-between items-center px-10 bg-secondary ">
+      <div className="hidden md:flex flex-col md:h-20">
+        <div className="hidden md:flex gap-2 items-center">
+          <Button
+            tipo={"rounded"}
+            variant="secondary"
+            size={"roundedSm"}
+            className={"cursor-pointer"}
+            onClick={() => router.back()}
+          >
+            <FaAngleLeft />
+          </Button>
+          <h2 className={cn(textBold.className, "")}>Hola,</h2>
+          <p className={cn(textBold.className, "text-primary")}>
+            {user.nombre}
+          </p>
+          <p className={cn(textBold.className, "text-[34px]")}>👋</p>
+        </div>
+        <p className="text-sm text-gray-400">
+          Administra tus proyectos y consulta la info más relevante a tu
+          alrededor.
+        </p>
+      </div>
 
-  <div className="text-gray-400 flex items-center gap-5">
-    <FaSearch className="cursor-pointer" />
-    <FaInfo className="cursor-pointer" />
-    <div className="relative">
-      <Badge
-        size={"sm"}
-        className={
-          "absolute top-[-2px] right-0 w-2 h-2 bg-green-500 animate-pulse"
-        }
-      />
-      <FaBell className="cursor-pointer animate-pulse" />
+      <div className="text-gray-400 flex items-center gap-5">
+        <SearchBar></SearchBar>
+        <FaSearch className="cursor-pointer" />
+        <FaInfo className="cursor-pointer" />
+        <div className="relative">
+          <Badge
+            size={"sm"}
+            className={
+              "absolute top-[-2px] right-0 w-2 h-2 bg-green-500 animate-pulse"
+            }
+          />
+          <FaBell className="cursor-pointer animate-pulse" />
+        </div>
+        <ModeToggle />
+      </div>
     </div>
-    <ModeToggle />
-  </div>
-</div>)
-}
+  );
+};
 
 /**
  *
@@ -84,14 +108,46 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
 
   if (!session)
     return (
-      <nav className="fixed top-0 bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm md:px-0 z-50" {...props}>
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[60px]">
+      <nav
+        className="fixed top-0 bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm md:px-0 z-50"
+        {...props}
+      >
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 md:w-full">
+          <div className="h-[60px] md:h-[80px]  flex items-center justify-between">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <Link href={"/"} className={cn(textBold.className)}>
-                  CoCode
+              <div className="flex items-center gap-16">
+                <Link href={"/"} className={cn(textBold.className, "text-lg")}>
+                  Co<span className="text-primary font-bold">Code</span>
                 </Link>
+                <ul className="hidden md:flex md:items-center md:gap-16">
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.2 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
+                    <Link href="/user">usuario</Link>
+                  </motion.li>
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.4 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
+                    <Link href="/workspace">workspace</Link>
+                  </motion.li>
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.6 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
+                    <Link href="/explore">explore</Link>
+                  </motion.li>
+                </ul>
               </div>
             </div>
             <div className="grid grid-flow-col items-center justify-between gap-[20px]">
@@ -111,14 +167,11 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             </div>
           </div>
         </div>
-        <NavBarScrollProgress  />
+        <NavBarScrollProgress />
       </nav>
     );
 
-  if (
-    (session && path === "/") ||
-    path === "/user"
-  )
+  if ((session && path === "/") || path === "/user")
     return (
       <nav
         className="fixed top-0 bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm md:px-0 z-50"
@@ -132,20 +185,38 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   Co<span className="text-primary font-bold">Code</span>
                 </Link>
                 <ul className="hidden md:flex md:items-center md:gap-16">
-                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.2}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.2 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
                     <Link href="/user">usuario</Link>
                   </motion.li>
-                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.4}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.4 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
                     <Link href="/workspace">workspace</Link>
                   </motion.li>
-                  <motion.li variants={linkVariants} initial={"initial"} animate={"animate"} transition={{delay: 0.6}} className="hover:underline hover:text-primary hover:font-bold cursor-pointer">
+                  <motion.li
+                    variants={linkVariants}
+                    initial={"initial"}
+                    animate={"animate"}
+                    transition={{ delay: 0.6 }}
+                    className="hover:underline hover:text-primary hover:font-bold cursor-pointer"
+                  >
                     <Link href="/explore">explore</Link>
                   </motion.li>
                 </ul>
               </div>
             </div>
             <div className="grid grid-flow-col items-center justify-between gap-[20px]">
-              <ul className="hidden md:flex gap-16 mr-16 items-center">
+              <ul className="hidden md:flex gap-8 mr-2  items-center">
                 <li>
                   <ModeToggle />
                 </li>
@@ -156,7 +227,15 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
 
               <Avatar className={"z-50 md:w-16 md:h-16"}>
                 <AvatarImage src={avatar} />
-                <AvatarFallback> </AvatarFallback>
+                <AvatarFallback>
+                  {" "}
+                  <Image
+                    src={defaultAvatar.src}
+                    width={100}
+                    height={100}
+                    alt="default avatar"
+                  />{" "}
+                </AvatarFallback>
               </Avatar>
 
               <div className={"md:hidden"}>
@@ -167,7 +246,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             </div>
           </div>
         </div>
-        <NavBarScrollProgress  />
+        <NavBarScrollProgress />
       </nav>
     );
 
@@ -185,7 +264,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   className={"absolute z-10 cursor-pointer"}
                   onClick={() => router.back()}
                 >
-                  <FaChevronLeft />
+                  <FaAngleLeft />
                 </Button>
               </div>
             </div>
@@ -195,7 +274,14 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             >
               <Avatar className={"absolute z-10 cursor-pointer"}>
                 <AvatarImage src={avatar} />
-                <AvatarFallback> </AvatarFallback>
+                <AvatarFallback>
+                  <Image
+                    src={defaultAvatar.src}
+                    width={100}
+                    height={100}
+                    alt="default avatar"
+                  />
+                </AvatarFallback>
               </Avatar>
               <DropDownNavbar>
                 <FaBars className="text-title cursor-pointer" />
@@ -256,7 +342,15 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
           >
             <Avatar variant={"lg"} className={"absolute z-10 cursor-pointer"}>
               <AvatarImage src={avatar} />
-              <AvatarFallback> </AvatarFallback>
+              <AvatarFallback>
+                {" "}
+                <Image
+                  src={defaultAvatar.src}
+                  width={100}
+                  height={100}
+                  alt="default avatar"
+                />{" "}
+              </AvatarFallback>
             </Avatar>
           </div>
         </div>

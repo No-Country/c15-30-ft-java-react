@@ -75,7 +75,7 @@ export const WorkspaceCustomCard = ({
 }) => {
   return (
     <Card
-      className={`shadow-sm w-full h-[377px] p-[40px] flex flex-col rounded-md md:max-w-full md:max-h-[820px] ${className}`}
+      className={`shadow-sm w-full h-[377px] p-[40px] flex flex-col rounded-[25px] md:max-w-full md:max-h-[820px] ${className}`}
     >
       <section
         className={cn(
@@ -136,7 +136,7 @@ export const WorkspaceCustomCard = ({
 const WorkSpaceCard = ({ projects, data, className }) => {
   return (
     <Card
-      className={`shadow-md w-full h-[377px] p-[40px] flex flex-col rounded-[50px] md:max-w-full md:max-h-[820px] ${className}`}
+      className={`shadow-sm w-full h-[377px] p-[40px] flex flex-col rounded-[25px] md:max-w-full md:max-h-[820px] ${className}`}
     >
       <section
         className={cn(
