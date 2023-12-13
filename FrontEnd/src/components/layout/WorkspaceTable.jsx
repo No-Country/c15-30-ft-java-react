@@ -39,6 +39,7 @@ import { cn } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
 import { ToastAction } from "../ui/toast";
 import data from "../../constants/MOCK_DATA.json";
+import { Card } from "../ui/card";
 
 export const columns = [
   {
@@ -288,7 +289,7 @@ export function WorkspaceTable({ className }) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <Card className="rounded-[25px] shadow-sm">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -334,7 +335,7 @@ export function WorkspaceTable({ className }) {
             )}
           </TableBody>
         </Table>
-      </div>
+      </Card>
       <div className="flex items-left justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} de{" "}

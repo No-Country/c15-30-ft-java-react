@@ -27,6 +27,8 @@ import { Badge } from "../ui/badge";
 import NavBarScrollProgress from "./NavBarScrollProgress";
 import { motion } from "framer-motion";
 import SearchBar from "../ui/searchBar";
+import Image from "next/image";
+import defaultAvatar from "../../../public/defaultAvatar.png";
 
 const linkVariants = {
   initial: { y: -100 },
@@ -34,6 +36,7 @@ const linkVariants = {
 };
 
 export const WorkspaceNavBar = ({ user }) => {
+  
   const router = useRouter();
 
   return (
@@ -224,7 +227,15 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
 
               <Avatar className={"z-50 md:w-16 md:h-16"}>
                 <AvatarImage src={avatar} />
-                <AvatarFallback> </AvatarFallback>
+                <AvatarFallback>
+                  {" "}
+                  <Image
+                    src={defaultAvatar.src}
+                    width={100}
+                    height={100}
+                    alt="default avatar"
+                  />{" "}
+                </AvatarFallback>
               </Avatar>
 
               <div className={"md:hidden"}>
@@ -263,7 +274,14 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             >
               <Avatar className={"absolute z-10 cursor-pointer"}>
                 <AvatarImage src={avatar} />
-                <AvatarFallback> </AvatarFallback>
+                <AvatarFallback>
+                  <Image
+                    src={defaultAvatar.src}
+                    width={100}
+                    height={100}
+                    alt="default avatar"
+                  />
+                </AvatarFallback>
               </Avatar>
               <DropDownNavbar>
                 <FaBars className="text-title cursor-pointer" />
@@ -324,7 +342,15 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
           >
             <Avatar variant={"lg"} className={"absolute z-10 cursor-pointer"}>
               <AvatarImage src={avatar} />
-              <AvatarFallback> </AvatarFallback>
+              <AvatarFallback>
+                {" "}
+                <Image
+                  src={defaultAvatar.src}
+                  width={100}
+                  height={100}
+                  alt="default avatar"
+                />{" "}
+              </AvatarFallback>
             </Avatar>
           </div>
         </div>
