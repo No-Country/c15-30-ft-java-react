@@ -16,6 +16,14 @@ import Group from "../../../public/Group.png";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 
+const testObject = {
+  id: "1",
+  nombre: "Tarea 1",
+  descripcion: "Descripcion de la tarea 1",
+  estado: "Pendiente",
+  prioridad: "Alta",
+};
+
 const WorkspaceSideBar = ({ user }) => {
   return (
     <>
@@ -49,6 +57,40 @@ const WorkspaceSideBar = ({ user }) => {
         <Separator className={"my-1"} />
         <hr className="border-gray-400" />
         <Separator className={"my-1"} />
+        <nav>
+          <ul>
+            <li>
+              <Link
+                href={`/workspace/tasks?command=${btoa(
+                  JSON.stringify(testObject)
+                )}`}
+                className="flex gap-2 items-center cursor-pointer"
+              >
+                <FaUser /> <p className="text-sm text-gray-400">Tareas</p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/workspace/calendar?command=${btoa(
+                  JSON.stringify(testObject)
+                )}`}
+                className="flex gap-2 items-center cursor-pointer"
+              >
+                <FaUser /> <p className="text-sm text-gray-400">Calendar</p>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/workspace/contribute?command=${btoa(
+                  JSON.stringify(testObject)
+                )}`}
+                className="flex gap-2 items-center cursor-pointer"
+              >
+                <FaUser /> <p className="text-sm text-gray-400">Contribute</p>
+              </Link>
+            </li>
+          </ul>
+        </nav>
         por definir
         {/* Enlaces */}
         <p className="text-sm text-gray-400 mt-5">Enlaces</p>
