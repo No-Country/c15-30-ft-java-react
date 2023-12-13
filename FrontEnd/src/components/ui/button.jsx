@@ -13,7 +13,7 @@ const config = {
   textSizeSm: "text-[14px]",
 };
 
-const types = {
+const tipos = {
   iconText: "flex justify-between",
   rounded: "rounded-full px-1 py-1",
   squared: "px-5"
@@ -36,8 +36,9 @@ const buttonVariants = cva(
       },
       size: {
         default: `${config.height} ${config.width} ${config.textSize}  px-[27.87px]`,
+        xs: "px-[15px] w-[20px]",
         sm: ` ${config.heightSm} ${config.widthSm} ${config.textSizeSm} px-[23.74px]`,
-        lg:  "h-11 px-8",
+        md:  "h-11 px-8",
         squared: "w-[77px] h-[49px]",
         squaredSm: "w-[70px] h-[40px]",
         rounded: "w-[50px] h-[50px]",
@@ -51,12 +52,11 @@ const buttonVariants = cva(
   }
 );
 
-
 /**
  * =======================
  *         Boton
  * =======================
- * @props {string} type - 
+ * @props {string} tipo - 
  *  - iconText: renderiza un botón con un icono.
  *  - rounded: renderiza un botón circular.
  *  - squared: renderiza un botón cuadrado.
@@ -89,40 +89,41 @@ const buttonVariants = cva(
  *   );
  * };
  */
+
 const Button = React.forwardRef(
-  ({ className, type, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, tipo, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    if (type === "iconText")
+    if (tipo === "iconText")
       return (
         <Comp
           className={cn(
-            buttonVariants({ variant, size, className,  } ), types[type]
+            buttonVariants({ variant, size, className,  } ), tipos[tipo]
           )}
           ref={ref}
           {...props}
         />
       );
-      if (type === "rounded")
+      if (tipo === "rounded")
       return (
         <Comp
           className={cn(
-            buttonVariants({ variant, size, className,  } ), types[type]
+            buttonVariants({ variant, size, className,  } ), tipos[tipo]
           )}
           ref={ref}
           {...props}
         />
       );
-      if (type === "squared")
+      if (tipo === "squared")
       return (
         <Comp
           className={cn(
-            buttonVariants({ variant, size, className,  } ), types[type]
+            buttonVariants({ variant, size, className,  } ), tipos[tipo]
           )}
           ref={ref}
           {...props}
         />
       );
-    if (!type) return (
+    if (!tipo) return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}

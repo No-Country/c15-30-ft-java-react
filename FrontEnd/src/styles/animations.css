@@ -1,0 +1,25 @@
+.imagenAnimada {
+  animation: imagen 2s forwards;
+}
+
+.formularioAnimado {
+  animation: formulario 2s forwards;
+}
+
+@keyframes imagen {
+  from {
+    top: 0;
+  }
+  to {
+    transform: translateY(135%);
+  }
+}
+
+@keyframes formulario {
+  from {
+    bottom: 0;
+  }
+  to {
+    transform: translateY(-55%);
+  }
+}
