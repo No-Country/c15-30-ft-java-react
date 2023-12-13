@@ -101,7 +101,9 @@ export const columns = [
     },
     cell: ({ row }) => (
       <div className="lowercase text-left font-medium">
+        {/* eslint-disable */}
         <img src={row.getValue("avatar")} alt="img avatar" width={50} height={50} />{" "}
+        {/* eslint-enable */}
       </div>
     ),
   },

@@ -12,8 +12,12 @@ import { signIn } from "next-auth/react";
 import "@/styles/animations.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Bolb from "../../../public/Blob.png";
+import { useRouter } from "next/navigation";
+import { useToast } from "../ui/use-toast";
 
 const LoginForm = () => {
+  const router = useRouter()
+  const {toast} = useToast()
   const { register, handleSubmit, errors } = useForm();
   const [isLogin, setIsLogin] = useState(false);
 
@@ -27,14 +31,28 @@ const LoginForm = () => {
     const response = await signIn("credentials", {
       email,
       password,
-      redirect: true,
+      redirect: false,
       callbackUrl: "/workspace",
     });
+
+    if (response.ok) {
+      router.push("/workspace");
+    } else {
+      console.log(response.error)
+      /* reemplar description por response.error.message */
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "revisar las credenciales",
+        isClosable: true,
+        duration: 5000,
+      })
+    }
   };
 
   return (
     <main className="relative h-full flex flex-col md:flex-row ">
-      <div id="imagen" className={`md:w-1/2 md:pt-3 `}>
+      <div id="imagen" className={`pt-0 md:w-1/2 md:pt-3 `}>
 
         {/* TODO camiar img a IMAGE y agregar el alt */}
 
@@ -47,12 +65,13 @@ const LoginForm = () => {
         className={`md:flex md:flex-col md:justify-center md:items-center`}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <AnimatePresence className={"md:w-screen"}>
-          <div className="px-[52px] flex flex-col gap-[27px]">
+
+        <AnimatePresence key={isLogin} className={"md:w-screen"}>
+          <div id="container" className="px-[52px] flex flex-col gap-[27px] md:w-[594.033px]">
             {isLogin && (
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
                 className="flex gap-5"
               >
@@ -74,7 +93,7 @@ const LoginForm = () => {
                 />
               </motion.div>
             )}
-            <div className="px-[52px] flex flex-col gap-[27px]"></div>
+            
             <Input
               name={"email"}
               tipo={"default"}
@@ -93,10 +112,10 @@ const LoginForm = () => {
             />
             {isLogin && (
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
-                className=""
+                className="w-full"
               >
                 <Input
                   name={"confirm password"}

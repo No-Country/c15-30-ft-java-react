@@ -73,9 +73,9 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
   const user = session?.user?.user;
   const path = usePathname();
   const router = useRouter();
-  const userImage = user?.avatar
+  const avatar = user?.avatar
     ? user?.avatar
-    : "/images/default-user.png";
+    : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png";
   const [isExtended, setExtended] = useState(false);
 
   const handleAvatarClick = () => {
@@ -84,7 +84,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
 
   if (!session)
     return (
-      <nav className="h-[60px] w-full shadow-sm px-[20px]" {...props}>
+      <nav className="fixed top-0 bg-card rounded-b-[32px] h-[60px] md:h-[80px] w-full md:w-full shadow-sm md:px-0 z-50" {...props}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[60px]">
             <div className="flex items-center">
@@ -111,6 +111,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             </div>
           </div>
         </div>
+        <NavBarScrollProgress  />
       </nav>
     );
 
@@ -154,7 +155,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
               </ul>
 
               <Avatar className={"z-50 md:w-16 md:h-16"}>
-                <AvatarImage src={userImage} />
+                <AvatarImage src={avatar} />
                 <AvatarFallback> </AvatarFallback>
               </Avatar>
 
@@ -193,7 +194,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
               onClick={() => setExtended(!isExtended)}
             >
               <Avatar className={"absolute z-10 cursor-pointer"}>
-                <AvatarImage src={userImage} />
+                <AvatarImage src={avatar} />
                 <AvatarFallback> </AvatarFallback>
               </Avatar>
               <DropDownNavbar>
@@ -254,7 +255,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
             }
           >
             <Avatar variant={"lg"} className={"absolute z-10 cursor-pointer"}>
-              <AvatarImage src={userImage} />
+              <AvatarImage src={avatar} />
               <AvatarFallback> </AvatarFallback>
             </Avatar>
           </div>

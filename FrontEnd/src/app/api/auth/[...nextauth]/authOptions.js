@@ -16,7 +16,18 @@ const authOptions = {
             headers: { "Content-Type": "application/json" },
           }
         );
-        const response = await res.json();
+        /* TODO modificar esto una vez haya conexion con el back */
+        const response = /* await res.json(); */ {
+          user: {
+            id:1,
+            nombre: "Falso",
+            apellido: "Perez",
+            email: "user@falso.com",
+            puesto: "Administrador",
+            avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png",
+            rol: "admin",
+          }
+        }
 
         if (response.message) throw response;
 
