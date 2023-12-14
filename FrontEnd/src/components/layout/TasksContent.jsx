@@ -1,9 +1,8 @@
-import React from 'react'
+const TasksContent = ({ text, params }) => {
 
-const TasksContent = ({text}) => {
-  return (
-    <div>{text}</div>
-  )
-}
+  console.log(params)
+  
+  return <div>{text}</div>;
+};
 
-export default TasksContent
+export default TasksContent;

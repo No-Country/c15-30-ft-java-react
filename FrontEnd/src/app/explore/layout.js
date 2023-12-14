@@ -3,6 +3,11 @@ import { getServerSession } from 'next-auth';
 import React from 'react'
 import authOptions from '../api/auth/[...nextauth]/authOptions';
 
+export const metadata = {
+  title: "CoCode - explore",
+  description: "Projectos activos en CoCode",
+};
+
 const layout = async ({children}) => {
   const session = await getServerSession(authOptions);
 

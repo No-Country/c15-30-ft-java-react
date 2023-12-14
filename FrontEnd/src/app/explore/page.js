@@ -7,8 +7,6 @@ const Explore = async () => {
   const projects = await API.get("/projects");
   // debería traerse tambien la lista de proyectos a los que se ha dado like
 
-  console.log(projects);
-
   return (
     <div>
       <section className="px-[20px] flex flex-col gap-5">

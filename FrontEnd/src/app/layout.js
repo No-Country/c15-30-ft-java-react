@@ -10,30 +10,27 @@ export const metadata = {
   description: "Developed for No-Country",
 };
 
-
 export default async function RootLayout({ children, pageProps }) {
-
   const session = await getServerSession();
 
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={text.className}>
         <main className="flex flex-col items-center overflow-x-hidden">
           <UserSession session={session}>
-           {/*  <StateLoader /> */}
-           <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster />
-           </ThemeProvider>
+            {/*  <StateLoader /> */}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+              <Toaster />
+            </ThemeProvider>
           </UserSession>
         </main>
       </body>
     </html>
-    
   );
 }

@@ -3,6 +3,7 @@ import WomanLaptop from "../../../public/WomanLaptop.png";
 import { Button } from "../ui/button";
 import { textBold } from "@/styles/fonts";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -19,15 +20,16 @@ const Footer = () => {
         <p className="text-[12px] text-gray-400">CoCode © 2023</p>
       </section>
       <section className="w-full md:w-1/6">
-        {/* eslint-disable */}
-        <img
+        <Image
+          quality={1}
+          loading="lazy"
+          objectPosition="center"
           src={WomanLaptop.src}
           alt="WomanLaptop"
           width={224}
           height={172}
           className="absolute bottom-0 right-0 md:bottom-5 md:block "
         />
-        {/* eslint-enable */}
       </section>
     </div>
   );

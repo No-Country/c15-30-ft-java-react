@@ -26,6 +26,7 @@ const authOptions = {
             puesto: "Administrador",
             avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png",
             rol: "admin",
+            githubUser: "jandres373",
           }
         }
 

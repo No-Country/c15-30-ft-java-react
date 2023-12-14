@@ -6,7 +6,6 @@ const page = ({searchParams}) => {
   const decodedData = atob(encryptedCommand);
   const parsed = JSON.parse(decodedData);
 
-  console.log(parsed);
 
   return (
     <div>
