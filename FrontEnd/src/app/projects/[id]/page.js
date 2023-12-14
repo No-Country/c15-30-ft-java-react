@@ -13,7 +13,6 @@ const ProjectsId = async ({ params }) => {
   const userId = project.userId;
   const user = await API.get(`/users/${userId}`);
 
-  console.log(project);
 
   return (
     <div className="relative h-screen flex flex-col gap-[20px]">

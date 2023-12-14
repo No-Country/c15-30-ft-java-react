@@ -20,7 +20,6 @@ const Create = async () => {
       userId: user?.id,
     }
     const res = API.post("/projects", task)
-    console.log(task)
   }
 
   return (

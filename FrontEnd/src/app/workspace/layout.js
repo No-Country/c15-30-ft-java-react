@@ -5,7 +5,6 @@ import authOptions from "../api/auth/[...nextauth]/authOptions";
 import Footer from "@/components/layout/Footer";
 import WorkspaceSideBar from "@/components/layout/WorkspaceSideBar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {motion, AnimatePresence} from "framer-motion"
 
 const layout = async ({ children }) => {
   const session = await getServerSession(authOptions);
@@ -26,7 +25,7 @@ const layout = async ({ children }) => {
         </div>
         <div>
           <ScrollArea className="w-full h-full md:h-[calc(100vh-72px)]">
-          {children}
+            {children}
           </ScrollArea>
         </div>
         <div className="md:hidden">

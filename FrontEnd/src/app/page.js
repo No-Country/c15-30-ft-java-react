@@ -69,14 +69,14 @@ export default async function Home(req, res) {
 
         <ScrollArea className="flex  w-[400px] md:w-full  my-32 ">
           <div className="w-full justify-center">
-          <TitleContainer
-            type={"titleAndDescription"}
-            content={{
-              title: "Testimonios",
-              description: "Las opiniones de algunos de nuestros usuarios",
-            }}
-            className={""}
-          />
+            <TitleContainer
+              type={"titleAndDescription"}
+              content={{
+                title: "Testimonios",
+                description: "Las opiniones de algunos de nuestros usuarios",
+              }}
+              className={""}
+            />
           </div>
           <div className="flex space-x-4 gap-5 py-2 px-2 md:flex md:justify-center W-FULL">
             <Testimonials
@@ -114,9 +114,8 @@ export default async function Home(req, res) {
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
-
       </div>
-        <Footer />
+      <Footer />
     </div>
   );
 }
