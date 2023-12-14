@@ -1,0 +1,148 @@
+Date : 2023-12-14 02:40:34
+Directory : c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src
+Total : 88 files,  5025 codes, 493 comments, 524 blanks, all 6042 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         85 |      4,810 |        493 |        483 |      5,786 |
+| CSS        |          2 |        115 |          0 |         41 |        156 |
+| JSON       |          1 |        100 |          0 |          0 |        100 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                 |         88 |      5,025 |        493 |        524 |      6,042 |
+| . (Files)                                                                                                                         |          1 |          9 |          0 |          4 |         13 |
+| app                                                                                                                               |         23 |        610 |          3 |        109 |        722 |
+| app (Files)                                                                                                                       |          2 |        147 |          0 |         12 |        159 |
+| app\api                                                                                                                           |          2 |         63 |          1 |          7 |         71 |
+| app\api\auth                                                                                                                      |          2 |         63 |          1 |          7 |         71 |
+| app\api\auth\[...nextauth]                                                                                                        |          2 |         63 |          1 |          7 |         71 |
+| app\explore                                                                                                                       |          2 |         44 |          1 |          9 |         54 |
+| app\guide                                                                                                                         |          2 |          8 |          0 |          6 |         14 |
+| app\guide (Files)                                                                                                                 |          1 |          0 |          0 |          1 |          1 |
+| app\guide\[page]                                                                                                                  |          1 |          8 |          0 |          5 |         13 |
+| app\login                                                                                                                         |          2 |         17 |          0 |          6 |         23 |
+| app\projects                                                                                                                      |          6 |        153 |          1 |         31 |        185 |
+| app\projects (Files)                                                                                                              |          1 |          8 |          0 |          7 |         15 |
+| app\projects\[id]                                                                                                                 |          2 |         71 |          0 |         13 |         84 |
+| app\projects\me                                                                                                                   |          3 |         74 |          1 |         11 |         86 |
+| app\projects\me (Files)                                                                                                           |          1 |          7 |          0 |          2 |          9 |
+| app\projects\me\create                                                                                                            |          2 |         67 |          1 |          9 |         77 |
+| app\user                                                                                                                          |          2 |         47 |          0 |         11 |         58 |
+| app\workspace                                                                                                                     |          5 |        131 |          0 |         27 |        158 |
+| app\workspace (Files)                                                                                                             |          2 |         74 |          0 |         13 |         87 |
+| app\workspace\calendar                                                                                                            |          1 |         17 |          0 |          4 |         21 |
+| app\workspace\contribute                                                                                                          |          1 |         17 |          0 |          5 |         22 |
+| app\workspace\tasks                                                                                                               |          1 |         23 |          0 |          5 |         28 |
+| axios                                                                                                                             |          1 |         19 |          1 |          5 |         25 |
+| components                                                                                                                        |         44 |      3,464 |        489 |        340 |      4,293 |
+| components\layout                                                                                                                 |         23 |      2,366 |        173 |        165 |      2,704 |
+| components\ui                                                                                                                     |         21 |      1,098 |        316 |        175 |      1,589 |
+| constants                                                                                                                         |          2 |        126 |          0 |          0 |        126 |
+| context                                                                                                                           |          2 |         12 |          0 |          5 |         17 |
+| lib                                                                                                                               |          1 |          5 |          0 |          2 |          7 |
+| state                                                                                                                             |          1 |         17 |          0 |          6 |         23 |
+| styles                                                                                                                            |          3 |        119 |          0 |         43 |        162 |
+| svgs                                                                                                                              |          9 |        630 |          0 |          9 |        639 |
+| utils                                                                                                                             |          1 |         14 |          0 |          1 |         15 |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                          | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\api\auth\[...nextauth]\authOptions.js     | JavaScript |         59 |          1 |          6 |         66 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\api\auth\[...nextauth]\route.js           | JavaScript |          4 |          0 |          1 |          5 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\explore\layout.js                         | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\explore\page.js                           | JavaScript |         24 |          1 |          5 |         30 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\guide\[page]\page.js                      | JavaScript |          8 |          0 |          5 |         13 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\guide\page.js                             | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\layout.js                                 | JavaScript |         33 |          0 |          4 |         37 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\login\layout.js                           | JavaScript |          5 |          0 |          3 |          8 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\login\page.js                             | JavaScript |         12 |          0 |          3 |         15 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\page.js                                   | JavaScript |        114 |          0 |          8 |        122 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\[id]\layout.js                   | JavaScript |          7 |          0 |          3 |         10 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\[id]\page.js                     | JavaScript |         64 |          0 |         10 |         74 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\me\create\layout.js              | JavaScript |         14 |          0 |          3 |         17 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\me\create\page.js                | JavaScript |         53 |          1 |          6 |         60 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\me\page.js                       | JavaScript |          7 |          0 |          2 |          9 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\projects\page.js                          | JavaScript |          8 |          0 |          7 |         15 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\user\layout.js                            | JavaScript |         20 |          0 |          5 |         25 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\user\page.js                              | JavaScript |         27 |          0 |          6 |         33 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\workspace\calendar\page.js                | JavaScript |         17 |          0 |          4 |         21 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\workspace\contribute\page.js              | JavaScript |         17 |          0 |          5 |         22 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\workspace\layout.js                       | JavaScript |         36 |          0 |          4 |         40 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\workspace\page.js                         | JavaScript |         38 |          0 |          9 |         47 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\app\workspace\tasks\page.js                   | JavaScript |         23 |          0 |          5 |         28 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\axios\apiConnection.js                        | JavaScript |         19 |          1 |          5 |         25 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\ButtonAuth.jsx              | JavaScript |         46 |         15 |          6 |         67 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\CreateProjectDialog.jsx     | JavaScript |         24 |         28 |          6 |         58 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\CreateProjectView.jsx       | JavaScript |        105 |         22 |          8 |        135 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\DropDownNavbar.jsx          | JavaScript |         67 |         21 |          5 |         93 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\DynamicLayer.jsx            | JavaScript |         10 |          0 |          4 |         14 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\Footer.jsx                  | JavaScript |         36 |          0 |          3 |         39 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\LoginCard.jsx               | JavaScript |         86 |          8 |          7 |        101 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\LoginForm.jsx               | JavaScript |        192 |          1 |         16 |        209 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\ModeToggle.jsx              | JavaScript |         37 |          0 |          4 |         41 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\NavBar.jsx                  | JavaScript |        337 |         10 |         15 |        362 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\NavBarScrollProgress.jsx    | JavaScript |         17 |          0 |          5 |         22 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\PlantBolbContainer.jsx      | JavaScript |         26 |          0 |          2 |         28 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\ProjectCard.jsx             | JavaScript |         45 |         19 |          2 |         66 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\ProjectsNavigation.jsx      | JavaScript |        158 |          0 |          7 |        165 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\Scrolly.jsx                 | JavaScript |        160 |          6 |         14 |        180 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\TasksContent.jsx            | JavaScript |          5 |          0 |          4 |          9 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\Testimonials.jsx            | JavaScript |         26 |          0 |          4 |         30 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WordspaceReactiveCards.jsx  | JavaScript |         86 |          9 |         14 |        109 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WorkSpaceCards.jsx          | JavaScript |        148 |         34 |         10 |        192 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WorkspaceCharts.jsx         | JavaScript |        180 |          0 |         12 |        192 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WorkspaceSideBar.jsx        | JavaScript |        190 |          0 |          5 |        195 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WorkspaceTable.jsx          | JavaScript |        361 |          0 |          6 |        367 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\layout\WorkspaceUserInfoLoader.jsx | JavaScript |         24 |          0 |          6 |         30 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\ImageContainer.jsx              | JavaScript |         23 |         19 |          4 |         46 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\avatar.jsx                      | JavaScript |         35 |         69 |          9 |        113 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\badge.jsx                       | JavaScript |         34 |         44 |          2 |         80 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\button.jsx                      | JavaScript |         94 |         37 |          6 |        137 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\card.jsx                        | JavaScript |         42 |          0 |          9 |         51 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\checkbox.jsx                    | JavaScript |         20 |          0 |          5 |         25 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\dialog.jsx                      | JavaScript |         83 |          0 |         14 |         97 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\dropdown-menu.jsx               | JavaScript |        139 |          0 |         19 |        158 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\input.jsx                       | JavaScript |         78 |         36 |         10 |        124 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\navigation-menu.jsx             | JavaScript |         94 |          0 |         13 |        107 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\scroll-area.jsx                 | JavaScript |         35 |          0 |          6 |         41 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\searchBar.jsx                   | JavaScript |          9 |          0 |          6 |         15 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\separator.jsx                   | JavaScript |         21 |          0 |          5 |         26 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\table.jsx                       | JavaScript |         73 |          0 |         11 |         84 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\textDisplayWIthTitle.jsx        | JavaScript |         27 |         45 |          7 |         79 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\titleContainer.jsx              | JavaScript |         17 |         40 |          1 |         58 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\titleDisplayWithButton.jsx      | JavaScript |         20 |         22 |          3 |         45 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\toast.jsx                       | JavaScript |         72 |          0 |         11 |         83 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\toaster.jsx                     | JavaScript |         32 |          0 |          4 |         36 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\toolBar.jsx                     | JavaScript |         23 |          1 |          5 |         29 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\components\ui\use-toast.js                    | JavaScript |        127 |          3 |         25 |        155 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\constants\MOCK_DATA.json                      | JSON       |        100 |          0 |          0 |        100 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\constants\comments.js                         | JavaScript |         26 |          0 |          0 |         26 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\context\ThemeProvider.jsx                     | JavaScript |          6 |          0 |          2 |          8 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\context\UserSession.jsx                       | JavaScript |          6 |          0 |          3 |          9 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\lib\utils.js                                  | JavaScript |          5 |          0 |          2 |          7 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\middleware.js                                 | JavaScript |          9 |          0 |          4 |         13 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\state\StateLoader.jsx                         | JavaScript |         17 |          0 |          6 |         23 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\styles\animations.css                         | CSS        |         22 |          0 |          3 |         25 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\styles\fonts.js                               | JavaScript |          4 |          0 |          2 |          6 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\styles\globals.css                            | CSS        |         93 |          0 |         38 |        131 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\BigBlob.jsx                              | JavaScript |         19 |          0 |          1 |         20 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\Blob.jsx                                 | JavaScript |         19 |          0 |          1 |         20 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\BlobWorkspaceLg.jsx                      | JavaScript |         19 |          0 |          1 |         20 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\BlobWorkspaceMd.jsx                      | JavaScript |         19 |          0 |          1 |         20 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\BlobWorkspaceSm.jsx                      | JavaScript |         19 |          0 |          1 |         20 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\NavBarBlob.jsx                           | JavaScript |         18 |          0 |          1 |         19 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\NavBarBlob2.jsx                          | JavaScript |         31 |          0 |          1 |         32 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\Plant.jsx                                | JavaScript |         36 |          0 |          1 |         37 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\svgs\SvgHombreLaptop.jsx                      | JavaScript |        450 |          0 |          1 |        451 |
+| c:\Users\USUARIO\Code\1-NO COUNTRY\RemoteFrontEnd\c15-30-ft-java-react\FrontEnd\src\utils\localeStorage.js                        | JavaScript |         14 |          0 |          1 |         15 |
+| Total                                                                                                                             |            |      5,025 |        493 |        524 |      6,042 |
++-----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

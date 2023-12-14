@@ -13,6 +13,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { useEffect } from "react";
 
 import { PolarArea, Line, Pie, Doughnut } from "react-chartjs-2";
 
@@ -29,7 +30,30 @@ ChartJS.register(
   Legend
 );
 
-export const PolarAreaChart = ({ className = "" }) => {
+export const PolarAreaChart = ({ className = "", selectedProject }) => {
+  useEffect(() => {
+    const getData = async () => {
+      return await fetch(
+        `https://api.github.com/repos/Jandres373/${selectedProject}/collaborators/jandres373`,
+        {
+          owner: "jandres373",
+          repo: selectedProject,
+          method: "GET",
+          headers: {
+            Authorization: `token ${process.env.GITHUB_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      ).catch((error) => {
+        console.error("Error en la solicitud:", error);
+      });
+    };
+
+    if (selectedProject) {
+      getData().then((resp) => console.log(resp));
+    }
+  }, [selectedProject]);
+
   const config = {
     type: "polarArea",
     data: {
@@ -125,7 +149,8 @@ export const LineChartChart = ({ className = "" }) => {
     <div
       className={`w-full h-full flex justify-center items-center  ${className}`}
     >
-      <Line data={data}
+      <Line
+        data={data}
         options={{
           plugins: {
             legend: {
@@ -144,26 +169,26 @@ export const LineChartChart = ({ className = "" }) => {
 
 export const DoughnutChart = ({ className = "" }) => {
   const data = {
-    labels: ['JavaScript', 'TypeScript', 'Python', 'Java', 'HTML', 'CSS'],
+    labels: ["JavaScript", "TypeScript", "Python", "Java", "HTML", "CSS"],
     datasets: [
       {
-        label: '# de proyectos',
+        label: "# de proyectos",
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.8)',
-          'rgba(54, 162, 235, 0.8)',
-          'rgba(255, 206, 86, 0.8)',
-          'rgba(75, 192, 192, 0.8)',
-          'rgba(153, 102, 255, 0.8)',
-          'rgba(255, 159, 64, 0.8)',
+          "rgba(255, 99, 132, 0.8)",
+          "rgba(54, 162, 235, 0.8)",
+          "rgba(255, 206, 86, 0.8)",
+          "rgba(75, 192, 192, 0.8)",
+          "rgba(153, 102, 255, 0.8)",
+          "rgba(255, 159, 64, 0.8)",
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
         ],
         borderWidth: 1,
       },
@@ -171,7 +196,9 @@ export const DoughnutChart = ({ className = "" }) => {
   };
 
   return (
-    <div className={`w-full h-full flex justify-center items-center  ${className}`}>
+    <div
+      className={`w-full h-full flex justify-center items-center  ${className}`}
+    >
       <Doughnut
         data={data}
         options={{

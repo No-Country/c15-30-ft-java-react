@@ -23,7 +23,6 @@ const Footer = () => {
         <Image
           quality={1}
           loading="lazy"
-          objectPosition="center"
           src={WomanLaptop.src}
           alt="WomanLaptop"
           width={224}
