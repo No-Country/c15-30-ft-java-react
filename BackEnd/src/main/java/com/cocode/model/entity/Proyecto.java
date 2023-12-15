@@ -1,24 +1,35 @@
 package com.cocode.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.List;
+import java.io.Serializable;
 
-@Entity
-@Data
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class Proyecto {
+@Entity
+@Table(name = "proyectos")
+public class Proyecto implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(length = 50, nullable = false)
     private String nombre;
+
+    @Column(length = 250)
     private String descripcion;
-    @OneToMany(mappedBy = "proyecto")
-    private List<Colaborador> colaboradores;
+
+    private String portada;
+
+    @OneToOne(targetEntity = Dificultad.class)
+    @JoinColumn(name = "dificultad")
+    private Dificultad dificultad;
+
+    @Column(columnDefinition = "tinyint(1)", nullable = false)
+    private Boolean activo;
 }
