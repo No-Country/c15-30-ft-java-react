@@ -34,13 +34,11 @@ const WorkSpace = async () => {
             content={pageContent}
           />
         </section>
-        
-        <section className="flex flex-col gap-10 my-20 w-full md:grid md:grid-cols-12 md:grid-rows-6">
-        <WordspaceReactiveCards projects={projects}>
 
-        </WordspaceReactiveCards>
+        <section className="flex flex-col my-20 w-full">
+          <WordspaceReactiveCards projects={projects}></WordspaceReactiveCards>
         </section>
-      </div>{" "}
+      </div>
     </div>
   );
 };

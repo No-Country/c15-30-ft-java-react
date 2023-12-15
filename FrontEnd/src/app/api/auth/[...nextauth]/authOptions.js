@@ -5,7 +5,7 @@ const authOptions = {
     CredentialsProvider({
       name: "Credentials",
       async authorize(credentials, req) {
-        const res = await fetch(
+        /* const res = await fetch(
           `${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,
           {
             method: "POST",
@@ -15,8 +15,9 @@ const authOptions = {
             }),
             headers: { "Content-Type": "application/json" },
           }
-        );
+        ); */
         /* TODO modificar esto una vez haya conexion con el back */
+        
         const response = /* await res.json(); */ {
           user: {
             id:1,
@@ -26,15 +27,16 @@ const authOptions = {
             puesto: "Administrador",
             avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png",
             rol: "admin",
+            githubUser: "jandres373",
           }
         }
 
         if (response.message) throw response;
 
         const { user } = response;
-        const { token } = response;
+        /* const { token } = response; */
 
-        return { user, token };
+        return { user, /* token */ };
       },
     }),
   ],

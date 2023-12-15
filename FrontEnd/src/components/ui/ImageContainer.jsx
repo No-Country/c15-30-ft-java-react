@@ -21,7 +21,7 @@ import React from "react";
  * };
  */
 const ImageContainer = ({ size, image, className }) => {
-  console.log(size)
+
   if ((size === "sm"))
     return (
       <div className={`w-content  h-[328px] mt-[21px]`}>

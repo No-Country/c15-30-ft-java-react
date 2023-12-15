@@ -8,7 +8,7 @@ import {
   VisibilityState,
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel, 
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
@@ -162,7 +162,7 @@ export const columns = [
     accessorKey: "fecha_limite",
     header: () => <div className="text-left">Fecha_limite</div>,
     cell: ({ row }) => {
-      const Fecha_limite = row.getValue("Fecha_limite");
+      const Fecha_limite = row.getValue("fecha_limite");
       const fechaLimiteString = Fecha_limite;
       const fechaLimite = new Date(fechaLimiteString);
       const opcionesDeFormato = {
@@ -241,18 +241,16 @@ export function WorkspaceTable({ className }) {
           "Debes seleccionar como mínimo una tarea para gestionarla.",
         action: <ToastAction altText="Deshacer">Entendido</ToastAction>,
       });
-    console.log(selected?.rowsById);
   };
 
   return (
-    <div className={`w-full ${className}`}
-    >
+    <div className={`w-full ${className}`}>
       <div className="flex items-left py-4">
         <Input
-          placeholder="Filter emails..."
-          value={table.getColumn("email")?.getFilterValue() ?? ""}
+          placeholder="Filtrar repositorio..."
+          value={table.getColumn("repositorio")?.getFilterValue() ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("repositorio")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
@@ -289,7 +287,7 @@ export function WorkspaceTable({ className }) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <Card className="rounded-[25px] shadow-sm">
+      <Card className="rounded-[25px] shadow-sm overflow-auto max-h-[500px]">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

@@ -58,9 +58,8 @@ const WorkspaceSideBar = ({ user }) => {
           <li>
             <Button tipo={"rounded"} variant={"link"} size={"roundedSm"}>
               {/* TODO reparar este componente */}
-              <DropDownNavbar>
-                <FaSlidersH />
-              </DropDownNavbar>
+
+              <FaSlidersH />
             </Button>
           </li>
         </ul>

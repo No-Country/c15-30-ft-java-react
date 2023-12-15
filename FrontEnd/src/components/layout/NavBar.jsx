@@ -29,7 +29,7 @@ import { motion } from "framer-motion";
 import SearchBar from "../ui/searchBar";
 import Image from "next/image";
 import defaultAvatar from "../../../public/defaultAvatar.png";
-
+import { signOut } from "next-auth/react";
 const linkVariants = {
   initial: { y: -100 },
   animate: { y: 0 },
@@ -101,6 +101,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
     ? user?.avatar
     : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png";
   const [isExtended, setExtended] = useState(false);
+
 
   const handleAvatarClick = () => {
     setExtended(!isExtended);
@@ -221,7 +222,7 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   <ModeToggle />
                 </li>
                 <li>
-                  <Button size={"sm"}>crear</Button>
+                  <Button variant={"destructive"}  size={"sm"} onClick={()=>signOut()}>Salir</Button>
                 </li>
               </ul>
 

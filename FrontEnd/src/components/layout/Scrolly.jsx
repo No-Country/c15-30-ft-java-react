@@ -47,7 +47,7 @@ const ScrollContainer = ({ children }) => {
           whileInView="visible"
           className="mt-20 w-[357px]"
           src={HomeGroup.src}
-          alt=""
+          alt="Ilustracion hombre frente a pc"
         />
         {/* eslint-enable */}
       </div>
@@ -60,7 +60,7 @@ const ScrollContainer = ({ children }) => {
           whileInView="visible"
           className="mb-34"
           src={HomeHombreTrabajando.src}
-          alt=""
+          alt="ilustracion trabajadores celebrando"
         />
         {/* eslint-enable */}
         <section>
