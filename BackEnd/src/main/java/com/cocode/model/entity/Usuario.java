@@ -1,38 +1,52 @@
 package com.cocode.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import jakarta.validation.constraints.Email;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Data
+@ToString
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario implements Serializable {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "nombre")
+
+    @Column(length = 10, nullable = false)
     private String nombre;
-    @Column(name = "apellido")
+
+    @Column(length = 25, nullable = false)
     private String apellido;
-    @Column(name = "username")
-    private String username;
-    @Column(name = "mail")
-    private String mail;
-    @Column(name = "contraseña")
-    private String contrasena;
-    @Column(name = "activo")
-    private boolean activo;
 
-    // TODO: Agregar atributos de pais, proyectos, proyectos_favoritos y stack_usuario
+    @Email
+    @Column(length = 25, nullable = false, unique = true)
+    private String email;
 
+    @Column(nullable = false)
+    private String password;
+
+    @OneToOne(targetEntity = Pais.class)
+    @JoinColumn(name = "pais")
+    private Pais pais;
+
+    @Column(length = 250)
+    private String descripcion;
+
+    @Column(length = 30)
+    private String rol;
+
+    private String avatar;
+
+    @Column(columnDefinition="int", nullable = false)
+    private Integer puntos;
+
+    @Column(columnDefinition="tinyint(1)", nullable = false)
+    private Boolean activo;
 }

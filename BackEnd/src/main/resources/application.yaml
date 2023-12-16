@@ -1,6 +1,26 @@
 spring:
+  output:
+    ansi:
+      enabled: always
   datasource:
-    url: ${DB_URL}:${DB_PORT}/${DB}
-    username: ${DB_USER}
-    password: ${DB_KEY}
-    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL}/${DB}
+    username: ${DB_PROD_USER}
+    password: ${DB_PROD_KEY}
+    hikari:
+      maximum-pool-size: 1
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+    swagger-ui:
+      path: /swagger-ui.html
