@@ -43,8 +43,6 @@ const WorkSpace = async ({searchParams}) => {
           />
         </section>
 
-
-
         <section className="flex flex-col my-20 w-full">
           <WordspaceReactiveCards projects={projects}></WordspaceReactiveCards>
         </section>

@@ -3,12 +3,10 @@ import { ProjectCard } from "@/components/layout/ProjectCard";
 import { Input } from "@/components/ui/input";
 import React from "react";
 
-import Proyects from "../../constants/Proyectos.json"
-
 const Explore = async () => {
-  /* const projects = await API.get("/projects"); */
+  const response = await API.get("/proyectos");
+  const projects = response.object;
   // debería traerse tambien la lista de proyectos a los que se ha dado like
-  const projects = Proyects;
 
   return (
     <div>
