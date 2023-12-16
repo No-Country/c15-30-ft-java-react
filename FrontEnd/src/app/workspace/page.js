@@ -4,15 +4,23 @@ import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
 import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 import API from "@/axios/apiConnection";
 import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
-import { WorkspaceTable } from "@/components/layout/WorkspaceTable";
+import Proyectos from "../../constants/Proyectos.json"
+
 
 const pageContent = {
   title: "",
   data: ["Aquí puedes ver los proyectos en los que participas actualmente."],
 };
 
-const WorkSpace = async () => {
-  const projects = await API.get("/projects");
+const WorkSpace = async ({searchParams}) => {
+  //TODO conectar los proyectos con la api
+  // const projects = await API.get("/projects");
+  //TODO desconectar el json de mockaroo cuando tengamos el crud.
+  const projects = Proyectos;
+
+  const params = searchParams
+  console.log(params)
+  
 
   return (
     <div className="h-full md:w-full">
@@ -34,6 +42,8 @@ const WorkSpace = async () => {
             content={pageContent}
           />
         </section>
+
+
 
         <section className="flex flex-col my-20 w-full">
           <WordspaceReactiveCards projects={projects}></WordspaceReactiveCards>

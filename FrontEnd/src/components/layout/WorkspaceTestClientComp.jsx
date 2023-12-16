@@ -8,7 +8,6 @@ import useSelectedProject from "@/state/projects/SelectedProject";
 
 const WorkspaceTestClientComp = ({}) => {
   const selectedProject = useSelectedProject((state) => state.selectedProject);
-  console.log(selectedProject);
 
   return (
     <>
@@ -25,7 +24,7 @@ const WorkspaceTestClientComp = ({}) => {
           "col-span-7 shadow-sm w-full h-[377px] p-[40px] flex flex-col rounded-[25px] md:max-w-full md:max-h-[820px] items-center "
         )}
       >
-        <LineChartChart />
+        <LineChartChart selectedProject={selectedProject} />
       </Card>
     </>
   );

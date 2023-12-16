@@ -6,3 +6,8 @@ const useSelectedProject = create((set) => ({
 }));
 
 export default useSelectedProject;
+
+export const useProjectCommits = create((set)=>({
+  commits: [],
+  setCommits: (commits) => set({ commits: commits }),
+}))

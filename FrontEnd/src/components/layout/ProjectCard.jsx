@@ -23,10 +23,8 @@ import Link from "next/link";
  */
 export const ProjectCard = ({ project, like }) => {
   // project debería ser la data de un proyecto devuelta por la API.
-  const nombre = project?.nombre;
-  const imagen = project?.imagenPerfilUrl; // en lugar de imagenPerfilUrl, debería ser la url de la imagen del proyecto.
-  const descripcion = project?.descripcion;
-  const tecnologias = project?.tecnologias || ["angular","javascript","java"]; // debería ser la lista de tecnologías del proyecto
+  const {id, nombre, portada, descripcion, dificultad, activo} = project;
+  const tecnologias = project?.tecnologias || ["angular","javascript","java"]; 
 
   return (
     <section className="h-full w-full p-6">
@@ -36,7 +34,7 @@ export const ProjectCard = ({ project, like }) => {
           {/* eslint-disable */}
           <Link href={`/projects/${project.id}`}>
             <img
-              src={imagen}
+              src={portada}
               width={400}
               height={313}
               alt={`Imagen ${nombre}`}

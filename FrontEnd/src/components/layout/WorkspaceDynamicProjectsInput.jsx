@@ -1,17 +1,21 @@
-'use client'
+"use client";
 
 import React from "react";
-import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
-import useSelectedProject from "@/state/projects/SelectedProject"; 
+import useSelectedProject from "@/state/projects/SelectedProject";
 
 const WorkspaceDynamicProjectsInput = ({ reposArr }) => {
-  const setSelectedProject = useSelectedProject((state) => state.setSelectedProject);
+
+  const setSelectedProject = useSelectedProject(
+    (state) => state.setSelectedProject
+  );
+
 
   const handleSelectChange = (event) => {
     setSelectedProject(event.target.value);
   };
+
 
   return (
     <div className="w-full flex flex-col justify-end items-end md:flex-row md:justify-between ">
@@ -21,19 +25,16 @@ const WorkspaceDynamicProjectsInput = ({ reposArr }) => {
         </label>
         <p>y obten los datos sobre el mismo</p>
       </div>
-      <Input
-        type="select"
-        tipo="default"
-        placeholder="Buscar"
-        list="opciones"
-        className={"max-w-[400px]"}
-        onChange={handleSelectChange}
-      />
-      <datalist id="opciones">
+      <select className={"max-w-[400px]"} onChange={handleSelectChange}>
+        <option value="" disabled selected>
+          Repositorios
+        </option>
         {reposArr.map((opcion, index) => (
-          <option key={index} value={opcion} />
+          <option key={index} value={opcion}>
+            {opcion}
+          </option>
         ))}
-      </datalist>
+      </select>
     </div>
   );
 };

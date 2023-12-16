@@ -58,7 +58,7 @@ const TextDisplayWithTitle = ({ type, variant, content, ...props }) => {
   if (type === "vertical")
     return (
       <div className="flex flex-col gap-2 justify-between" {...props}>
-        <h2 className={cn(textBold.className, variants[variant])}>
+        <h2 className={cn(textBold.className, variants[variant], "line-clamp-1")}>
           {content.title}
         </h2>
         <p className={cn("text-gray-500 text-sm line-clamp-2")}>{content.data}</p>
