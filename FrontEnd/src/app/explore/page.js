@@ -2,10 +2,11 @@ import API from "@/axios/apiConnection";
 import { ProjectCard } from "@/components/layout/ProjectCard";
 import { Input } from "@/components/ui/input";
 import React from "react";
+import Proyectos from "../../constants/Proyectos.json"
 
 const Explore = async () => {
   const response = await API.get("/proyectos");
-  const projects = response.object;
+  const projects = response?.object || Proyectos
   // debería traerse tambien la lista de proyectos a los que se ha dado like
 
   return (

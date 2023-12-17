@@ -35,6 +35,7 @@ const authOptions = {
 
         const { user } = response;
         /* const { token } = response; */
+        console.log(user)
 
         return { user, /* token */ };
       },
@@ -51,7 +52,6 @@ const authOptions = {
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl;
       console.log(auth);
-      console.log('Me ejecuto en el callback');
       return true;
     },
   },

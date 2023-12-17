@@ -13,10 +13,8 @@ const pageContent = {
 };
 
 const WorkSpace = async ({searchParams}) => {
-  //TODO conectar los proyectos con la api
-  // const projects = await API.get("/projects");
-  //TODO desconectar el json de mockaroo cuando tengamos el crud.
-  const projects = Proyectos;
+  const response = await API.get("/proyectos");
+  const projects = response?.object || Proyectos
 
   const params = searchParams
   console.log(params)

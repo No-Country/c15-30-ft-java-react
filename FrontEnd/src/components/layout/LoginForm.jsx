@@ -9,18 +9,19 @@ import { textBold } from "@/styles/fonts";
 import { useForm } from "react-hook-form";
 import ButtonAuth from "./ButtonAuth";
 import { signIn } from "next-auth/react";
-import "@/styles/animations.css";
 import { motion, AnimatePresence } from "framer-motion";
 import Bolb from "../../../public/Blob.png";
 import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
 import Image from "next/image";
+import "@/styles/animations.css";
+import API from "@/axios/apiConnection";
 
 const LoginForm = () => {
   const router = useRouter();
-  const { toast } = useToast();
-  const { register, handleSubmit, errors } = useForm();
   const [isLogin, setIsLogin] = useState(false);
+  const { register, handleSubmit, errors } = useForm();
+  const { toast } = useToast();
 
   const handleToggle = () => {
     setIsLogin(!isLogin);
@@ -50,24 +51,39 @@ const LoginForm = () => {
     }
   };
 
-  const onRegisterSubmit = (data) => {
-    if (data.confirm_password === data.password) {
-      toast({
-        variant: "",
-        title: "Registro exitoso",
-        description: "Inicia sesion para continuar",
-        isClosable: true,
-        duration: 5000,
-      });
-      setIsLogin(false);
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Password no coincide",
-        description: "El password debe coincidir con la cofirmacion",
-        isClosable: true,
-        duration: 5000,
-      });
+  const onRegisterSubmit = async (data) => {
+    console.log(data);
+
+    try {
+      if (data.confirm_password !== data.password) {
+        return toast({
+          variant: "destructive",
+          title: "Password no coincide",
+          description: "El password debe coincidir con la confirmación",
+          isClosable: true,
+          duration: 5000,
+        });
+      }
+      //test fetch para verificar si la politica CORS afecta en modo no-cors
+      const resp = await fetch("http://localhost:8080/api/v1/usuarios", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      }, {mode:"no-cors"})
+
+      if (resp) {
+        toast({
+          variant: "",
+          title: "Registro exitoso",
+          description: "Inicia sesión para continuar",
+          isClosable: true,
+          duration: 5000,
+        });
+        setIsLogin(false);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
