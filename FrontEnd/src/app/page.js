@@ -25,7 +25,6 @@ const sectionContent = {
 
 export default async function Home(req, res) {
   const session = await getServerSession(authOptions);
-  
 
   return (
     <div className="">

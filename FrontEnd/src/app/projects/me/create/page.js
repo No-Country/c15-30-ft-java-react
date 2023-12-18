@@ -17,9 +17,12 @@ const Create = async () => {
     const task = {
       nombre: formData.get("nombre"),
       descripcion: formData.get("descripcion"),
-      userId: user?.id,
+      portada: "https://th.bing.com/th/id/OIP.AQ5rAzGvicbIAudCjnmlyQHaHa?rs=1&pid=ImgDetMain",
+      colaborador: 1,
+      dificultad: 1,
+      tareas_id: 1,
     };
-    const res = API.post("/projects", task);
+    const res = API.post("/proyecto", task);
   };
 
   return (
