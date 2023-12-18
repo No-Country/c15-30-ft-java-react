@@ -36,7 +36,6 @@ const linkVariants = {
 };
 
 export const WorkspaceNavBar = ({ user }) => {
-  
   const router = useRouter();
 
   return (
@@ -102,7 +101,6 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
     : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png";
   const [isExtended, setExtended] = useState(false);
 
-
   const handleAvatarClick = () => {
     setExtended(!isExtended);
   };
@@ -164,7 +162,6 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   </Button>
                 </Link>
               }
-              <FaBars className="text-title cursor-pointer" />
             </div>
           </div>
         </div>
@@ -222,7 +219,13 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   <ModeToggle />
                 </li>
                 <li>
-                  <Button variant={"destructive"}  size={"sm"} onClick={()=>signOut()}>Salir</Button>
+                  <Button
+                    variant={"destructive"}
+                    size={"xs"}
+                    onClick={() => signOut()}
+                  >
+                    Salir
+                  </Button>
                 </li>
               </ul>
 
@@ -273,19 +276,8 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
               className="flex justify-center items-center mr-[20px]"
               onClick={() => setExtended(!isExtended)}
             >
-              <Avatar className={"absolute z-10 cursor-pointer"}>
-                <AvatarImage src={avatar} />
-                <AvatarFallback>
-                  <Image
-                    src={defaultAvatar.src}
-                    width={100}
-                    height={100}
-                    alt="default avatar"
-                  />
-                </AvatarFallback>
-              </Avatar>
-              <DropDownNavbar>
-                <FaBars className="text-title cursor-pointer" />
+              <DropDownNavbar className={""}>
+                <FaBars className="text-title cursor-pointer " />
               </DropDownNavbar>
             </div>
           </div>
@@ -316,15 +308,9 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                 </div>
               </div>
               <div className="flex justify-center items-center mr-[30px]">
-                <Button
-                  tipo={"rounded"}
-                  variant="default"
-                  size={"rounded"}
-                  className={"absolute top-4 z-10 cursor-pointer"}
-                  onClick={() => setExtended(!isExtended)}
-                >
-                  <FaBars className="text-[25px]" />
-                </Button>
+                <DropDownNavbar>
+                  <FaBars className="text-title cursor-pointer" />
+                </DropDownNavbar>
               </div>
             </div>
           </div>

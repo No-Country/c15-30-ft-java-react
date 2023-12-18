@@ -33,7 +33,7 @@ const LoginCard = () => {
   };
 
   return (
-    <div className="cardConfig h-screen p-[40px] flex flex-col rounded-t-[50px]">
+    <div className="shadow-md h-auto min-w-[400px] max-w-md p-[40px] flex flex-col rounded-[50px]">
       <section
         className={cn(
           textBold.className,
@@ -92,7 +92,6 @@ const LoginCard = () => {
         />
       </section>
       <hr className="mt-10 border-2 border-gray-300" />
-      aquí van las tecnologías
     </div>
   );
 };

@@ -16,7 +16,7 @@ import GithubLottie from "@/svgs/GithubLottie";
 
 const WordspaceReactiveCards = async ({ projects, children }) => {
   const session = await getServerSession(authOptions);
-  const { githubUser } = await session?.user?.user;
+  /* const { githubUser } = await session?.user?.user; */
 
   const res = await fetch("https://api.github.com/users/jandres373/repos", {
     method: "GET",

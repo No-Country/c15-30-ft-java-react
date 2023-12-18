@@ -90,7 +90,7 @@ const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
             )}
             {...props}
           />
-          <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" />
+          <FaSearch aria-label="button" className="absolute right-10 hover:scale-150 hover:animate-pulse top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer" type="submit" />
         </div>
       </div>
     );

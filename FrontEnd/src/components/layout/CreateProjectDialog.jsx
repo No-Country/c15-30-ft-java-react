@@ -40,7 +40,7 @@ const CreateProjectDialog = ({ opener, content, children }) => {
   return (
     <Dialog >
       <DialogTrigger>{opener}</DialogTrigger>
-      <DialogContent className="w-[98vw]">
+      <DialogContent className="w-[98vw] overflow-auto">
         <DialogHeader>
           <DialogTitle>{content.title}</DialogTitle>
           <DialogDescription>{content.description}</DialogDescription>

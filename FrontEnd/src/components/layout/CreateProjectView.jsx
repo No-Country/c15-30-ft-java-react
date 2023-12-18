@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import { Button } from "../ui/button";
@@ -13,7 +13,7 @@ import { textBold } from "@/styles/fonts";
  * =======================
  * @props {function} handleSubmit - Función para manejar la presentación del formulario.
  * **************************************************************
- * 
+ *
  * @example
  * import CreateProjectView from './Ruta';
  *
@@ -25,7 +25,7 @@ import { textBold } from "@/styles/fonts";
  *     const descripcion = formData.get("descripcion");
  *     console.log({nombre, descripcion});
  *   };
- * 
+ *
  *   return <CreateProjectView handleSubmit={handleFormSubmit} />;
  * };
  */
@@ -35,11 +35,14 @@ const CreateProjectView = () => {
     const nombre = formData.get("nombre");
     const descripcion = formData.get("descripcion");
 
-    console.log({nombre,descripcion})
+    console.log({ nombre, descripcion, picture });
   };
 
   return (
-    <form action={handleSubmit} className="flex flex-col gap-5">
+    <form
+      action={handleSubmit}
+      className="flex flex-col gap-5 z-0 overflow-y-auto"
+    >
       <h1 className={cn(textBold.className, "text-blue-500 text-xl")}>
         Crear proyecto
       </h1>
@@ -59,7 +62,7 @@ const CreateProjectView = () => {
           <textarea
             name="descripcion"
             cols="1"
-            rows="5"
+            rows="2"
             className="w-full  border border-gray-400 rounded-xl p-2"
             placeholder="Descripción"
           ></textarea>
@@ -72,7 +75,7 @@ const CreateProjectView = () => {
           variant={""}
           content={{
             title: "Tecnologías",
-            data: "Te recomendamos añadir las 5 aptitudes más relevantes para este proyecto. También aparecerán en tu sección «Aptitudes»",
+            data: "Te recomendamos añadir las 5 aptitudes más relevantes para este proyecto.",
           }}
         />
         <Button
@@ -92,7 +95,7 @@ const CreateProjectView = () => {
           variant={""}
           content={{
             title: "Imagenes",
-            data: "Añade imagenes del estado actual de tu proyecto y referencias de que es lo que quieres lograr.",
+            data: "Añade imagenes del estado actual de tu proyecto y referencias de lo que quieres lograr.",
           }}
         />
         <div class="relative">
@@ -116,6 +119,27 @@ const CreateProjectView = () => {
           </label>
         </div>
       </div>
+      <div>
+        {" "}
+        <TextDisplayWithTitle
+          id="tareas"
+          type={"vertical"}
+          variant={""}
+          content={{
+            title: "Tareas",
+            data: "Añade las tareas que esten por realizar en el proyecto.",
+          }}
+        />
+        <Button
+          type="button"
+          tipo={""}
+          variant={"outline"}
+          size={""}
+          className=""
+        >
+          + Añadir tareas
+        </Button>
+      </div>
       <div className="flex justify-end gap-5">
         <Button
           type="submit"
@@ -124,7 +148,7 @@ const CreateProjectView = () => {
           variant={"default"}
           className=""
         >
-          guardar
+          Guardar
         </Button>
       </div>
     </form>

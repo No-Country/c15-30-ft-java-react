@@ -21,24 +21,29 @@ import Link from "next/link";
       descripcion={project?.descripcion}
  * />
  */
-export const ProjectCard = ({ project, like }) => {
+export const ProjectCard = ({ project, like, ...props }) => {
   // project debería ser la data de un proyecto devuelta por la API.
-  const {id, nombre, portada, descripcion, dificultad, activo} = project;
-  const tecnologias = project?.tecnologias || ["angular","javascript","java"]; 
+  const { id, nombre, portada, descripcion, dificultad, activo } = project;
+  const tecnologias = project?.tecnologias || ["tech", "tech", "tech"];
 
   return (
-    <section className="h-full w-full p-6">
+    <section className={`h-full w-full p-6 max-w-[500px]`}>
       <h2 className={cn(textBold.className)}>{nombre}</h2>
       <div className="mt-2 h-full w-full">
+          <p className={cn(textBold.className, "text-primary")}>Vista previa</p>
         <div className="flex justify-between relative rounded-xl overflow-hidden border-red-200">
           {/* eslint-disable */}
           <Link href={`/projects/${project.id}`}>
-            <img
-              src={portada}
-              width={400}
-              height={313}
-              alt={`Imagen ${nombre}`}
-            />
+            {portada ? (
+              <img
+                src={portada}
+                width={400}
+                height={313}
+                alt={`Imagen ${nombre}`}
+              />
+            ) : (
+              <div className="w-[500px] h-[313px] bg-gray-400 animate-pulse"></div>
+            )}
           </Link>
           {/* eslint-enable */}
           <div className="absolute top-2 right-2 text-white">

@@ -9,7 +9,6 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import Testimonials from "@/components/layout/Testimonials";
 import Footer from "@/components/layout/Footer";
 import HombreLaptop from "../../public/ManLaptop.png";
-import HomeScrollSection from "@/components/layout/NavBarScrollProgress";
 import Scrolly from "@/components/layout/Scrolly";
 
 const titleContent = {

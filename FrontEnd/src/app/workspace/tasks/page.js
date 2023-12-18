@@ -12,12 +12,11 @@ const Tasks = ({ searchParams }) => {
   return (
     <>
       <div>
-        <WorkspaceTable
-          className={cn("hidden md:block col-span-12 row-span-2")}
-        />
-
         <DynamicLayer>
           <TasksContent text={parsed.nombre+" soy un añadido"} params={params} />
+          <WorkspaceTable
+          className={cn("hidden md:block col-span-12 row-span-2")}
+        />
         </DynamicLayer>
       </div>
     </>

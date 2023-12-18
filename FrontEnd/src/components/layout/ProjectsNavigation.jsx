@@ -113,7 +113,7 @@ export function ProjectsNavigation() {
           {/* dialog */}
 
           <CreateProjectDialog
-            className={cn(buttonVariants({ variant: "default" }))}
+            className={cn(buttonVariants({ variant: "default" }), "overflow-auto z-0")}
             opener={
               <NavigationMenuLink
                 className={cn(buttonVariants({ variant: "default" }), "w-24")}
@@ -121,12 +121,13 @@ export function ProjectsNavigation() {
                 Configura
               </NavigationMenuLink>
             }
-            content={{ title: "Crear proyecto", description: "hola 2" }}
+            content={{ title: "", description: "" }}
           >
+            {/* comp que renderiza el modal con las opciones para crear la tarea */}
             <CreateProjectView />
           </CreateProjectDialog>
 
-           {/* dialog */}
+          {/* dialog */}
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

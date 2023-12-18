@@ -1,16 +1,16 @@
-import axios from "axios"; 
+import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || process.env.BASE_URL,
+  baseURL: process.env.BASE_URL,
 });
 
 const handleRequest = async (requestFunction, path, data) => {
   try {
     const response = await requestFunction(path, data);
-    return response.data; 
+    return response.data;
   } catch (error) {
     console.error(error);
-    throw error; 
+    throw error;
   }
 };
 
@@ -19,7 +19,6 @@ const API = {
     const baseURL = usePublicBackend ? process.env.NEXT_PUBLIC_BACKEND_URL : process.env.BASE_URL;
     const dynamicAxiosInstance = axios.create({
       baseURL,
-      // ... otras configuraciones ...
     });
 
     return handleRequest(dynamicAxiosInstance.get, path);
@@ -28,7 +27,6 @@ const API = {
     const baseURL = usePublicBackend ? process.env.NEXT_PUBLIC_BACKEND_URL : process.env.BASE_URL;
     const dynamicAxiosInstance = axios.create({
       baseURL,
-      // ... otras configuraciones ...
     });
 
     return handleRequest(dynamicAxiosInstance.post, path, data);
@@ -37,7 +35,6 @@ const API = {
     const baseURL = usePublicBackend ? process.env.NEXT_PUBLIC_BACKEND_URL : process.env.BASE_URL;
     const dynamicAxiosInstance = axios.create({
       baseURL,
-      // ... otras configuraciones ...
     });
 
     return handleRequest(dynamicAxiosInstance.put, path, data);
@@ -46,7 +43,6 @@ const API = {
     const baseURL = usePublicBackend ? process.env.NEXT_PUBLIC_BACKEND_URL : process.env.BASE_URL;
     const dynamicAxiosInstance = axios.create({
       baseURL,
-      // ... otras configuraciones ...
     });
 
     return handleRequest(dynamicAxiosInstance.delete, path);
@@ -54,3 +50,4 @@ const API = {
 };
 
 export default API;
+

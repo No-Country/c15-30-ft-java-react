@@ -57,8 +57,6 @@ const WorkspaceSideBar = ({ user }) => {
           </li>
           <li>
             <Button tipo={"rounded"} variant={"link"} size={"roundedSm"}>
-              {/* TODO reparar este componente */}
-
               <FaSlidersH />
             </Button>
           </li>
@@ -83,29 +81,8 @@ const WorkspaceSideBar = ({ user }) => {
                 <FaUser /> <p className="text-sm text-gray-400">Tareas</p>
               </Link>
             </li>
-            <li>
-              <Link
-                href={`/workspace/calendar?command=${btoa(
-                  JSON.stringify(testObject)
-                )}`}
-                className="flex gap-2 items-center cursor-pointer"
-              >
-                <FaUser /> <p className="text-sm text-gray-400">Calendar</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/workspace/contribute?command=${btoa(
-                  JSON.stringify(testObject)
-                )}`}
-                className="flex gap-2 items-center cursor-pointer"
-              >
-                <FaUser /> <p className="text-sm text-gray-400">Contribute</p>
-              </Link>
-            </li>
           </ul>
         </nav>
-        por definir
         {/* Enlaces */}
         <p className="text-sm text-gray-400 mt-5">Enlaces</p>
         <Separator className={"my-1"} />

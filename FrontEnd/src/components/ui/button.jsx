@@ -8,9 +8,12 @@ const config = {
   width: "w-[219px]",
   height: "h-[49px]",
   textSize: "text-[16px]",
-  widthSm: "w-[70px]",
+  widthSm: "w-[200px]",
   heightSm: "h-[40px]",
   textSizeSm: "text-[14px]",
+  widthXs: "w-[70px]",
+  heightXs: "h-[40px]",
+  textSizeXs: "text-[12px]",
 };
 
 const tipos = {
@@ -36,7 +39,7 @@ const buttonVariants = cva(
       },
       size: {
         default: `${config.height} ${config.width} ${config.textSize}  px-[27.87px]`,
-        xs: "px-[15px] w-[20px]",
+        xs: `${config.heightXs} ${config.widthXs} ${config.textSizeXs}  px-[20.87px]`,
         sm: ` ${config.heightSm} ${config.widthSm} ${config.textSizeSm} px-[23.74px]`,
         md:  "h-11 px-8",
         squared: "w-[77px] h-[49px]",

@@ -14,7 +14,7 @@ const Footer = () => {
       >
         <h2 className={cn(textBold.className, "text-[2.0rem]")}>CoCode</h2>
         <p className="md:w-38 lg:w-72 md:flex">Desarrollada para No Country</p>
-        <Button tipo={"squared"} className={"w-[150px] bg-[#211048]"}>
+        <Button variant={"secondary"} tipo={"squared"} size={"md"} className={"w-[150px]"}>
           Ver equípo
         </Button>
         <p className="text-[12px] text-gray-400">CoCode © 2023</p>

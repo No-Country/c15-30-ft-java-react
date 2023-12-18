@@ -14,6 +14,7 @@ const pageContent = {
 
 const WorkSpace = async ({searchParams}) => {
   const response = await API.get("/proyectos");
+  console.log(response)
   const projects = response?.object || Proyectos
 
   const params = searchParams
