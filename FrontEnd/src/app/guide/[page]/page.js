@@ -1,5 +1,4 @@
 
-import React from 'react'
 
 const DocsPage = ({params}) => {
   const pageName = params.page

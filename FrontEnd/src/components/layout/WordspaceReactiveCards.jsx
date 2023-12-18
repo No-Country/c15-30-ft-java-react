@@ -1,11 +1,9 @@
-import React from "react";
+
 import WorkSpaceCard, { WorkspaceCustomCard } from "./WorkSpaceCards";
 import { cn } from "@/lib/utils";
 import { comments } from "@/constants/comments";
 import {
   DoughnutChart,
-  LineChartChart,
-  PolarAreaChart,
 } from "./WorkspaceCharts";
 import { Card } from "../ui/card";
 import { getServerSession } from "next-auth";

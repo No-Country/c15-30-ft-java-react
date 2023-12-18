@@ -17,7 +17,6 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import defaultAvatar from "../../../public/defaultAvatar.png";
-import DropDownNavbar from "./DropDownNavbar";
 
 const testObject = {
   id: "1",

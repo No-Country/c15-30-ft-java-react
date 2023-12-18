@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { FaGithub, FaHome, FaUser, FaBook } from "react-icons/fa";
 import Link from "next/link";
-import React from "react";
 import { Button, buttonVariants } from "../ui/button";
 import { signOut } from "next-auth/react";
 import { cn } from "@/lib/utils";

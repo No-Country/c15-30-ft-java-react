@@ -1,4 +1,4 @@
-import React from "react";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -9,13 +9,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { textBold } from "@/styles/fonts";
 import CreateProjectDialog from "./CreateProjectDialog";
-import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
-import { Input } from "../ui/input";
 import CreateProjectView from "./CreateProjectView";
 
 const components = [

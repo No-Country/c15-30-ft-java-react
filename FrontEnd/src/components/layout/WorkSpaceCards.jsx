@@ -2,13 +2,11 @@
 
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
-import React from "react";
 import TextDispalyWithTitle from "../ui/textDisplayWIthTitle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { Card, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 
 const AnimationVariants = {
   initial: {

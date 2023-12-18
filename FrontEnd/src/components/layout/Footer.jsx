@@ -1,4 +1,4 @@
-import React from "react";
+
 import WomanLaptop from "../../../public/WomanLaptop.png";
 import { Button } from "../ui/button";
 import { textBold } from "@/styles/fonts";

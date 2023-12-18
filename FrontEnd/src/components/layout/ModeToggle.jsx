@@ -1,11 +1,9 @@
 "use client"
  
 import * as React from "react"
-import { BiMoon, BiSun, } from 'react-icons/bi'
-import { FaCloudRain } from 'react-icons/fa'
+import { BiMoon } from 'react-icons/bi'
 import { useTheme } from "next-themes"
 import DarkSide from "../../../public/DarkSide.png"
-import LightSide from "../../../public/LightSide.png"
 import Image from "next/image" 
 
 

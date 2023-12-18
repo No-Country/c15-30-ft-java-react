@@ -7,7 +7,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import React from "react";
 /**
  * =======================
  *    CreateProjectDialog

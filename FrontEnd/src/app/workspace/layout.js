@@ -1,6 +1,5 @@
 import NavBar, { WorkspaceNavBar } from "@/components/layout/NavBar";
 import { getServerSession } from "next-auth";
-import React from "react";
 import authOptions from "../api/auth/[...nextauth]/authOptions";
 import Footer from "@/components/layout/Footer";
 import WorkspaceSideBar from "@/components/layout/WorkspaceSideBar";

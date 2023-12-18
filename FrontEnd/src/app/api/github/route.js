@@ -1,4 +1,4 @@
-const getData = async () => {
+/* const getData = async () => {
   return await fetch(
     `https://api.github.com/repos/Jandres373/${selectedProject}/commits`,
     {
@@ -18,3 +18,4 @@ const getData = async () => {
 if (selectedProject) {
   getData().then((resp) => console.log(resp));
 }
+ */

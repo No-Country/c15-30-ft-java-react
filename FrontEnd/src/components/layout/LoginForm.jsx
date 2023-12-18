@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FaGithub, FaGoogle } from "react-icons/fa";
@@ -15,7 +15,6 @@ import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
 import Image from "next/image";
 import "@/styles/animations.css";
-import API from "@/axios/apiConnection";
 
 const LoginForm = () => {
   const router = useRouter();

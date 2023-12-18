@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Card } from "../ui/card";
 import { cn } from "@/lib/utils";
 import { LineChartChart, PolarAreaChart } from "./WorkspaceCharts";

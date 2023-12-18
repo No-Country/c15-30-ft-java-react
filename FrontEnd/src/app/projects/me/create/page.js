@@ -2,12 +2,9 @@ import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
 import API from "@/axios/apiConnection";
 import { ProjectCard } from "@/components/layout/ProjectCard";
 import { ProjectsNavigation } from "@/components/layout/ProjectsNavigation";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import { getServerSession } from "next-auth";
-import React from "react";
-import { Separator } from "@/components/ui/separator";
 
 const Create = async () => {
   const session = await getServerSession(authOptions);

@@ -1,7 +1,6 @@
 import BigBlob from '@/svgs/BigBlob'
 import Blob from '@/svgs/Blob'
 import Plant from '@/svgs/Plant'
-import React from 'react'
 
 const PlantBolbContainer = () => {
   return (

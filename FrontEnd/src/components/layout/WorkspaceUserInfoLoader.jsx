@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
 import { useSession } from "next-auth/react";
 

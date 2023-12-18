@@ -3,7 +3,6 @@
 import { useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
-import React from "react";
 import TextDispalyWithTitle from "../ui/textDisplayWIthTitle";
 import { Button } from "../ui/button";
 

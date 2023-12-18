@@ -1,7 +1,6 @@
 import API from "@/axios/apiConnection";
 import { ProjectCard } from "@/components/layout/ProjectCard";
 import { Input } from "@/components/ui/input";
-import React from "react";
 import Proyectos from "../../constants/Proyectos.json";
 
 const Explore = async () => {

@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
@@ -9,7 +8,6 @@ import Link from "next/link";
 import {
   FaChevronLeft,
   FaBars,
-  FaSpinner,
   FaSearch,
   FaInfo,
   FaBell,
@@ -30,6 +28,7 @@ import SearchBar from "../ui/searchBar";
 import Image from "next/image";
 import defaultAvatar from "../../../public/defaultAvatar.png";
 import { signOut } from "next-auth/react";
+import { useState } from "react";
 const linkVariants = {
   initial: { y: -100 },
   animate: { y: 0 },

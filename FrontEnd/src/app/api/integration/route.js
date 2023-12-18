@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+/* export const dynamic = "force-dynamic";
 
 export async function GET(req) {
   try {
@@ -43,3 +43,4 @@ export async function GET(req) {
     };
   }
 }
+ */

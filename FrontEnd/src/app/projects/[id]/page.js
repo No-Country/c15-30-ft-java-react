@@ -9,7 +9,6 @@ import { FaHeart, FaCodeBranch } from "react-icons/fa";
 const ProjectsId = async ({ params }) => {
   const projectId = params.id;
   const project = await API.get(`/projects/${projectId}`);
-
   const userId = project.userId;
   const user = await API.get(`/users/${userId}`);
 
