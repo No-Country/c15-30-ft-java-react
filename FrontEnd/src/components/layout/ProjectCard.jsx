@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { textBold } from "@/styles/fonts";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import React from "react";
 /**
  * Explore Component
  *

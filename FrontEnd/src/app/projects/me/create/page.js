@@ -5,6 +5,7 @@ import { ProjectsNavigation } from "@/components/layout/ProjectsNavigation";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import { getServerSession } from "next-auth";
+import * as React from "react";
 
 const Create = async () => {
   const session = await getServerSession(authOptions);
