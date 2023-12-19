@@ -23,6 +23,7 @@
     "axios": "^1.6.2",
     "chart.js": "^4.4.1",
     "class-variance-authority": "^0.7.0",
+    "cloudinary": "^1.41.1",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
     "lucide-react": "^0.294.0",

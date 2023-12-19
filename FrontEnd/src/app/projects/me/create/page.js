@@ -14,21 +14,30 @@ const Create = async () => {
   const postTask = async (formData) => {
     "use server";
 
-    const task = {
-      nombre: formData.get("nombre"),
-      descripcion: formData.get("descripcion"),
-      portada: "https://th.bing.com/th/id/OIP.AQ5rAzGvicbIAudCjnmlyQHaHa?rs=1&pid=ImgDetMain",
-      colaborador: 1,
-      dificultad: 1,
-      tareas_id: 1,
-    };
-    const res = API.post("/proyecto", task);
+    const task = new FormData();
+    task.append("nombre", formData.get("nombre"));
+    task.append("descripcion", formData.get("descripcion"));
+    task.append("portada", formData.get("portada"));
+    task.append("colaborador", 1);
+    task.append("dificultad", 1);
+    task.append("tareas_id", 1);
+
+
+    const res = await fetch("http://localhost:3000/api/uploads",{
+      method: "POST",
+      body: task,
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    console.log(res)
   };
 
   return (
     <form action={postTask} className="h-full rounded-xl">
       <div className="p-[20px] flex justify-center mb-20 md:mb-0">
-        <ProjectsNavigation></ProjectsNavigation>
+        <ProjectsNavigation postTask={postTask}></ProjectsNavigation>
       </div>
       <main className="h-[80svh] flex flex-col justify-evenly">
         <section>

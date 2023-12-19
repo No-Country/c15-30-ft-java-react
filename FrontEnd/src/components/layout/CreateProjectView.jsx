@@ -1,4 +1,3 @@
-"use client";
 
 import { Button } from "../ui/button";
 import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
@@ -30,16 +29,30 @@ import { textBold } from "@/styles/fonts";
  */
 
 const CreateProjectView = () => {
-  const handleSubmit = async (formData) => {
-    const nombre = formData.get("nombre");
-    const descripcion = formData.get("descripcion");
+  
+  const postTask = async (formData) => {
+    "use server";
 
-    console.log({ nombre, descripcion, picture });
+    const task = new FormData();
+    task.append("nombre", formData.get("nombre"));
+    task.append("descripcion", formData.get("descripcion"));
+    task.append("portada", formData.get("portada"));
+    task.append("colaborador", 1);
+    task.append("dificultad", 1);
+    task.append("tareas_id", 1);
+
+
+    const res = await fetch(`${process.env.LOCAL_API}/uploads`,{
+      method: "POST",
+      body: task,
+    });
+
+    console.log(res)
   };
 
   return (
     <form
-      action={handleSubmit}
+      action={postTask}
       className="flex flex-col gap-5 z-0 overflow-y-auto"
     >
       <h1 className={cn(textBold.className, "text-blue-500 text-xl")}>
@@ -100,15 +113,15 @@ const CreateProjectView = () => {
         <div class="relative">
           <input
             type="file"
-            id="picture"
-            name="picture"
+            id="portada"
+            name="portada"
             accept="image/png, image/jpeg"
             multiple
             tipo="default"
             class="hidden"
           />
           <label
-            for="picture"
+            for="portada"
             className={cn(
               textBold.className,
               "cursor-pointer flex justify-center items-center w-[219px] h-[49px] text-black px-4 py-2 rounded-md  border-2 border-black"

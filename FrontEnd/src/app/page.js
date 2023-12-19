@@ -10,7 +10,6 @@ import Testimonials from "@/components/layout/Testimonials";
 import Footer from "@/components/layout/Footer";
 import HombreLaptop from "../../public/ManLaptop.png";
 import Scrolly from "@/components/layout/Scrolly";
-import API from "@/axios/apiConnection";
 
 const titleContent = {
   title: "Co-crear hecho fácil.",

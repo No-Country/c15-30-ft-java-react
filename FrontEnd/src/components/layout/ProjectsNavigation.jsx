@@ -54,7 +54,7 @@ const components = [
   },
 ];
 
-export function ProjectsNavigation() {
+export function ProjectsNavigation({postTask}) {
   return (
     <NavigationMenu className={"bg-blue-50 rounded-2xl"}>
       <NavigationMenuList className={""}>
