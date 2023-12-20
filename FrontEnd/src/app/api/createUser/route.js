@@ -1,4 +1,4 @@
-import API from '@/axios/apiConnection';
+/* import API from '@/axios/apiConnection';
 import { hashPassword } from '../encript';
 
 export const dynamic = 'force-dynamic';
@@ -13,6 +13,6 @@ export async function POST(request, response) {
 
   if (resp) return Response.json({ mensaje: "usuario creado correctamente" });
   
-}
+} */
 
 

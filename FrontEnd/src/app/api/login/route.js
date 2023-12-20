@@ -1,4 +1,4 @@
-import API from '@/axios/apiConnection';
+/* import API from '@/axios/apiConnection';
 import { hashPassword } from '../encript';
 const crypto = require('crypto');
 
@@ -35,3 +35,4 @@ async function getUserFromDatabase(username) {
 
   return null;
 }
+ */
