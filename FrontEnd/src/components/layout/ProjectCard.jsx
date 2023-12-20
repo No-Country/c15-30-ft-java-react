@@ -38,8 +38,8 @@ export const ProjectCard = ({ project, like, ...props }) => {
             {portada ? (
               <img
                 src={portada}
-                width={400}
-                height={313}
+                width={500}
+                height={500}
                 alt={`Imagen ${nombre}`}
               />
             ) : (

@@ -29,17 +29,18 @@ const LoginForm = () => {
   const onLoginSubmit = async (data) => {
     const { email, password } = data;
 
+    //TODO esto puede ocacionar problemas en el futuro
     const response = await signIn("credentials", {
       email,
       password,
-      redirect: false,
-      callbackUrl: "/workspace",
+      redirect: true,
+      callbackUrl: "/",
     });
 
     if (response.ok) {
-      router.push("/workspace");
+      router.push("/");
     } else {
-      /* reemplar description por response.error.message */
+      /* TODO reemplar description por response.error.message */
       toast({
         variant: "destructive",
         title: "Error",
