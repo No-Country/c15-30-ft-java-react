@@ -4,22 +4,20 @@ import TitleDisplayWithButton from "@/components/ui/titleDisplayWithButton";
 import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader";
 import API from "@/axios/apiConnection";
 import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
-import Proyectos from "../../constants/Proyectos.json"
-
+import Proyectos from "../../constants/Proyectos.json";
 
 const pageContent = {
   title: "",
   data: ["Aquí puedes ver los proyectos en los que participas actualmente."],
 };
 
-const WorkSpace = async ({searchParams}) => {
-/*   const response = await API.get("/proyectos");
+const WorkSpace = async ({ searchParams }) => {
+  /*   const response = await API.get("/proyectos");
   console.log(response) */
-  const projects = /* response?.object || */ Proyectos
+  const projects = /* response?.object || */ Proyectos;
 
-  const params = searchParams
-  console.log(params)
-  
+  const params = searchParams;
+  console.log(params);
 
   return (
     <div className="h-full md:w-full">

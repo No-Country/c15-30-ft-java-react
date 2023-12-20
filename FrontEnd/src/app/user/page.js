@@ -10,8 +10,20 @@ import { FaPen } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 
 const page = async () => {
-  const tecnologias = await API.get("/tecnologias");
- 
+  const tecnologias =
+    /*  await API.get("/tecnologias"); */
+    {
+      message: "todo bien",
+      object: [
+        { id: 1, nombre: "HTML" },
+        { id: 2, nombre: "CSS" },
+        { id: 3, nombre: "JavaScript" },
+        { id: 4, nombre: "TypeScript" },
+        { id: 5, nombre: "Python" },
+        { id: 6, nombre: "Java" },
+        { id: 7, nombre: "C#" },
+      ],
+    };
   const avatar =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png";
   const userData = {
@@ -41,7 +53,12 @@ const page = async () => {
                   />{" "}
                 </AvatarFallback>
               </Avatar>
-              <Badge variant={"ghost"} className={"absolute bottom-0 right-0 z-50 p-2 border-none hover:animate-pulse cursor-pointer"}>
+              <Badge
+                variant={"ghost"}
+                className={
+                  "absolute bottom-0 right-0 z-50 p-2 border-none hover:animate-pulse cursor-pointer"
+                }
+              >
                 <FaPen className="" />
               </Badge>
             </div>

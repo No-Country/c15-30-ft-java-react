@@ -52,6 +52,7 @@ const Input = React.forwardRef(({ className, type, tipo, ...props }, ref) => {
             placeholder="Place Holder"
             className="h-[52px] w-full rounded-lg border border-black p-2 text-primary"
             ref={ref}
+            type={type}
             {...props}
           />
         </div>

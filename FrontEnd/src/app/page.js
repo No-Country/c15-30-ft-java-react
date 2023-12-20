@@ -66,21 +66,21 @@ export default async function Home(req, res) {
           <Scrolly />
         </section>
 
+        <div className="w-full flex justify-center">
+          <TitleContainer
+            type={"titleAndDescription"}
+            content={{
+              title: "Testimonios",
+              description: "Las opiniones de algunos de nuestros usuarios",
+            }}
+            className={""}
+          />
+        </div>
         <ScrollArea className="flex  w-[400px] md:w-full  my-32 ">
-          <div className="w-full justify-center">
-            <TitleContainer
-              type={"titleAndDescription"}
-              content={{
-                title: "Testimonios",
-                description: "Las opiniones de algunos de nuestros usuarios",
-              }}
-              className={""}
-            />
-          </div>
           <div className="flex space-x-4 gap-5 py-2 px-2 md:flex md:justify-center W-FULL">
             <Testimonials
               content={{
-                text: "Amé esta aplicacion, es excelente para encontrar personas con buenas ideas",
+                text: "Amé esta aplicacion, es ideal para encontrar colaboradores.",
                 image:
                   "https://th.bing.com/th/id/OIP.plXc_9Brf3Ravy8czRaglAHaEo?rs=1&pid=ImgDetMain",
                 nombre: "Marcela",

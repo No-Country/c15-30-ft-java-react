@@ -161,6 +161,9 @@ const NavBar = ({ tipo, variant, session, ...props }) => {
                   </Button>
                 </Link>
               }
+              <DropDownNavbar>
+                <FaBars className="text-title cursor-pointer" />
+              </DropDownNavbar>
             </div>
           </div>
         </div>
