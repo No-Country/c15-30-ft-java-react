@@ -1,9 +1,9 @@
-
 import WomanLaptop from "../../../public/WomanLaptop.png";
-import { Button } from "../ui/button";
 import { textBold } from "@/styles/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
+import { buttonVariants } from "../ui/button";
 
 const Footer = () => {
   return (
@@ -14,9 +14,12 @@ const Footer = () => {
       >
         <h2 className={cn(textBold.className, "text-[2.0rem]")}>CoCode</h2>
         <p className="md:w-38 lg:w-72 md:flex">Desarrollada para No Country</p>
-        <Button variant={"secondary"} tipo={"squared"} size={"md"} className={"w-[150px]"}>
+        <Link
+          href={"/team"}
+          className={cn(buttonVariants({ variant: "secondary" }))}
+        >
           Ver equípo
-        </Button>
+        </Link>
         <p className="text-[12px] text-gray-400">CoCode © 2023</p>
       </section>
       <section className="w-full md:w-1/6">
