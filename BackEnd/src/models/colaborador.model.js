@@ -18,5 +18,4 @@ const Colaborador = sequelize.define(
     tableName: "colaboradores",
   }
 );
-
-export default Colaborador;
+module.exports = Colaborador;

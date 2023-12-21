@@ -1,4 +1,4 @@
-/* const { getAll, create, getOne, remove, update } = require('../controllers/status.controller');
+const { getAll, create, getOne, remove, update } = require('../controllers/status.controller');
 const express = require('express');
 
 const statusRouter = express.Router();
@@ -12,4 +12,4 @@ statusRouter.route('/:id')
     .delete(remove)
     .put(update);
 
-module.exports = statusRouter; */
+module.exports = statusRouter;
