@@ -1,4 +1,4 @@
-const Usuario = require("../models/usuario.model");
+/* const Usuario = require("../models/usuario.model");
 const catchError = require("../utils/catchError");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
@@ -19,3 +19,4 @@ const loginAuth = catchError(async (req, res) => {
 module.exports = {
   loginAuth,
 };
+ */

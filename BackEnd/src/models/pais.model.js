@@ -1,20 +1,22 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../utils/connection");
+import sequelize from "../utils/connection";
 
-const Pais = sequelize.define("pais", {
-  pais_id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+//
+const Pais = sequelize.define(
+  "pais",
+  {
+    codigo: {
+      type: DataTypes.STRING(3),
+      allowNull: false,
+    },
+    nombre: {
+      type: DataTypes.STRING(25),
+      allowNull: false,
+    },
   },
-  codigo_pais: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  nombre_pais: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-});
+  {
+    tableName: "paises",
+  }
+);
 
-module.exports = Pais;
+export default Pais;

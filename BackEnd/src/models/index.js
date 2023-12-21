@@ -1,6 +1,3 @@
-const Project = require("./project.model");
-const Technology = require("./technology.model");
-const User = require("./usuario.model");
 
 /* User.hasMany(Project, {
   foreignKey: "userId",
