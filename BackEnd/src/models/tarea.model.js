@@ -30,4 +30,4 @@ const Tarea = sequelize.define("terea", {
   }
 );
 
-export default Tarea;
+module.exports = Tarea;

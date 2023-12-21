@@ -2,7 +2,6 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../utils/connection");
 
 // 
-
 const Tecnologia = sequelize.define(
   "tecnologia",
   {
@@ -16,4 +15,4 @@ const Tecnologia = sequelize.define(
   }
 );
 
-export default Tecnologia;
+module.exports = Tecnologia;

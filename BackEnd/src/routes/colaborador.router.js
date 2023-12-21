@@ -3,13 +3,13 @@ const express = require('express');
 
 const colaboradorRouter = express.Router();
 
-paisRouter.route('/')
+colaboradorRouter.route('/')
     .get(getAll)
     .post(create);
 
-paisRouter.route('/:id')
+colaboradorRouter.route('/:id')
     .get(getOne)
     .delete(remove)
     .put(update);
 
-module.exports = colaboradorRouter;
+module.exports = colaboradorRouter; 

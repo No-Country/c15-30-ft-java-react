@@ -39,4 +39,4 @@ Proyecto.hasOne(Dificultad, { foreignKey: 'id'});
 Dificultad.belongsTo(Proyecto, { foreignKey: 'id' }); 
 */
 
-export default Proyecto;
+module.exports = Proyecto;

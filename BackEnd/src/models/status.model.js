@@ -15,4 +15,4 @@ const Status = sequelize.define(
   }
 );
 
-export default Status;
+module.exports = Status;
