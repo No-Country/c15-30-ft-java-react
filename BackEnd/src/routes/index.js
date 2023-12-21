@@ -11,15 +11,15 @@ const tecnologiaRouter = require("./tecnologia.router");
 const usuarioRouter = require("./usuario.router");
 const comentarioRouter = require("./comentario.router");
 
-router.use("/usuarios", usuarioRouter);
-router.use("/proyectos", proyectoRouter);
-router.use("/paises", paisRouter);
-router.use("/colaboradores", colaboradorRouter);
-router.use("/dificultad", dificultadRouter);
-router.use("/status", statusRouter);
-router.use("/tareas", tareaRouter);
-router.use("/tecnologias", tecnologiaRouter);
-router.use("/comentarios", comentarioRouter)
+router.use("/api/v1/usuarios", usuarioRouter);
+router.use("/api/v1/proyectos", proyectoRouter);
+router.use("/api/v1/paises", paisRouter);
+router.use("/api/v1/colaboradores", colaboradorRouter);
+router.use("/api/v1/dificultad", dificultadRouter);
+router.use("/api/v1/status", statusRouter);
+router.use("/api/v1/tareas", tareaRouter);
+router.use("/api/v1/tecnologias", tecnologiaRouter);
+router.use("/api/v1/comentarios", comentarioRouter)
 // router.use("/login", loginRouter)
 
 
