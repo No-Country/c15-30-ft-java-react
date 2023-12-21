@@ -37,7 +37,7 @@ const LoginForm = () => {
       callbackUrl: "/",
     });
     console.log(response)
-    if (response.ok) {
+    if (response.ok && !response.error) {
       router.push("/");
     } else {
       /* TODO reemplar description por response.error.message */
