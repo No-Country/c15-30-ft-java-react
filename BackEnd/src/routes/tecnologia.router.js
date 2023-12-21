@@ -4,12 +4,9 @@ const express = require('express');
 const tecnologiaRouter = express.Router();
 
 tecnologiaRouter.route('/')
-    .get(getAll)
-    .post(create);
+  .get(getAll)
 
 tecnologiaRouter.route('/:id')
-    .get(getOne)
-    .delete(remove)
-    .put(update);
+  .get(getOne)
 
 module.exports = tecnologiaRouter;

@@ -4,12 +4,9 @@ const express = require('express');
 const statusRouter = express.Router();
 
 statusRouter.route('/')
-    .get(getAll)
-    .post(create);
+  .get(getAll)
 
 statusRouter.route('/:id')
-    .get(getOne)
-    .delete(remove)
-    .put(update);
+  .get(getOne)
 
 module.exports = statusRouter;
