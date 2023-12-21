@@ -33,10 +33,10 @@ const LoginForm = () => {
     const response = await signIn("credentials", {
       email,
       password,
-      redirect: true,
+      redirect: false,
       callbackUrl: "/",
     });
-
+    console.log(response)
     if (response.ok) {
       router.push("/");
     } else {
@@ -44,7 +44,7 @@ const LoginForm = () => {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "revisar las credenciales",
+        description: response.error,
         isClosable: true,
         duration: 5000,
       });
