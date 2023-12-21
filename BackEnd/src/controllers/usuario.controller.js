@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Usuario = require('../models/usuario.model');
+const Usuario = require('../models/usuario.model.js');
 const bcrypt = require('bcrypt');
 
 const getAll = catchError(async(_, res) => {

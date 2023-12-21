@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Tecnologia = require('../models/tecnologia.model');
+const Tecnologia = require('../models/tecnologia.model.js');
 
 const getAll = catchError(async (req, res) => {
   const results = await Tecnologia.findAll();

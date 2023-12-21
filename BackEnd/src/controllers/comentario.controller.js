@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Comentario = require('../models/Comentario.model');
+const Comentario = require('../models/comentario.model.js');
 
 const getAll = catchError(async(req, res) => {
     const results = await Comentario.findAll();

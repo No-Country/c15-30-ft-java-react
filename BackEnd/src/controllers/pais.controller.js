@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Pais = require('../models/pais.model')
+const Pais = require('../models/pais.model.js')
 
 const getAll = catchError(async (req, res) => {
   const results = await Pais.findAll();

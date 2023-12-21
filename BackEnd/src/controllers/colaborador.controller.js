@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Colaborador = require('../models/colaborador.model');
+const Colaborador = require('../models/colaborador.model.js');
 
 const getAll = catchError(async (req, res) => {
   const results = await Colaborador.findAll();

@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const Proyecto = require('../models/proyecto.model');
+const Proyecto = require('../models/proyecto.model.js');
 
 const getAll = catchError(async (req, res) => {
   const results = await Proyecto.findAll();
