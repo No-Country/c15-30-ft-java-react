@@ -39,6 +39,7 @@ const Usuario = sequelize.define(
     puntos: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 50,
     },
 
     rol: {

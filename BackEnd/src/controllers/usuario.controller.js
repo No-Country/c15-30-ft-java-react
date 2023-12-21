@@ -1,5 +1,6 @@
 const catchError = require('../utils/catchError');
 const Usuario = require('../models/Usuario.model');
+const bcrypt = require('bcrypt');
 
 const getAll = catchError(async(_, res) => {
     const results = await Usuario.findAll();
