@@ -9,6 +9,7 @@ const proyectoRouter = require("./proyecto.routes");
 const tareaRouter = require("./tarea.router");
 const tecnologiaRouter = require("./tecnologia.router");
 const usuarioRouter = require("./usuario.router");
+const comentarioRouter = require("./comentario.router");
 
 router.use("/usuarios", usuarioRouter);
 router.use("/proyectos", proyectoRouter);
@@ -18,6 +19,7 @@ router.use("/dificultad", dificultadRouter);
 router.use("/status", statusRouter);
 router.use("/tareas", tareaRouter);
 router.use("/tecnologias", tecnologiaRouter);
+router.use("/comentarios", comentarioRouter)
 // router.use("/login", loginRouter)
 
 
