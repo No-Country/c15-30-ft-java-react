@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
-import sequelize from "../utils/connection";
-import Proyecto from "../proyectos/Proyecto.model";
+const sequelize = require("../utils/connection");
 
 const Comentario = sequelize.define(
   "comentario",
@@ -27,7 +26,5 @@ const Comentario = sequelize.define(
   }
 );
 
-Comentario.belongsTo(Proyecto, { foreignKey: 'proyecto_id' });
-Proyecto.hasMany(Comentario, { foreignKey: 'proyecto_id' });
 
-export default Comentario;
+module.exports = Comentario;

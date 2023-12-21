@@ -1,4 +1,4 @@
-const { getAllTechnologies, createTechnology, getOneTechnology, updateTechnology, removeTechnology } = require('../controllers/technology.controller');
+/* const { getAllTechnologies, createTechnology, getOneTechnology, updateTechnology, removeTechnology } = require('../controllers/technology.controller');
 const express = require('express');
 
 const technologyRouter = express.Router();
@@ -12,4 +12,4 @@ technologyRouter.route('/:id')
   .put(updateTechnology)
   .delete(removeTechnology);
 
-module.exports = technologyRouter;
+module.exports = technologyRouter; */

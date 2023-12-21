@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-import sequelize from "../utils/connection";
+const sequelize = require("../utils/connection");
 
 //
 const Dificultad = sequelize.define(
@@ -15,4 +15,4 @@ const Dificultad = sequelize.define(
   }
 );
 
-export default Dificultad;
+module.exports = Dificultad;

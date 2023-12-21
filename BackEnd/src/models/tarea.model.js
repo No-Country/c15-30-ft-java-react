@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-import sequelize from "../utils/connection";
+const sequelize = require("../utils/connection");
 
 // 
 

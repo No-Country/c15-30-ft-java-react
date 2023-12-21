@@ -1,4 +1,4 @@
-const {
+/* const {
   asociarTecnologiasAUsuario,
 } = require("../controllers/relaciones.controller");
 const express = require("express");
@@ -9,3 +9,4 @@ relationsRouter.route("/")
   .post(asociarTecnologiasAUsuario);
 
 module.exports = relationsRouter;
+ */

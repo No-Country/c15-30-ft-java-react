@@ -8,12 +8,12 @@ const paisRouter = require('./pais.routes');
 const statusRouter = require('./status.router');
 const router = express.Router();
 
-router.use("/login", loginRouter)
-router.use("/usuarios", userRouter)
+// router.use("/login", loginRouter)
+// router.use("/usuarios", userRouter)
 router.use("/paises", paisRouter)
-router.use("/status",statusRouter)
-/* router.use("/projects", projectRouter)
-router.use("/techs", technologyRouter)
-router.use("/asociate", relationsRouter) */
+// router.use("/status",statusRouter)
+// router.use("/projects", projectRouter)
+// router.use("/techs", technologyRouter)
+// router.use("/asociate", relationsRouter)
 
 module.exports = router;

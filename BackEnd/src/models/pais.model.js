@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-import sequelize from "../utils/connection";
+const sequelize = require("../utils/connection");
 
 //
 const Pais = sequelize.define(
@@ -19,4 +19,4 @@ const Pais = sequelize.define(
   }
 );
 
-export default Pais;
+module.exports = Pais;
