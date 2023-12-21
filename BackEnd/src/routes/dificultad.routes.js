@@ -4,12 +4,9 @@ const express = require('express');
 const dificultadRouter = express.Router();
 
 dificultadRouter.route('/')
-    .get(getAll)
-    .post(create);
+  .get(getAll)
 
 dificultadRouter.route('/:id')
-    .get(getOne)
-    .delete(remove)
-    .put(update);
+  .get(getOne)
 
 module.exports = dificultadRouter; 
