@@ -40,7 +40,6 @@ const LoginForm = () => {
     if (response.ok && !response.error) {
       router.push("/");
     } else {
-      /* TODO reemplar description por response.error.message */
       toast({
         variant: "destructive",
         title: "Error",

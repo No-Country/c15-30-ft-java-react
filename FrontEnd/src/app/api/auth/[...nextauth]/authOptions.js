@@ -6,7 +6,8 @@ const authOptions = {
       name: "Credentials",
       async authorize(credentials, req) {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/login`,
+          `${process.env.BASE_URL}/login`,
+          
           {
             method: "POST",
             body: JSON.stringify({
@@ -15,11 +16,12 @@ const authOptions = {
             }),
             headers: { "Content-Type": "application/json" },
           }
-        );
-        
-        const response = await res.json(); 
-
-        console.log(response)
+          );
+          
+          const response = await res.json(); 
+          
+          console.log(process.env.BASE_URL)
+          console.log(response)
         if (response.message) throw response;
 
         const { user } = response;
