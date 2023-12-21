@@ -6,11 +6,13 @@ const technologyRouter = require('./technology.routes');
 const relationsRouter = require('./relaciones.routes');
 const paisRouter = require('./pais.routes');
 const statusRouter = require('./status.router');
+const colaboradorRouter = require('./colaborador.router');
 const router = express.Router();
 
 // router.use("/login", loginRouter)
 // router.use("/usuarios", userRouter)
 router.use("/paises", paisRouter)
+router.use("/colaboradores", colaboradorRouter)
 // router.use("/status",statusRouter)
 // router.use("/projects", projectRouter)
 // router.use("/techs", technologyRouter)
