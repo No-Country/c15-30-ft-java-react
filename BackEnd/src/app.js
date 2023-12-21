@@ -18,7 +18,7 @@ app.use(
 app.use(cors());
 
 app.use("/api/v1", router);
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   return res.send("Welcome to express!");
 });
 
