@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import Proyectos from "../../constants/Proyectos.json";
 
 const Explore = async () => {
-  /* const response = await API.get("/proyectos"); */
-  let projects = /* response?.object || */ Proyectos;
+  const response = await API.get("/proyectos");
+  let projects = response || Proyectos;
   // debería traerse tambien la lista de proyectos a los que se ha dado like
 
   function filterProjects(formData) {

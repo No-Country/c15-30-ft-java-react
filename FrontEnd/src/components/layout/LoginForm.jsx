@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
 import Image from "next/image";
 import "@/styles/animations.css";
+import APIClient from "@/axios/apiFrontConnection";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -36,8 +37,8 @@ const LoginForm = () => {
       redirect: false,
       callbackUrl: "/",
     });
-    console.log(response)
-    if (response.ok && !response.error) {
+    console.log(response);
+    if (response.ok) {
       router.push("/");
     } else {
       toast({
@@ -63,15 +64,10 @@ const LoginForm = () => {
           duration: 5000,
         });
       }
-      //test fetch para verificar si la politica CORS afecta en modo no-cors
-      const resp = await fetch("http://localhost:8080/api/v1/usuarios", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }, {mode:"no-cors"})
 
-      if (resp) {
+      const res = await APIClient.post("/usuarios", data);
+
+      if (res) {
         toast({
           variant: "",
           title: "Registro exitoso",
@@ -89,8 +85,6 @@ const LoginForm = () => {
   return (
     <main className="relative h-full flex flex-col md:flex-row ">
       <div id="imagen" className={`pt-0 md:w-1/2 md:pt-3 `}>
-        {/* TODO camiar img a IMAGE y agregar el alt */}
-
         <Image
           src={Bolb.src}
           quality={50}

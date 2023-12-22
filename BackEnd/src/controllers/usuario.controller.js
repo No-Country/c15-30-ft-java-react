@@ -34,6 +34,7 @@ const update = catchError(async (req, res) => {
     { where: { id }, returning: true }
   );
   if (result[0] === 0) return res.sendStatus(404);
+  console.log(req)
   return res.json(result[1][0]);
 });
 

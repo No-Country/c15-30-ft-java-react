@@ -1,6 +1,3 @@
-// una instancia de axios como la que tu hiciste
-import API from "@/axios/apiConnection";
-
 // Importamos la función "NextResponse" desde el paquete "next/server"
 import { NextResponse } from "next/server"; 
 

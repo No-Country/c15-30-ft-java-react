@@ -1,9 +1,9 @@
-
 import { Button } from "../ui/button";
 import TextDisplayWithTitle from "../ui/textDisplayWIthTitle";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
+import axios from "axios";
 
 /**
  * =======================
@@ -29,32 +29,44 @@ import { textBold } from "@/styles/fonts";
  */
 
 const CreateProjectView = () => {
-  
+
   const postTask = async (formData) => {
-    "use server";
 
-    const task = new FormData();
-    task.append("nombre", formData.get("nombre"));
-    task.append("descripcion", formData.get("descripcion"));
-    task.append("portada", formData.get("portada"));
-    task.append("colaborador", 1);
-    task.append("dificultad", 1);
-    task.append("tareas_id", 1);
+    'use server'
 
-
-    const res = await fetch(`${process.env.LOCAL_API}/uploads`,{
-      method: "POST",
-      body: task,
-    });
-
-    console.log(res)
+    const nombre = formData.get("nombre");
+    const descripcion = formData.get("descripcion");
+    const portada = formData.get("portada");
+  
+    const newProject = {
+      nombre,
+      descripcion,
+      portada,
+      colaborador: null,
+      dificultad: null,
+      tareas_id: null,
+    };
+  
+    const data = new FormData();
+    data.append("nombre", nombre);
+    data.append("descripcion", descripcion);
+    data.append("portada", portada);
+  
+    try {
+      const res = await axios.post(`${process.env.BASE_URL}/proyectos`, data, {
+        headers: {
+          "Content-Type": "multipart/form-data", // Utilizando FormData para la imagen
+        },
+      });
+      
+      console.log(res.data)
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
   };
 
   return (
-    <form
-      action={postTask}
-      className="flex flex-col gap-5 z-0 overflow-y-auto"
-    >
+    <form action={postTask} className="flex flex-col gap-5 z-0 overflow-y-auto">
       <h1 className={cn(textBold.className, "text-blue-500 text-xl")}>
         Crear proyecto
       </h1>

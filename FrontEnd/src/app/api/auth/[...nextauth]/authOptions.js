@@ -20,13 +20,13 @@ const authOptions = {
           
           const response = await res.json(); 
           
-          console.log(process.env.BASE_URL)
-          console.log(response)
         if (response.message) throw response;
 
         const { user } = response;
         const { token } = response;
+
         console.log(user)
+        console.log(token)
 
         return { user, token };
       },

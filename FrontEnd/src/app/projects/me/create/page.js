@@ -11,33 +11,10 @@ const Create = async () => {
   const session = await getServerSession(authOptions);
   const user = session?.user?.user;
 
-  const postTask = async (formData) => {
-    "use server";
-
-    const task = new FormData();
-    task.append("nombre", formData.get("nombre"));
-    task.append("descripcion", formData.get("descripcion"));
-    task.append("portada", formData.get("portada"));
-    task.append("colaborador", 1);
-    task.append("dificultad", 1);
-    task.append("tareas_id", 1);
-
-
-    const res = await fetch("http://localhost:3000/api/uploads",{
-      method: "POST",
-      body: task,
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
-
-    console.log(res)
-  };
-
   return (
-    <form action={postTask} className="h-full rounded-xl">
+    <div className="h-full rounded-xl">
       <div className="p-[20px] flex justify-center mb-20 md:mb-0">
-        <ProjectsNavigation postTask={postTask}></ProjectsNavigation>
+        <ProjectsNavigation ></ProjectsNavigation>
       </div>
       <main className="h-[80svh] flex flex-col justify-evenly">
         <section>
@@ -60,7 +37,7 @@ const Create = async () => {
           <ProjectCard project={""} like={false} />
         </section>
       </main>
-    </form>
+    </div>
   );
 };
 

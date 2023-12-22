@@ -31,7 +31,6 @@ export const ProjectCard = ({ project, like, ...props }) => {
     <section className={`h-full w-full p-6 max-w-[500px]`}>
       <h2 className={cn(textBold.className)}>{nombre}</h2>
       <div className="mt-2 h-full w-full">
-          <p className={cn(textBold.className, "text-primary")}>Vista previa</p>
         <div className="flex justify-between relative rounded-xl overflow-hidden border-red-200">
           {/* eslint-disable */}
           <Link href={`/projects/${project.id}`}>

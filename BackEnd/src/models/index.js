@@ -1,14 +1,13 @@
+const Proyecto = require('../models/proyecto.model.js');
+const Tarea = require('../models/tarea.model.js');
+const Colaborador = require('./colaborador.model.js');
 
-/* User.hasMany(Project, {
-  foreignKey: "userId",
-}); */
-/* Project.belongsTo(User, {
-  foreignKey: "userId",
-});
- */
-/* Technology.belongsToMany(User, {
-  through: "user_technology",
-});
-User.belongsToMany(Technology, {
-  through: "user_technology",
-}) */
+Proyecto.hasMany(Tarea, {foreignKey: 'id'});
+Tarea.belongsTo(Proyecto, {foreignKey: 'id'});
+
+Proyecto.belongsToMany(Colaborador, {through: "proyectos_colaboradores", })
+Colaborador.belongsToMany(Proyecto, {through: "proyectos_colaboradores", })
+
+
+//has many belongs to 
+//belongsToMany x2

@@ -11,7 +11,7 @@ const Proyecto = sequelize.define("proyecto", {
     allowNull: false,
   },
   portada: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(150),
     allowNull: true,
   },
   colaboradores: {

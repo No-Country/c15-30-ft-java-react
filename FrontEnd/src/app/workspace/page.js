@@ -12,12 +12,9 @@ const pageContent = {
 };
 
 const WorkSpace = async ({ searchParams }) => {
-  /*   const response = await API.get("/proyectos");
-  console.log(response) */
-  const projects = /* response?.object || */ Proyectos;
-
+  const response = await API.get("/proyectos");
+  const projects = response || Proyectos;
   const params = searchParams;
-  console.log(params);
 
   return (
     <div className="h-full md:w-full">

@@ -1,10 +1,7 @@
-
 import WorkSpaceCard, { WorkspaceCustomCard } from "./WorkSpaceCards";
 import { cn } from "@/lib/utils";
 import { comments } from "@/constants/comments";
-import {
-  DoughnutChart,
-} from "./WorkspaceCharts";
+import { DoughnutChart } from "./WorkspaceCharts";
 import { Card } from "../ui/card";
 import { getServerSession } from "next-auth";
 import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
@@ -14,9 +11,11 @@ import GithubLottie from "@/svgs/GithubLottie";
 
 const WordspaceReactiveCards = async ({ projects, children }) => {
   const session = await getServerSession(authOptions);
-  /* const { githubUser } = await session?.user?.user; */
+  const { githubUser } = await session?.user?.user;
 
-  const res = await fetch("https://api.github.com/users/jandres373/repos", {
+  console.log(githubUser);
+
+  const res = await fetch(`https://api.github.com/users/${githubUser}/repos`, {
     method: "GET",
     headers: {
       Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
@@ -27,7 +26,7 @@ const WordspaceReactiveCards = async ({ projects, children }) => {
   });
 
   const repos = await res.json();
-  const reposArr = repos.map((repo) => repo.name);
+  const reposArr = projects.map((repo) => repo.name);
 
   return (
     <>
@@ -47,16 +46,20 @@ const WordspaceReactiveCards = async ({ projects, children }) => {
         />
       </section>
 
-      <section className="w-full mt-10 flex justify-end col-span-12 mb-10">
-        <WorkspaceDynamicProjectsInput reposArr={reposArr} />
-      </section>
-
-      <section className="hidden">
-        <GithubLottie />
-      </section>
-      <section className="md:grid md:grid-cols-12 gap-10">
-        <WorkspaceTestClientComp />
-      </section>
+      {!githubUser ? (
+        <section className="">
+          <GithubLottie githubUser={githubUser} />
+        </section>
+      ) : (
+        <>
+          <section className="w-full mt-10 flex justify-end col-span-12 mb-10">
+            <WorkspaceDynamicProjectsInput reposArr={reposArr} />
+          </section>{" "}
+          <section className="md:grid md:grid-cols-12 gap-10">
+            <WorkspaceTestClientComp />
+          </section>
+        </>
+      )}
 
       <WorkspaceCustomCard
         projects={projects}
