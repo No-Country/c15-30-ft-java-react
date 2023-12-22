@@ -5,11 +5,11 @@ const sequelize = require("../utils/connection");
 const Colaborador = sequelize.define(
   "colaborador",
   {
-    colaborador: {
+    colaborador_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    proyecto: {
+    proyecto_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     }

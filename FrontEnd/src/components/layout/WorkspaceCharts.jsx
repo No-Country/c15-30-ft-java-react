@@ -43,21 +43,21 @@ const generateDynamicColors = (contributors) => {
   });
 };
 
-export const PolarAreaChart = ({ className = "", selectedProject }) => {
+export const PolarAreaChart = ({ className = "", selectedProject, githubUser }) => {
   const [commits, setCommits] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/Jandres373/${selectedProject}/commits`,
+          `https://api.github.com/repos/${githubUser}/${selectedProject}/commits`,
           {
             method: "GET",
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+           /*  headers: {
+              Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
               "X-GitHub-Api-Version": "2022-11-28",
               "Content-Type": "application/json",
-            },
+            }, */
           }
         );
 
@@ -123,7 +123,7 @@ export const PolarAreaChart = ({ className = "", selectedProject }) => {
   );
 };
 
-export const LineChartChart = ({ className = "", selectedProject }) => {
+export const LineChartChart = ({ className = "", selectedProject, githubUser }) => {
   const [chartData, setChartData] = useState(null);
   const [contributors, setContributors] = useState(null);
 
@@ -131,14 +131,14 @@ export const LineChartChart = ({ className = "", selectedProject }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/Jandres373/${selectedProject}/commits`,
+          `https://api.github.com/repos/${githubUser}/${selectedProject}/commits`,
           {
             method: "GET",
-            headers: {
+            /* headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
               "X-GitHub-Api-Version": "2022-11-28",
               "Content-Type": "application/json",
-            },
+            }, */
           }
         );
 

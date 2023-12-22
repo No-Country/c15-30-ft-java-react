@@ -14,8 +14,14 @@ const getOne = catchError(async (req, res) => {
   return res.json(result);
 });
 
+const create = catchError(async (req, res) => {
+  const result = await Tecnologia.create(req.body);
+  return res.status(201).json(result);
+});
+
 
 module.exports = {
   getAll,
   getOne,
+  create
 }

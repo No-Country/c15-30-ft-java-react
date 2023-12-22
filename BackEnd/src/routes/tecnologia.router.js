@@ -5,6 +5,7 @@ const tecnologiaRouter = express.Router();
 
 tecnologiaRouter.route('/')
   .get(getAll)
+  .post(create)
 
 tecnologiaRouter.route('/:id')
   .get(getOne)

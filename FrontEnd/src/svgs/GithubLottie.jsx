@@ -11,14 +11,15 @@ import { Button } from "@/components/ui/button";
 import APIClient from "@/axios/apiFrontConnection";
 import { useForm } from "react-hook-form";
 import { toast } from "../components/ui/use-toast";
+import { useRouter } from "next/navigation";
 
 const GithubLottie = ({usuarioId}) => {
-
+  const router = useRouter();
   const {register, handleSubmit} = useForm();
 
   const onSubmit = async (data) => {
+    router.push(`?user=${data.github}`)
     try {
-      console.log(data);
       const res = await APIClient.put(`usuarios/${usuarioId}`, {
         githubUser: data.github,
       });

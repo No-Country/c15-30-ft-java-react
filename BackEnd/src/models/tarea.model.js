@@ -12,7 +12,7 @@ const Tarea = sequelize.define("terea", {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    colaborador: {
+    colaborador_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -20,7 +20,7 @@ const Tarea = sequelize.define("terea", {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    Proyecto: {
+    proyecto_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     }

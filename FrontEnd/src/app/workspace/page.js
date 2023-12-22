@@ -5,6 +5,8 @@ import WorkspaceUserInfoLoader from "@/components/layout/WorkspaceUserInfoLoader
 import API from "@/axios/apiConnection";
 import WordspaceReactiveCards from "@/components/layout/WordspaceReactiveCards";
 import Proyectos from "../../constants/Proyectos.json";
+import { getServerSession } from "next-auth";
+import authOptions from "../api/auth/[...nextauth]/authOptions";
 
 const pageContent = {
   title: "",
@@ -13,9 +15,12 @@ const pageContent = {
 
 const WorkSpace = async ({ searchParams }) => {
   const response = await API.get("/proyectos");
+  const session = await getServerSession(authOptions);
+  const usuarioId = session.user.user.id
   const projects = response || Proyectos;
-  const params = searchParams;
+  const params = searchParams.user;
 
+  
   return (
     <div className="h-full md:w-full">
       <div className="px-[20px] w-full  h-full flex flex-col justify-between">
@@ -38,7 +43,7 @@ const WorkSpace = async ({ searchParams }) => {
         </section>
 
         <section className="flex flex-col my-20 w-full">
-          <WordspaceReactiveCards projects={projects}></WordspaceReactiveCards>
+          <WordspaceReactiveCards projects={projects}  session={session} usuarioId={usuarioId} params={params}></WordspaceReactiveCards>
         </section>
       </div>
     </div>

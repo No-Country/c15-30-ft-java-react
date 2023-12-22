@@ -5,7 +5,7 @@ import React from "react";
 const layout = ({ children }) => {
   return (
     <main className="max-w-screen relaltive">
-      <NavBar className={"hidden md:block"}/>
+     {/*  <NavBar className={"hidden md:block"}/> */}
       {children}
       <Footer />
     </main>

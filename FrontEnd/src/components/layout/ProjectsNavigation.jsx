@@ -14,6 +14,9 @@ import { buttonVariants } from "../ui/button";
 import { textBold } from "@/styles/fonts";
 import CreateProjectDialog from "./CreateProjectDialog";
 import CreateProjectView from "./CreateProjectView";
+import API from "@/axios/apiConnection";
+import { getServerSession } from "next-auth";
+import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
 
 const components = [
   {
@@ -54,7 +57,10 @@ const components = [
   },
 ];
 
-export function ProjectsNavigation() {
+export async function ProjectsNavigation() {
+  const tecnologias = await API.get("tecnologias")
+  const user = await getServerSession(authOptions);
+
   return (
     <NavigationMenu className={"bg-blue-50 rounded-2xl"}>
       <NavigationMenuList className={""}>
@@ -121,7 +127,7 @@ export function ProjectsNavigation() {
             content={{ title: "", description: "" }}
           >
             {/* comp que renderiza el modal con las opciones para crear la tarea */}
-            <CreateProjectView />
+            <CreateProjectView techs={tecnologias}  user={user}/>
           </CreateProjectDialog>
 
           {/* dialog */}

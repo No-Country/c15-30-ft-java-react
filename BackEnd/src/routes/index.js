@@ -10,16 +10,17 @@ const tareaRouter = require("./tarea.router");
 const tecnologiaRouter = require("./tecnologia.router");
 const usuarioRouter = require("./usuario.router");
 const loginRouter = require("./login.routes");
+const comentarioRouter = require("./comentario.router");
 
 router.use("/usuarios", usuarioRouter);
 router.use("/proyectos", proyectoRouter);
 router.use("/paises", paisRouter);
 router.use("/colaboradores", colaboradorRouter);
+router.use("/comentarios", comentarioRouter);
 router.use("/dificultad", dificultadRouter);
 router.use("/status", statusRouter);
 router.use("/tareas", tareaRouter);
 router.use("/tecnologias", tecnologiaRouter);
-router.use("/login", loginRouter)
-
+router.use("/login", loginRouter);
 
 module.exports = router;

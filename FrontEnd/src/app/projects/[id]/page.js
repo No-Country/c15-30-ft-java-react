@@ -11,26 +11,12 @@ import ProjectTask from "@/components/layout/ProjectTask";
 const ProjectsId = async ({ params }) => {
   const projectId = params.id;
   const project = await API.get(`/proyectos/${projectId}`);
+  const user = await API.get(`/usuarios/${project.creador_id}`);
   const tareas = await API.get("/tareas");
   // hacemos un get del proyecto por id
   // debemos traernos del back el usuario creador de este proyecto
   // debemos traernos del back las tareas asociadas a este proyecto.
   // debemos traernos del back los colaboradores actuales en el proyecto.
-
-  const userId = /* project.userId */ 1;
-  /*   const user = await API.get(`/users/${userId}`); */
-
-  const user = {
-    id: 1,
-    nombre: "Test",
-    apellido: "Perez",
-    email: "user@falso.com",
-    puesto: "Administrador",
-    avatar:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png",
-    rol: "admin",
-    githubUser: "jandres373",
-  };
 
   return (
     <div className="relative h-screen flex flex-col items-center gap-[20px]">
@@ -61,7 +47,7 @@ const ProjectsId = async ({ params }) => {
           <section>
             <Avatar variant={"md"} className={""}>
               <AvatarImage src={user.imageUrl} />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback></AvatarFallback>
             </Avatar>
           </section>
         </div>

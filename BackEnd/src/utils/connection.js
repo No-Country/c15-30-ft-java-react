@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize({
+/* const sequelize = new Sequelize({
   dialect: 'mysql',
   dialectModule: require('mysql2'),
   database: process.env.DB,
@@ -16,6 +16,15 @@ const sequelize = new Sequelize({
   define: {
     timestamps: false,
   },
-})
+}) */
 
+const sequelize = new Sequelize(process.env.psql, {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Puedes necesitar ajustar esto dependiendo de tu configuración de SSL
+    }
+  }
+});
 module.exports = sequelize;

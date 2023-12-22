@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { textBold } from "@/styles/fonts";
 import axios from "axios";
+import { redirect } from "next/dist/server/api-utils";
 
 /**
  * =======================
@@ -28,7 +29,11 @@ import axios from "axios";
  * };
  */
 
-const CreateProjectView = () => {
+const CreateProjectView = ({techs,user}) => {
+  const userId = user?.user?.user?.id
+
+  console.log(userId)
+
 
   const postTask = async (formData) => {
 
@@ -37,20 +42,14 @@ const CreateProjectView = () => {
     const nombre = formData.get("nombre");
     const descripcion = formData.get("descripcion");
     const portada = formData.get("portada");
-  
-    const newProject = {
-      nombre,
-      descripcion,
-      portada,
-      colaborador: null,
-      dificultad: null,
-      tareas_id: null,
-    };
+    const tecnologias = formData.get("tecnologias");
   
     const data = new FormData();
     data.append("nombre", nombre);
     data.append("descripcion", descripcion);
     data.append("portada", portada);
+    data.append("tecnologías", tecnologias);
+    data.append("creador_id", userId)
   
     try {
       const res = await axios.post(`${process.env.BASE_URL}/proyectos`, data, {
@@ -59,7 +58,7 @@ const CreateProjectView = () => {
         },
       });
       
-      console.log(res.data)
+      redirect("/explore", "replace")
     } catch (error) {
       console.error("Error:", error.message);
     }
@@ -102,15 +101,14 @@ const CreateProjectView = () => {
             data: "Te recomendamos añadir las 5 aptitudes más relevantes para este proyecto.",
           }}
         />
-        <Button
-          type="button"
-          tipo={""}
-          variant={"outline"}
-          size={""}
-          className=""
+        <select
+          placeholder="Selecciona una tecnología"
+          className="border border-gray-400 rounded-xl p-2"
         >
-          + Añadir tecnologías
-        </Button>
+          {techs && techs?.map(tech => (
+            <option key={tech.id} value={tech.id}>{tech.nombre}</option>
+          ))}
+        </select>
       </div>
       <div className="flex flex-col gap-5">
         <TextDisplayWithTitle
@@ -145,7 +143,7 @@ const CreateProjectView = () => {
       </div>
       <div>
         {" "}
-        <TextDisplayWithTitle
+{/*         <TextDisplayWithTitle
           id="tareas"
           type={"vertical"}
           variant={""}
@@ -153,8 +151,8 @@ const CreateProjectView = () => {
             title: "Tareas",
             data: "Añade las tareas que esten por realizar en el proyecto.",
           }}
-        />
-        <Button
+        /> */}
+{/*         <Button
           type="button"
           tipo={""}
           variant={"outline"}
@@ -162,7 +160,7 @@ const CreateProjectView = () => {
           className=""
         >
           + Añadir tareas
-        </Button>
+        </Button> */}
       </div>
       <div className="flex justify-end gap-5">
         <Button

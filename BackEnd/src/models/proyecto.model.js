@@ -14,13 +14,17 @@ const Proyecto = sequelize.define("proyecto", {
     type: DataTypes.STRING(150),
     allowNull: true,
   },
-  colaboradores: {
+  creador_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  colaborador_id: {
     /* type: DataTypes.ARRAY(DataTypes.INTEGER), */
     type: DataTypes.INTEGER,
     allowNull: true,
     /*     defaultValue: [],  */
   },
-  tareas: {
+  tarea_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
@@ -32,11 +36,5 @@ const Proyecto = sequelize.define("proyecto", {
   tableName: "proyectos", 
 });
 
-// Esto de abajo está generando un error por que la asociacion, en el modelo hay 'dificultad' y se esta asociando a una tabla del mismo nombre. No sé si funcione pero podríamos llamar dificultad_id en este modelo e intentar la asocicacion de nuevo. 
-
-/* 
-Proyecto.hasOne(Dificultad, { foreignKey: 'id'});
-Dificultad.belongsTo(Proyecto, { foreignKey: 'id' }); 
-*/
 
 module.exports = Proyecto;

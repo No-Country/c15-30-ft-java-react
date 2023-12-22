@@ -4,6 +4,7 @@ const cloudinary = require("../utils/cloudinary");
 const Tarea = require("../models/tarea.model.js");
 const Colaborador = require("../models/colaborador.model.js");
 const Dificultad = require("../models/dificultad.model.js");
+const Tecnologia = require("../models/tecnologia.model.js");
 const sequelize = require("../utils/connection.js");
 
 const getAll = catchError(async (req, res) => {
@@ -53,7 +54,6 @@ const create = catchError(async (req, res) => {
     });
 
     const imageUrl = uploadImage.secure_url;
-
     const result = await Proyecto.create({ ...req.body, portada: imageUrl });
 
     return res.status(200).json({

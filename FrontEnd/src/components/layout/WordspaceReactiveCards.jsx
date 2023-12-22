@@ -9,24 +9,24 @@ import WorkspaceDynamicProjectsInput from "./WorkspaceDynamicProjectsInput";
 import WorkspaceTestClientComp from "./WorkspaceTestClientComp";
 import GithubLottie from "@/svgs/GithubLottie";
 
-const WordspaceReactiveCards = async ({ projects, children }) => {
-  const session = await getServerSession(authOptions);
-  const { githubUser } = await session?.user?.user;
 
-  console.log(githubUser);
+const WordspaceReactiveCards = async ({ projects, children, usuarioId, session, params }) => {
+  const  githubUser  =  params || session.user.user.githubUser
+
+  console.log(githubUser)
 
   const res = await fetch(`https://api.github.com/users/${githubUser}/repos`, {
     method: "GET",
-    headers: {
-      Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+/*     headers: {
+      Authorization: `token ${process.env.GITHUB_TOKEN}`,
       "Content-Type": "application/json",
-    },
+    }, */
   }).catch((error) => {
     console.error("Error en la solicitud:", error);
   });
 
   const repos = await res.json();
-  const reposArr = projects.map((repo) => repo.name);
+  const reposArr = repos.map((repo) => repo.name);
 
   return (
     <>
@@ -48,7 +48,7 @@ const WordspaceReactiveCards = async ({ projects, children }) => {
 
       {!githubUser ? (
         <section className="">
-          <GithubLottie githubUser={githubUser} />
+          <GithubLottie usuarioId={usuarioId} />
         </section>
       ) : (
         <>
@@ -56,7 +56,7 @@ const WordspaceReactiveCards = async ({ projects, children }) => {
             <WorkspaceDynamicProjectsInput reposArr={reposArr} />
           </section>{" "}
           <section className="md:grid md:grid-cols-12 gap-10">
-            <WorkspaceTestClientComp />
+            <WorkspaceTestClientComp githubUser={githubUser} />
           </section>
         </>
       )}
