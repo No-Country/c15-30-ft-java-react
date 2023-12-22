@@ -24,7 +24,7 @@ const Proyecto = sequelize.define("proyecto", {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
-  dificultad: {
+  dificultad_id: {
     type: DataTypes.INTEGER,
     allowNull: true,
   },

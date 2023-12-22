@@ -16,7 +16,7 @@ const Tarea = sequelize.define("terea", {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    status: {
+    status_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

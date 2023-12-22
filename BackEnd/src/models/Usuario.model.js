@@ -57,7 +57,7 @@ const Usuario = sequelize.define(
       allowNull: true,
     },
 
-    pais: {
+    pais_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },

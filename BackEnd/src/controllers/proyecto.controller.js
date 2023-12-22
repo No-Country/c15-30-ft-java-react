@@ -7,7 +7,7 @@ const Dificultad = require("../models/dificultad.model.js");
 const sequelize = require("../utils/connection.js");
 
 const getAll = catchError(async (req, res) => {
-  const results = await Proyecto.findAll({ include: [Tarea, Colaborador] });
+  const results = await Proyecto.findAll({ include: [Tarea, Colaborador,Dificultad] });
   return res.json(results);
 });
 
