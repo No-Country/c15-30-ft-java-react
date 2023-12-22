@@ -34,12 +34,12 @@ const update = catchError(async (req, res) => {
     { where: { id }, returning: true }
   );
   if (result[0] === 0) return res.sendStatus(404);
-  console.log(req)
   return res.json(result[1][0]);
 });
 
 Usuario.prototype.toJSON = function() {
   const values = Object.assign({}, this.get());
+  // biome-ignore lint/performance/noDelete: <explanation>
   delete values.password;
   return values;
 };
